@@ -16,6 +16,9 @@
 		794B478723D9E549008A65DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794B478523D9E549008A65DC /* LaunchScreen.storyboard */; };
 		794B479223D9E549008A65DC /* DualogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B479123D9E549008A65DC /* DualogueTests.swift */; };
 		794B479D23D9E549008A65DC /* DualogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B479C23D9E549008A65DC /* DualogueUITests.swift */; };
+		794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AA23D9EC20008A65DC /* TestNotes.swift */; };
+		794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AC23D9EE91008A65DC /* NoteModel.swift */; };
+		794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AE23D9F582008A65DC /* AvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		794B479823D9E549008A65DC /* DualogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualogueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		794B479C23D9E549008A65DC /* DualogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualogueUITests.swift; sourceTree = "<group>"; };
 		794B479E23D9E549008A65DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		794B47AA23D9EC20008A65DC /* TestNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotes.swift; sourceTree = "<group>"; };
+		794B47AC23D9EE91008A65DC /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		794B47AE23D9F582008A65DC /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 				794B477723D9E540008A65DC /* AppDelegate.swift */,
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				794B477E23D9E540008A65DC /* ContentView.swift */,
+				794B47AE23D9F582008A65DC /* AvatarView.swift */,
+				794B47AA23D9EC20008A65DC /* TestNotes.swift */,
+				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
 				794B478523D9E549008A65DC /* LaunchScreen.storyboard */,
 				794B478823D9E549008A65DC /* Info.plist */,
@@ -271,6 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
+				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
+				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,
+				794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* ContentView.swift in Sources */,
 				794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */,
