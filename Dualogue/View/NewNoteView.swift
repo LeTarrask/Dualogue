@@ -34,7 +34,9 @@ struct NewNoteView: View {
     }
     
     func savePressed() {
-        print("save pressed")
+        let contact = DuaUser(name: noteContact, image: "face")
+        let newNote = DuaNote(user: contact, text: noteTitle)
+        // TO DO: store newNote in Storage Manager
     }
 }
 
