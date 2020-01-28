@@ -11,28 +11,46 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            TabView {
-                MainView()
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Home")
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("Contacts")
+                        .font(.title).bold()
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face", size: 60, name: "Testname")
+                            // TO DO: when implementing this functionality, remove padding from sides
+                        }
+                    }
+                
                 }
-                NewNoteView()
-                    .tabItem {
-                        Image(systemName: "tv.fill")
-                        Text("New Note View")
-                }
-                ContactsView()
-                    .tabItem {
-                        Image(systemName: "tv.fill")
-                        Text("Contacts View")
+                .padding(20)
+                .background(Color.white)
+                Spacer()
+                ScrollView(.vertical) {
+                    NoteView(title: "test", date: "test")
+
+                    NoteView(title: "test", date: "test")
+
                 }
             }
-            .navigationBarTitle("Dualogue", displayMode: .large)
-            .navigationBarItems(trailing: Text("Alert Button"))
+            .background(Color.black)
+            .navigationBarTitle("Dualogue", displayMode: .inline)
+            .navigationBarItems(trailing: Image(systemName: "magnifyingglass"))
         }
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {

@@ -15,19 +15,28 @@ struct AvatarView: View {
     /// size
     let size: CGFloat
     
+    let name: String
+    
     /// body
     var body: some View {
-        Image(image)
-            .resizable()
-            .frame(width: size, height: size)
-            .border(Color.gray.opacity(0.5), width: 0.5)
-            .cornerRadius(size/2)
+        VStack {
+            Image(image)
+                .resizable()
+                .frame(width: size, height: size)
+                .border(Color.gray.opacity(0.5), width: 0.5)
+                .cornerRadius(size/2)
+                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                .shadow(radius: 3)
+                .padding(5)
+            Text(name)
+                .font(.caption)
+        }
     }
 }
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(image: "face.jpg", size: 36)
+        AvatarView(image: "face", size: 60, name: "Testname")
     }
 }
 

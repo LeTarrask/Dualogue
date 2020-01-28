@@ -23,6 +23,7 @@
 		7954AF1F23E05E6700BF1294 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF1E23E05E6700BF1294 /* NewNoteView.swift */; };
 		7954AF2223E068EB00BF1294 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2123E068EB00BF1294 /* ContactsView.swift */; };
 		7954AF2523E0742600BF1294 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2423E0742600BF1294 /* UserData.swift */; };
+		7954AF2723E0974600BF1294 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2623E0974600BF1294 /* NoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		7954AF1E23E05E6700BF1294 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
 		7954AF2123E068EB00BF1294 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		7954AF2423E0742600BF1294 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		7954AF2623E0974600BF1294 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				7954AF2123E068EB00BF1294 /* ContactsView.swift */,
 				7954AF1C23E05E3D00BF1294 /* MainView.swift */,
 				794B47AE23D9F582008A65DC /* AvatarView.swift */,
+				7954AF2623E0974600BF1294 /* NoteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			files = (
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
 				7954AF1D23E05E3D00BF1294 /* MainView.swift in Sources */,
+				7954AF2723E0974600BF1294 /* NoteView.swift in Sources */,
 				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
 				7954AF2223E068EB00BF1294 /* ContactsView.swift in Sources */,
 				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,

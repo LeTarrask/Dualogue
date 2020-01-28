@@ -40,9 +40,9 @@ struct NoteCard: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack {
             HStack {
-                AvatarView(image: note.user.image, size: 48)
+                AvatarView(image: note.user.image, size: 48, name: "Testname")
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
                 Text(note.user.name)
                     .font(.caption)
