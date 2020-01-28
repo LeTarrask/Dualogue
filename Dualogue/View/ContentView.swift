@@ -20,10 +20,10 @@ struct ContentView: View {
                         HStack {
                             AvatarView(image: "face", size: 60, name: "Testname")
                             AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face2", size: 60, name: "Testname")
+                            AvatarView(image: "face2", size: 60, name: "Testname")
                             AvatarView(image: "face", size: 60, name: "Testname")
-                            AvatarView(image: "face", size: 60, name: "Testname")
-                            AvatarView(image: "face", size: 60, name: "Testname")
-                            AvatarView(image: "face", size: 60, name: "Testname")
+                            AvatarView(image: "face2", size: 60, name: "Testname")
                             AvatarView(image: "face", size: 60, name: "Testname")
                             AvatarView(image: "face", size: 60, name: "Testname")
                             AvatarView(image: "face", size: 60, name: "Testname")
@@ -37,9 +37,9 @@ struct ContentView: View {
                 .background(Color.white)
                 Spacer()
                 ScrollView(.vertical) {
-                    NoteView(title: "test", date: "test")
+                    NoteView(title: "test", date: "test", imagePath: "face2")
 
-                    NoteView(title: "test", date: "test")
+                    NoteView(title: "test", date: "test", contactImg: "face")
 
                 }
             }

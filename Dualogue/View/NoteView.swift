@@ -15,12 +15,16 @@ struct NoteView: View {
     var text: String?
     @State var completed: Bool = false
     var contactName: String?
+    var contactImg: String?
     
     var body: some View {
         VStack {
             HStack {
-                AvatarView(image: "face", size: 36, name: contactName ?? "")
+                if contactImg != nil {
+                    // TO DO: add failsafe with image placeholder here as well
+                    AvatarView(image: contactImg!, size: 36, name: contactName ?? "")
                     .offset(y: 8)
+                }
                 VStack(alignment: .leading) {
                     Text(title)
                         .bold()
@@ -36,7 +40,7 @@ struct NoteView: View {
                 .foregroundColor(Color.gray)
                 .padding()
             if (imagePath != nil) {
-                Image(imagePath!)
+                Image(imagePath!) // TO DO: add image placeholder
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxHeight: 200)
@@ -78,6 +82,6 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(title: "The greatest headline for a note ", date: "September 21, 1981", imagePath: "face")
+        NoteView(title: "The greatest headline for a note ", date: "September 21, 1981", imagePath: "face", contactImg: "face2")
     }
 }
