@@ -113,10 +113,7 @@
 			children = (
 				794B477723D9E540008A65DC /* AppDelegate.swift */,
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
-				794B477E23D9E540008A65DC /* ContentView.swift */,
-				7954AF1E23E05E6700BF1294 /* NewNoteView.swift */,
-				7954AF1C23E05E3D00BF1294 /* MainView.swift */,
-				794B47AE23D9F582008A65DC /* AvatarView.swift */,
+				7954AF2023E05E8800BF1294 /* View */,
 				794B47AA23D9EC20008A65DC /* TestNotes.swift */,
 				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
@@ -152,6 +149,17 @@
 				794B479E23D9E549008A65DC /* Info.plist */,
 			);
 			path = DualogueUITests;
+			sourceTree = "<group>";
+		};
+		7954AF2023E05E8800BF1294 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				794B477E23D9E540008A65DC /* ContentView.swift */,
+				7954AF1E23E05E6700BF1294 /* NewNoteView.swift */,
+				7954AF1C23E05E3D00BF1294 /* MainView.swift */,
+				794B47AE23D9F582008A65DC /* AvatarView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
