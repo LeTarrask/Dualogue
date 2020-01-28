@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct NewNoteView: View {
+    @EnvironmentObject var userData: UserData
+    
     @State private var noteTitle: String = ""
     @State private var noteText: String = ""
     @State private var noteContact: String = ""
@@ -36,7 +38,12 @@ struct NewNoteView: View {
     func savePressed() {
         let contact = DuaUser(name: noteContact, image: "face")
         let newNote = DuaNote(user: contact, text: noteTitle)
-        // TO DO: store newNote in Storage Manager
+        
+        userData.noteCollection.append(newNote)
+        
+        // TO DO: reset contents of note
+        
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
 }
 

@@ -17,28 +17,18 @@ struct ContentView: View {
                         Image(systemName: "phone.fill")
                         Text("Home")
                 }
-                Text("The content of the second view")
-                    .tabItem {
-                        Image(systemName: "tv.fill")
-                        Text("CalendarView")
-                }
-                Text("The content of the third view")
+                NewNoteView()
                     .tabItem {
                         Image(systemName: "tv.fill")
                         Text("New Note View")
                 }
-                Text("The content of the fourth view")
-                    .tabItem {
-                        Image(systemName: "tv.fill")
-                        Text("Notes View")
-                }
-                Text("The content of the fifth view")
+                ContactsView()
                     .tabItem {
                         Image(systemName: "tv.fill")
                         Text("Contacts View")
                 }
             }
-            .navigationBarTitle("Dualogue", displayMode: .inline)
+            .navigationBarTitle("Dualogue", displayMode: .large)
             .navigationBarItems(trailing: Text("Alert Button"))
         }
     }

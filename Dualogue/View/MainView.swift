@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
-    var data = NoteBuilderTest()
+    @EnvironmentObject var userData: UserData
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct MainView: View {
             }
             ScrollView(.vertical, content: {
                 HStack(spacing: 10) {
-                    ForEach(data.noteCollection) { note in
+                    ForEach(userData.noteCollection) { note in
                         NoteCard(note: note)
                     }
                 }

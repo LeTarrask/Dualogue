@@ -21,6 +21,8 @@
 		794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AE23D9F582008A65DC /* AvatarView.swift */; };
 		7954AF1D23E05E3D00BF1294 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF1C23E05E3D00BF1294 /* MainView.swift */; };
 		7954AF1F23E05E6700BF1294 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF1E23E05E6700BF1294 /* NewNoteView.swift */; };
+		7954AF2223E068EB00BF1294 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2123E068EB00BF1294 /* ContactsView.swift */; };
+		7954AF2523E0742600BF1294 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2423E0742600BF1294 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		794B47AE23D9F582008A65DC /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		7954AF1C23E05E3D00BF1294 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7954AF1E23E05E6700BF1294 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
+		7954AF2123E068EB00BF1294 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		7954AF2423E0742600BF1294 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +118,7 @@
 				794B477723D9E540008A65DC /* AppDelegate.swift */,
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				7954AF2023E05E8800BF1294 /* View */,
-				794B47AA23D9EC20008A65DC /* TestNotes.swift */,
-				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
+				7954AF2323E06E0B00BF1294 /* Model */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
 				794B478523D9E549008A65DC /* LaunchScreen.storyboard */,
 				794B478823D9E549008A65DC /* Info.plist */,
@@ -156,10 +159,21 @@
 			children = (
 				794B477E23D9E540008A65DC /* ContentView.swift */,
 				7954AF1E23E05E6700BF1294 /* NewNoteView.swift */,
+				7954AF2123E068EB00BF1294 /* ContactsView.swift */,
 				7954AF1C23E05E3D00BF1294 /* MainView.swift */,
 				794B47AE23D9F582008A65DC /* AvatarView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7954AF2323E06E0B00BF1294 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
+				7954AF2423E0742600BF1294 /* UserData.swift */,
+				794B47AA23D9EC20008A65DC /* TestNotes.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +310,9 @@
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
 				7954AF1D23E05E3D00BF1294 /* MainView.swift in Sources */,
 				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
+				7954AF2223E068EB00BF1294 /* ContactsView.swift in Sources */,
 				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,
+				7954AF2523E0742600BF1294 /* UserData.swift in Sources */,
 				794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* ContentView.swift in Sources */,
