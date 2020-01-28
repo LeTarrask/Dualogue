@@ -19,6 +19,8 @@
 		794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AA23D9EC20008A65DC /* TestNotes.swift */; };
 		794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AC23D9EE91008A65DC /* NoteModel.swift */; };
 		794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AE23D9F582008A65DC /* AvatarView.swift */; };
+		7954AF1D23E05E3D00BF1294 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF1C23E05E3D00BF1294 /* MainView.swift */; };
+		7954AF1F23E05E6700BF1294 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF1E23E05E6700BF1294 /* NewNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		794B47AA23D9EC20008A65DC /* TestNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotes.swift; sourceTree = "<group>"; };
 		794B47AC23D9EE91008A65DC /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		794B47AE23D9F582008A65DC /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		7954AF1C23E05E3D00BF1294 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7954AF1E23E05E6700BF1294 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				794B477723D9E540008A65DC /* AppDelegate.swift */,
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				794B477E23D9E540008A65DC /* ContentView.swift */,
+				7954AF1E23E05E6700BF1294 /* NewNoteView.swift */,
+				7954AF1C23E05E3D00BF1294 /* MainView.swift */,
 				794B47AE23D9F582008A65DC /* AvatarView.swift */,
 				794B47AA23D9EC20008A65DC /* TestNotes.swift */,
 				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
@@ -280,11 +286,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
+				7954AF1D23E05E3D00BF1294 /* MainView.swift in Sources */,
 				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
 				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,
 				794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* ContentView.swift in Sources */,
+				7954AF1F23E05E6700BF1294 /* NewNoteView.swift in Sources */,
 				794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
