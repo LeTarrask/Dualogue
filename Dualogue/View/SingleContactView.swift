@@ -1,5 +1,5 @@
 //
-//  ContactsView.swift
+//  SingleContactView.swift
 //  Dualogue
 //
 //  Created by Alex Luna on 17/02/2020.
@@ -8,18 +8,19 @@
 
 import SwiftUI
 
-// TODO:
-// ADD EMPTY CELL IN THE BEGINNING
-// ADD CONTACTS CELLS FROM MODEL
+// TO DO:
+//ADD HEADER
+//ADD SEARCH
+//ADD NOTE LIST FILTERED BY CONTACT
 
-struct ContactsView: View {
+struct SingleContactView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ContactsView_Previews: PreviewProvider {
+struct SingleContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsView()
+        SingleContactView()
     }
 }

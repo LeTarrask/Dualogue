@@ -8,7 +8,12 @@
 
 import SwiftUI
 
-struct NewNoteView: View {
+// TO DO:
+//implement editing capability
+//implement app design
+//implement storage/retrieval methods
+
+struct SingleNoteView: View {
     @EnvironmentObject var userData: UserData
     
     @State private var noteTitle: String = ""
@@ -41,14 +46,19 @@ struct NewNoteView: View {
         
         userData.noteCollection.append(newNote)
         
-        // TO DO: reset contents of note
-        
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+        resetView()
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+    }
+    
+    func resetView() {
+        noteTitle = ""
+        noteText = ""
+        noteContact = ""
     }
 }
 
 struct NewNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NewNoteView()
+        SingleNoteView()
     }
 }

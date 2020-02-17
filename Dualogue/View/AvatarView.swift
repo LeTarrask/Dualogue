@@ -8,13 +8,32 @@
 
 import SwiftUI
 
+// TO DO:
+// 3 different sizes of avatars & names
+
+//Type 1: (for main screen story scroll)
+//text regular size 12
+//Image 60px
+//border grey 2px
+//larger border white 4px
+
+//Type 2: (for note)
+//text regular size 12
+//Image 50px
+//border grey 2px
+//larger border white 4px
+
+//Type 3: (for user page)
+//text semibold size 12
+//Image 100px
+//border grey 2px
+//larger border white 4px
+
+//INIT empty image & empty text
+
 struct AvatarView: View {
-    /// image
     let image: String
-    
-    /// size
     let size: CGFloat
-    
     let name: String
     
     /// body
@@ -23,20 +42,23 @@ struct AvatarView: View {
             Image(image)
                 .resizable()
                 .frame(width: size, height: size)
-                .border(Color.gray.opacity(0.5), width: 0.5)
                 .cornerRadius(size/2)
-                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                .overlay(Circle().stroke(Color.accent1, lineWidth: 6))
+                .overlay(Circle().stroke(Color.main, lineWidth: 2))
                 .shadow(radius: 3)
-                .padding(5)
             Text(name)
+                .lineLimit(2)
+                .truncationMode(.tail)
+                .frame(width: size*1.3)
                 .font(.caption)
+            // TO DO: clip the name in XXX characters so it doesnt overflow
         }
     }
 }
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(image: "face", size: 60, name: "Testname")
+        AvatarView(image: "face", size: 60, name: "Testname TestnameTestname")
     }
 }
 
