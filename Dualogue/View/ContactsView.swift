@@ -14,7 +14,37 @@ import SwiftUI
 
 struct ContactsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // TO DO: ADD SEARCH IN THE TOP
+        
+        // TO DO: HOW TO ADD 2 ROWS OF CELLS AND SEVERAL LINES???
+        
+        VStack {
+            ZStack {
+                Rectangle().fill(Color.accent2)
+                    .frame(width: 165, height: 195, alignment: .topLeading)
+                    .cornerRadius(20)
+                Image("plussign")
+                    .frame(width: 40, height: 40)
+            }
+            ZStack {
+                Rectangle().fill(Color.accent1)
+                    .frame(width: 165, height: 195, alignment: .topLeading)
+                    .cornerRadius(20)
+                VStack {
+                    AvatarView(image: "face2", size: 100, name: "Jennifer Longmamenne")
+                        .foregroundColor(Color.main)
+                        .padding()
+                    Button(action: {print("button pressed")}, label: {
+                        Text("CREATE NOTE")
+                            .padding(5)
+                            .background(Color.accent3)
+                            .foregroundColor(Color.main)
+                            .font(.body)
+                            .cornerRadius(10)
+                    })
+                }.frame(width: 165, height: 195)
+            }
+        }
     }
 }
 

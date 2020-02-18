@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB8E23FC463500350C48 /* NoteTimeline.swift */; };
+		7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB9223FC467C00350C48 /* FriendListScroll.swift */; };
 		79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7C23FAB21000C37120 /* ColorSchemes.swift */; };
 		79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7E23FABFE400C37120 /* SingleContactView.swift */; };
 		79410E8123FAC01500C37120 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E8023FAC01500C37120 /* ContactsView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7934EB8E23FC463500350C48 /* NoteTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
+		7934EB9223FC467C00350C48 /* FriendListScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendListScroll.swift; path = Dualogue/View/FriendListScroll.swift; sourceTree = "<group>"; };
 		79410E7C23FAB21000C37120 /* ColorSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		79410E7E23FABFE400C37120 /* SingleContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleContactView.swift; sourceTree = "<group>"; };
 		79410E8023FAC01500C37120 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		794B476B23D9E540008A65DC = {
 			isa = PBXGroup;
 			children = (
+				7934EB9223FC467C00350C48 /* FriendListScroll.swift */,
 				794B477623D9E540008A65DC /* Dualogue */,
 				794B479023D9E549008A65DC /* DualogueTests */,
 				794B479B23D9E549008A65DC /* DualogueUITests */,
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				794B477E23D9E540008A65DC /* MainScreen.swift */,
+				7934EB8E23FC463500350C48 /* NoteTimeline.swift */,
 				7954AF2623E0974600BF1294 /* NotePreView.swift */,
 				7954AF1E23E05E6700BF1294 /* SingleNoteView.swift */,
 				79410E7E23FABFE400C37120 /* SingleContactView.swift */,
@@ -319,6 +325,8 @@
 				79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */,
 				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,
 				7954AF2523E0742600BF1294 /* UserData.swift in Sources */,
+				7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */,
+				7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */,
 				79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */,
 				794B47AB23D9EC20008A65DC /* TestNotes.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,

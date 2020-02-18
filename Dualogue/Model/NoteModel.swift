@@ -10,15 +10,21 @@ import SwiftUI
 
 //MARK: NoteModel
 struct DuaNote: Identifiable {
-    var id = UUID().uuidString
+    let id = UUID().uuidString
     
-    let user: DuaUser
+    var user: DuaUser?
     
-    let text: String
+    var title: String
     
-    init(user: DuaUser, text: String) {
-        self.user = user
-        self.text = text
+    var text: String?
+    
+    let date: Date
+    
+    var images: [String]?
+    
+    init(title: String) {
+        self.title = title
+        self.date = Date()
     }
 }
 

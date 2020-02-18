@@ -51,7 +51,6 @@ struct AvatarView: View {
                 .truncationMode(.tail)
                 .frame(width: size*1.3)
                 .font(.caption)
-            // TO DO: clip the name in XXX characters so it doesnt overflow
         }
     }
 }

@@ -21,9 +21,10 @@ struct NotePreView: View {
     @State var completed: Bool = false
     var contactName: String?
     var contactImg: String?
-    var isExpanded: Bool = false
-    
+    @State var isExpanded: Bool = true
+
     var body: some View {
+        // TO DO: implement click to expand/collapse
         VStack {
             HStack {
                 VStack(alignment: .leading) {
@@ -45,20 +46,23 @@ struct NotePreView: View {
                 }
             }
             .frame(minWidth: 0, maxWidth: .infinity,  alignment: Alignment.topLeading)
-            // TO DO: Implement carrousel
-            HStack {
-                if (imagePath != nil) {
-                    Image(imagePath!) // TO DO: add image placeholder
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: 200)
-                        .cornerRadius(20)
-                    .padding()
+            if isExpanded {
+                HStack {
+                    // TO DO: Implement carrousel
+
+                    if (imagePath != nil) {
+                        Image(imagePath!) // TO DO: add image placeholder
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxHeight: 200)
+                            .cornerRadius(20)
+                        .padding()
+                    }
+                    
                 }
-                
-            }
-            if text != "" {
-                TextDisplay(text: text ?? "")
+                if text != "" {
+                    TextDisplay(text: text ?? "")
+                }
             }
             Divider()
             .frame(height: 1)

@@ -42,7 +42,7 @@ struct SingleNoteView: View {
     
     func savePressed() {
         let contact = DuaUser(name: noteContact, image: "face")
-        let newNote = DuaNote(user: contact, text: noteTitle)
+        let newNote = DuaNote(title: noteTitle)
         
         userData.noteCollection.append(newNote)
         

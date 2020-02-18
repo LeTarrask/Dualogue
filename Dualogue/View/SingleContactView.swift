@@ -15,7 +15,35 @@ import SwiftUI
 
 struct SingleContactView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            VStack {
+                HStack {
+                    
+                    AvatarView(image: "face", size: 100, name: "Jennifer Longname")
+                    
+                    VStack {
+                        Text("20")
+                        Text("NOTES")
+                    }
+                    
+                    }
+                .padding()
+                .foregroundColor(Color.main)
+
+                Button(action: {print("button pressed")}, label: {
+                    Text("CREATE NOTE")
+                        .padding()
+                        .background(Color.accent1)
+                        .foregroundColor(Color.main)
+                        .font(.callout)
+                        .cornerRadius(50)
+                })
+                // TO DO: Insert search field
+            }
+            
+            NoteTimeline()
+        }
+        .background(Color.mainBG.edgesIgnoringSafeArea(.all))
     }
 }
 
