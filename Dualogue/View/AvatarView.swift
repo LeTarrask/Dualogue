@@ -32,7 +32,7 @@ import SwiftUI
 //INIT empty image & empty text
 
 struct AvatarView: View {
-    let image: String
+    var image: String
     let size: CGFloat
     let name: String
     
@@ -57,7 +57,7 @@ struct AvatarView: View {
 
 struct AvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(image: "face", size: 60, name: "Testname TestnameTestname")
+        AvatarView(image: "face", size: 60, name: "contact")
     }
 }
 

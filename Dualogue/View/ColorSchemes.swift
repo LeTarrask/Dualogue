@@ -8,6 +8,15 @@
 
 import SwiftUI
 
+extension Color {
+    public static let main = Color.white
+    public static let mainBG = Color.black
+    public static let accent1 = Color("accent1")
+    public static let accent2 = Color("accent2")
+    public static let accent3 = Color("accent3")
+}
+
+
 struct ColorSchemes: View {
     var body: some View {
         VStack {
@@ -32,10 +41,3 @@ struct ColorSchemes_Previews: PreviewProvider {
 }
 
 
-extension Color {
-    public static let main = Color.white
-    public static let mainBG = Color.black
-    public static let accent1 = Color("accent1")
-    public static let accent2 = Color("accent2")
-    public static let accent3 = Color("accent3")
-}
