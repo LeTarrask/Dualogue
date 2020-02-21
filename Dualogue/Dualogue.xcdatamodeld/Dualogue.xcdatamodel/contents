@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ContactStorage" representedClassName="ContactStorage" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="contacts" inverseEntity="NoteStorage"/>
+    </entity>
+    <entity name="ImageStorage" representedClassName="ImageStorage" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="path" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="images" inverseEntity="NoteStorage"/>
+    </entity>
+    <entity name="NoteStorage" representedClassName="NoteStorage" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="contacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactStorage" inverseName="note" inverseEntity="ContactStorage"/>
+        <relationship name="images" optional="YES" toMany="YES" maxCount="5" deletionRule="Cascade" destinationEntity="ImageStorage" inverseName="note" inverseEntity="ImageStorage"/>
+    </entity>
+    <elements>
+        <element name="ContactStorage" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="ImageStorage" positionX="-54" positionY="27" width="128" height="118"/>
+        <element name="NoteStorage" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
 </model>

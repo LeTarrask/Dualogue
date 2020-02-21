@@ -10,22 +10,38 @@ import SwiftUI
 
 struct FriendListScroll: View {
     var body: some View {
-        ScrollView(.horizontal) {
+        VStack(alignment: .leading) {
             HStack {
-                // TO DO: implement model generator for friend list
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face2", size: 60, name: "Testname")
-                AvatarView(image: "face2", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face2", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                AvatarView(image: "face", size: 60, name: "Testname")
-                // TO DO: when implementing this functionality, remove padding from sides
-            }.frame(minHeight: 100)
+                Text("Friends")
+                    .font(.title).bold()
+                    .foregroundColor(.main)
+                Spacer()
+                Text("View Contacts")
+                    .font(.caption)
+                    .foregroundColor(.accent3)
+            }
+            
+            ScrollView(.horizontal) {
+                HStack {
+                    // TO DO: implement model generator for friend list
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face2", size: 60, name: "Testname")
+                    AvatarView(image: "face2", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face2", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    AvatarView(image: "face", size: 60, name: "Testname")
+                    // TO DO: when implementing this functionality, remove padding from sides
+                }.frame(minHeight: 100)
+            }
+            // TO DO: Add searchbar here
         }
+        .background(Color.mainBG)
+        
+        
     }
 }
 

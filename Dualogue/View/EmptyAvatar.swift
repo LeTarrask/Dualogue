@@ -21,6 +21,7 @@ struct EmptyAvatar: View {
                 .overlay(Circle().stroke(Color.accent1, lineWidth: 6))
                 .overlay(Circle().stroke(Color.main, lineWidth: 2))
                 .shadow(radius: 3)
+                .foregroundColor(Color.accent1)
                 Image(image)
             }
             Text(name)
@@ -28,6 +29,7 @@ struct EmptyAvatar: View {
                 .truncationMode(.tail)
                 .frame(width: size * 1.3)
                 .font(.caption)
+                .foregroundColor(Color.accent3)
         }
     }
 }

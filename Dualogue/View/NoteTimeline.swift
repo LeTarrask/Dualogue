@@ -9,20 +9,23 @@
 import SwiftUI
 
 struct NoteTimeline: View {
-    @ObservedObject var notes = NoteBuilderTest()
+    @FetchRequest(entity: NoteStorage.entity(), sortDescriptors: []) var notes: FetchedResults<NoteStorage>
     
     var body: some View {
-        ScrollView(.vertical) {
-            // TO DO: implement model generator for notes with different types
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad", text: "adsfsdf aewrfsadfasdf asdf asdf asdf asdf asdf asdf asdf asdf asdfasdf asdf asdf asdf asd fasd fasd fasd fasdfasdfasdfasdfasdfasdfasdfasd", contactName: "generic", contactImg: "face")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad", text: "asdfasdf kasdfk asdpfk asp`dfl asdfo ", contactName: "generic", contactImg: "face2", isExpanded: false)
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad", contactName: "generic", contactImg: "face")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad", contactImg: "face2")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad")
-            NotePreView(title: "asdfasdf asdf asdf asdf asdf", date: "fadfadfad")
+        ScrollView {
+            ForEach(notes, id: \.self) { note in
+                Text(String(describing: note))
+                    .foregroundColor(.accent1)
+                
+                //This solution is not working, probably because it takes too long to load the data, create the views and then show them. we need to implement some sort of loader before displaying the data
+                //                NotePreView(title: note.title ?? "",
+                //                            date: note.date ?? "",
+                //                            text: note.text ?? "",
+                //                            completed: false,
+                //                            contactName: note.contactName ?? "",
+                //                            contactImg: note.contactImage ?? "",
+                //                            isExpanded: false)
+            }
         }
     }
 }

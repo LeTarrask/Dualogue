@@ -12,28 +12,25 @@ struct MainScreen: View {
     var body: some View {
         NavigationView {
             VStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Friends")
-                            .font(.title).bold()
-                            .foregroundColor(.main)
-                        Spacer()
-                        Text("View Contacts")
-                            .font(.caption)
-                            .foregroundColor(.accent3)
-                    }
-                    
-                    FriendListScroll()
-                    // TO DO: Add searchbar here
+                TabView {
+                    TimelinesView()
+                        .tabItem {
+                            Image(systemName: "1.circle")
+                            Text("All your notes")
+                    }.tag(0)
+                    SingleNoteView()
+                        .tabItem {
+                            Image(systemName: "2.circle")
+                            Text("Add note")
+                    }.tag(1)
+                    ContactsView()
+                        .tabItem {
+                            Image(systemName: "3.circle")
+                            Text("Contacts")
+                    }.tag(2)
                 }
-                .background(Color.mainBG)
-                
-                NoteTimeline()
-                
-                // TO DO: implement tabbar
             }
             .navigationBarTitle("Dualogue", displayMode: .inline)
-            .foregroundColor(.main)
             .navigationBarItems(trailing: Image(systemName: "magnifyingglass"))
             .foregroundColor(.main)
             .background(NavigationConfigurator { nc in
@@ -41,35 +38,6 @@ struct MainScreen: View {
                 nc.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
             })
         }
-    }
-}
-
-
-struct AddNewNoteButton: View {
-    @State private var animationAmount: CGFloat = 1
-    
-    var body: some View {
-        Button(action: {
-            print("button pressed")
-            self.animationAmount = 1.1
-        }) {
-            Image(systemName: "plus")
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .padding()
-                .background(Color.blue)
-                .mask(Circle())
-                .scaleEffect(animationAmount)
-                .animation(
-                    Animation
-                        .easeInOut(duration: 1)
-                        .repeatForever(autoreverses: false))
-            
-        }
-        .onAppear {
-            self.animationAmount = 1
-        }
-        
     }
 }
 

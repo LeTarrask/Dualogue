@@ -7,13 +7,20 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SingleNoteView: View {
+    // CoreData setup:
+    @Environment(\.managedObjectContext) var moc
+    
+    // CoreData properties:
     @State private var date = Date()
-    @State private var title: String = "add a very very very very title"
-    @State private var contact: DuaUser?
-    @State private var images = [Image]()
-    @State var text: String
+    @State private var images = [String]()
+    @State var text: String = ""
+    @State var title: String = "click to add your note title"
+    @State private var contactName: String = ""
+    @State private var contactImage: String = ""
+    
     @State private var isEditing: Bool = true
     
     var body: some View {
@@ -21,29 +28,50 @@ struct SingleNoteView: View {
             GeometryReader { geometry in
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                    Text(String(describing: self.date))
-                        .font(.caption)
-                        .foregroundColor(Color.accent3)
-                    Text(self.title)
-                        .bold()
-                        .font(.title)
-                        .lineLimit(2)
-                        .foregroundColor(Color.main)
+                        Text(String(describing: self.date))
+                            .font(.caption)
+                            .foregroundColor(.accent3)
+                        TextField("click to add your note title", text: self.$title)
+                            .font(.title)
+                            .lineLimit(2)
+                            .foregroundColor(Color.main)
                     }
-                .padding()
+                    .padding()
                     .frame(maxWidth: geometry.size.width*4/5)
                     
                     EmptyAvatar(size: 60)
-                        .foregroundColor(Color.accent3)
                         .frame(maxWidth: geometry.size.width*1/5)
                 }
                 .frame(maxWidth: .infinity, maxHeight: 90)
+            }
+            HStack {
+                Button(action: {
+                    self.clearNote()
+                }, label: {
+                    Text("NEW NOTE")
+                        .font(.callout)
+                        .foregroundColor(.accent1)
+                        .padding()
+                        .background(Color.accent2)
+                        .cornerRadius(15)
+                    
+                })
+                Button(action: {
+                    self.storeNote()
+                }, label: {
+                    Text("SAVE NOTE")
+                        .font(.callout)
+                        .foregroundColor(.accent1)
+                        .padding()
+                        .background(Color.accent3)
+                        .cornerRadius(15)
+                })
             }
             ZStack {
                 Rectangle().fill(Color.accent1)
                     .cornerRadius(20)
                     .padding()
-                    
+                
                 VStack(alignment: .leading) {
                     GeometryReader { geometry in
                         Image("plussign")
@@ -67,23 +95,40 @@ struct SingleNoteView: View {
             }
             if isEditing {
                 TextField("", text: $text)
-                .padding(20)
-                .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
-                .background(Color.main)
-                .foregroundColor(Color.mainBG)
-                .cornerRadius(20)
-                .padding(20)
+                    .padding(20)
+                    .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
+                    .background(Color.main)
+                    .foregroundColor(Color.mainBG)
+                    .cornerRadius(20)
+                    .padding(20)
             } else {
                 Text(text)
-                .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
-                .background(Color.mainBG)
-                .foregroundColor(Color.main)
-                .padding(35)
+                    .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
+                    .background(Color.mainBG)
+                    .foregroundColor(Color.main)
+                    .padding(35)
             }
-            
         }
         .frame(maxWidth: .infinity)
         .background(Color.mainBG)
+    }
+    
+    func storeNote() {
+        let newNote = NoteStorage(context: self.moc)
+        newNote.title = self.title
+        newNote.text = self.text
+        newNote.id = UUID()
+        newNote.date = self.date
+        
+        try? self.moc.save()
+    }
+    
+    func clearNote() {
+        self.title = "click to add your note title"
+        self.text = ""
+        self.contactName = ""
+        self.contactImage = ""
+        self.images = []
     }
 }
 
