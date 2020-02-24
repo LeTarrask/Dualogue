@@ -21,7 +21,7 @@ struct DuaNote: Identifiable, Hashable {
     // TO DO: Maybe it shouldn't generate UUID automagically because old notes should already have an UUID
     let id = UUID().uuidString
     
-    var user: DuaContact?
+    var contact: DuaContact?
     
     var title: String
     
@@ -37,7 +37,7 @@ struct DuaNote: Identifiable, Hashable {
     }
 }
 
-//MARK: UserModel
+//MARK: ContactModel
 struct DuaContact: Identifiable {
     var id = UUID().uuidString
     
@@ -47,6 +47,21 @@ struct DuaContact: Identifiable {
     
     init(name: String, image: String) {
         self.name = name
+        self.image = image
+    }
+}
+
+//MARK: ImageModel
+struct DuaImage: Identifiable {
+    var id = UUID().uuidString
+    
+    let image: String
+    
+    var text: String?
+    
+    var title: String?
+    
+    init(image: String) {
         self.image = image
     }
 }

@@ -13,11 +13,10 @@ struct SingleNoteView: View {
     @EnvironmentObject var noteManager: NoteManager
     
     @State private var date = Date()
-    @State private var images = [String]()
+    @State private var images = [DuaImage]()
     @State var text: String = ""
     @State var title: String = "click to add your note title"
-    @State private var contactName: String = ""
-    @State private var contactImage: String = ""
+    @State var contact: DuaContact?
     
     @State private var isEditing: Bool = true
     
@@ -37,8 +36,10 @@ struct SingleNoteView: View {
                     .padding()
                     .frame(maxWidth: geometry.size.width*4/5)
                     
-                    EmptyAvatar(size: 60)
-                        .frame(maxWidth: geometry.size.width*1/5)
+                    if (self.contact == nil) {
+                        EmptyAvatar(size: 60)
+                            .frame(maxWidth: geometry.size.width*1/5)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: 90)
             }
@@ -112,14 +113,21 @@ struct SingleNoteView: View {
     }
     
     func storeNote() {
-        noteManager.storeNewNote(note: DuaNote(title: title))
+        var note = DuaNote(title: title)
+
+        if (contact != nil) {
+            note.contact = contact
+        }
+        
+        note.text = text
+        
+        noteManager.storeNewNote(note: note)
     }
     
     func clearNote() {
         self.title = "click to add your note title"
         self.text = ""
-        self.contactName = ""
-        self.contactImage = ""
+        self.contact = nil
         self.images = []
     }
 }
