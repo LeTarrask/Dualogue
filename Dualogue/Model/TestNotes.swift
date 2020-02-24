@@ -13,8 +13,8 @@ class NoteBuilderTest: ObservableObject {
     var noteCollection = [DuaNote]()
 
     init() {
-        let user1 = DuaUser(name: "John", image: "face")
-        let user2 = DuaUser(name: "Peter", image: "face2")
+        let user1 = DuaContact(name: "John", image: "face")
+        let user2 = DuaContact(name: "Peter", image: "face2")
         
         var note1 = DuaNote(title: "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.")
         note1.user = user1

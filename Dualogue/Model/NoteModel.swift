@@ -12,7 +12,7 @@ import SwiftUI
 struct DuaNote: Identifiable {
     let id = UUID().uuidString
     
-    var user: DuaUser?
+    var user: DuaContact?
     
     var title: String
     
@@ -29,7 +29,7 @@ struct DuaNote: Identifiable {
 }
 
 //MARK: UserModel
-struct DuaUser: Identifiable {
+struct DuaContact: Identifiable {
     var id = UUID().uuidString
     
     let name: String

@@ -13,29 +13,30 @@ class NoteManager: ObservableObject {
     // CoreData setup:
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: NoteStorage.entity(), sortDescriptors: []) var notes: FetchedResults<NoteStorage>
+    @FetchRequest(entity: ContactStorage.entity(), sortDescriptors: []) var contacts: FetchedResults<NoteStorage>
     
     var noteCollection: [DuaNote]
+    var contactCollection: [DuaContact]
     var isLoading: Bool = true
-    
-    
     
     init() {
         noteCollection = [DuaNote]()
+        contactCollection = [DuaContact]()
         // isLoading = true
         // async get all input from (notes/memory) and turn them into notes data
         // after finised loading:
         isLoading = false
     }
     
-    func storeNewNote(// format DuoNote) {
-        let newNote = NoteStorage(context: self.moc)
-        newNote.title = self.title
-        newNote.text = self.text
-        newNote.id = UUID()
-        newNote.date = self.date
-        
-        try? self.moc.save()
-    }
+//    func storeNewNote(// format DuoNote) {
+////        let newNote = NoteStorage(context: self.moc)
+////        newNote.title = self.title
+////        newNote.text = self.text
+////        newNote.id = UUID()
+//////        newNote.date = self.date
+//////
+//////        try? self.moc.save()
+//    }
     
     func deleteNote() {
         
