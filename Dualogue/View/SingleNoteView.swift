@@ -10,7 +10,7 @@ import SwiftUI
 import CoreData
 
 struct SingleNoteView: View {
-    @EnvironmentObject var noteManager: NoteManager
+    @Environment(\.managedObjectContext) var moc
     
     @State private var date = Date()
     @State private var images = [DuaImage]()
@@ -113,15 +113,24 @@ struct SingleNoteView: View {
     }
     
     func storeNote() {
-        var note = DuaNote(title: title)
-
+        let newNote = NoteStorage(context: self.moc)
+        newNote.title = title
+        newNote.text = text
+        
         if (contact != nil) {
-            note.contact = contact
+            let newContact = ContactStorage(context: self.moc)
+            newContact.name = contact?.name
+            newContact.image = contact?.image
+            
+            newNote.contacts = newContact
         }
         
-        note.text = text
-        
-        noteManager.storeNewNote(note: note)
+        do {
+            try self.moc.save()
+            print("Saving new note")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func clearNote() {
