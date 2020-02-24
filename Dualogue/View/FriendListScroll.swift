@@ -27,19 +27,9 @@ struct FriendListScroll: View {
             ScrollView(.horizontal) {
                 HStack {
                     // TO DO: implement model generator for friend list
-                    
-                    // TO DO: For each (contacts, id: \.self) { contact in
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    // TO DO: when implementing this functionality, remove padding from sides
+                    ForEach(contacts, id: \.self) { contact in
+                        AvatarView(image: contact.image ?? "noimage", size: 60, name: contact.name ?? "")
+                    }
                 }.frame(minHeight: 100)
             }
             // TO DO: Add searchbar here
