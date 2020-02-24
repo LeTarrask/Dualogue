@@ -21,23 +21,36 @@ struct NotePreView: View {
     @State var completed: Bool = false
     var contactName: String?
     var contactImg: String?
-    @State var isExpanded: Bool = true
+    @State var isExpanded: Bool = false
+    
+    init(note: NoteStorage) {
+        self.title = note.title ?? ""
+        self.date = note.date?.toString() ?? ""
+        self.imagePath = ""
+        self.text = note.text ?? ""
+        self.isExpanded = false
+        self.completed = note.isCompleted
+        self.contactName = "Astolfo"
+        self.contactImg = "face2"
+    }
 
     var body: some View {
-        // TO DO: implement click to expand/collapse
         VStack {
             HStack {
-                VStack(alignment: .leading) {
-                    Text(date)
-                        .foregroundColor(Color.gray)
-                        .font(.caption)
-                    Text(title)
-                        .bold()
-                        .foregroundColor(.main)
-                        .lineLimit(2)
-                }
-                .padding()
+                Button(action: {self.isExpanded.toggle()}, label: {
+                    VStack(alignment: .leading) {
+                        Text(date)
+                            .foregroundColor(Color.gray)
+                            .font(.caption)
+                        Text(title)
+                            .bold()
+                            .foregroundColor(.main)
+                            .lineLimit(2)
+                    }
+                    .padding()
                 Spacer()
+                })
+                
                 if contactImg != nil && contactName != nil {
                     // TO DO: add failsafe with image placeholder here as well
                     AvatarView(image: contactImg!, size: 60, name: contactName ?? "")
@@ -83,8 +96,8 @@ struct TextDisplay: View {
     }
 }
 
-struct NoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotePreView(title: "The greatest headline for a note greatest headline for a note greatest headline for a note ", date: "September 21, 1981", imagePath: "face", text: "long large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etclong large headline that shold be big and large and etc", contactName: "Generic", contactImg: "face2")
-    }
-}
+//struct NoteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotePreView()
+//    }
+//}

@@ -12,8 +12,10 @@ import SwiftUI
 //ADD HEADER
 //ADD SEARCH
 //ADD NOTE LIST FILTERED BY CONTACT
+// to do this properly, it would be better if it's already storing contact properly, which is not implemented yet
 
 struct SingleContactView: View {
+    
     
     var body: some View {
         VStack {

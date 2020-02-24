@@ -26,7 +26,7 @@ struct FriendListScroll: View {
             
             ScrollView(.horizontal) {
                 HStack {
-                    // TO DO: implement model generator for friend list
+                    // add button here that goes to SingleContactView passing specific contact to it
                     ForEach(contacts, id: \.self) { contact in
                         AvatarView(image: contact.image ?? "face", size: 60, name: contact.name ?? "")
                     }

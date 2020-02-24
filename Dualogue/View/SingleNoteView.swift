@@ -9,6 +9,9 @@
 import SwiftUI
 import CoreData
 
+// TO DO: add animations on clear
+
+
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var moc
     

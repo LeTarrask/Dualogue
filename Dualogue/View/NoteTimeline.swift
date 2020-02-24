@@ -8,25 +8,40 @@
 
 import SwiftUI
 
+// TO DO: add toggle isExpanded on click (in a small check button, preferably)
+// TO DO: add mark as completed on swipe right
+// TO DO: figure out why it doesn't show the entire properties of the note
+// TO DO: add go to SingleNoteView and view note on long press
+
 struct NoteTimeline: View {
+    @Environment(\.managedObjectContext) var moc
+    
     var fetchRequest: FetchRequest<NoteStorage>
-    var notes: FetchedResults<NoteStorage> { fetchRequest.wrappedValue}
+    var notes: FetchedResults<NoteStorage> { fetchRequest.wrappedValue }
     var noteViews = [NotePreView]()
     
     var body: some View {
-        ScrollView {
+        List {
             ForEach(notes, id: \.self) { note in
-                VStack {
-                    NotePreView(title: note.title ?? "", date: "note.date.toString", imagePath: "", text: note.text ?? "lorem ipsum set peee", completed: note.isCompleted ?? false, contactName: "genesio", contactImg: "face", isExpanded: false)
-                    // DOESNT WORK WITH A COMPLETE NOTE. MEMORY ISSUES????
-//                    NotePreView(title: note.title ?? "", date: note.date.toString, imagePath: "", text: note.text ?? "lorem ipsum set peee", completed: note.isCompleted ?? false, contactName: "genesio", contactImg: "face", isExpanded: false)
+                Button(action: {
+                    print(note)
+                }, label: {
+                    NotePreView(note: note)
+                })
+                
+                // DOESNT WORK WITH A COMPLETE NOTE. MEMORY ISSUES????
+//                return NotePreView(title: title, date: date, imagePath: imagePath, text: text, completed: completed, contactName: contactName, contactImg: contactImg, isExpanded: isExpanded)
+            }.onDelete(perform: { indexSet in
+                for index in indexSet {
+                    self.moc.delete(self.notes[index])
                 }
-            }
+            })
         }
     }
     
     init() {
         fetchRequest = FetchRequest<NoteStorage>(entity: NoteStorage.entity(), sortDescriptors: [])
+        print(fetchRequest)
     }
 }
 
