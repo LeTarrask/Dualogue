@@ -30,15 +30,15 @@ class NoteManager: ObservableObject {
         isLoading = false
     }
     
-//    func storeNewNote(// format DuoNote) {
-////        let newNote = NoteStorage(context: self.moc)
-////        newNote.title = self.title
-////        newNote.text = self.text
-////        newNote.id = UUID()
-//////        newNote.date = self.date
-//////
-//////        try? self.moc.save()
-//    }
+    func storeNewNote(note: DuaNote) {
+//        let newNote = NoteStorage(context: self.moc)
+//        newNote.title = self.title
+//        newNote.text = self.text
+//        newNote.id = UUID()
+////        newNote.date = self.date
+////
+////        try? self.moc.save()
+    }
     
     func deleteNote() {
         
