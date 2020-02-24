@@ -10,10 +10,6 @@ import SwiftUI
 import CoreData
 
 struct SingleNoteView: View {
-    // CoreData setup:
-    @Environment(\.managedObjectContext) var moc
-    
-    // CoreData properties:
     @State private var date = Date()
     @State private var images = [String]()
     @State var text: String = ""
@@ -114,13 +110,15 @@ struct SingleNoteView: View {
     }
     
     func storeNote() {
-        let newNote = NoteStorage(context: self.moc)
-        newNote.title = self.title
-        newNote.text = self.text
-        newNote.id = UUID()
-        newNote.date = self.date
-        
-        try? self.moc.save()
+        // TO DO: send note data to NoteManager to store permanently
+        // Format DuoNote?
+//        let newNote = NoteStorage(context: self.moc)
+//        newNote.title = self.title
+//        newNote.text = self.text
+//        newNote.id = UUID()
+//        newNote.date = self.date
+//
+//        try? self.moc.save()
     }
     
     func clearNote() {

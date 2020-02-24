@@ -9,10 +9,26 @@
 import SwiftUI
 
 struct MainScreen: View {
+    var noteManager = NoteManager()
+    
     var body: some View {
         NavigationView {
             VStack {
                 TabView {
+                    // TO DO: add a view here that changes its content according to the variable noteManager.isLoading. This solution here is currently not working.
+                    
+                    if noteManager.isLoading == true {
+                        LoadingView()
+                        .tabItem {
+                        Image(systemName: "1.circle")
+                        Text("All your notes")
+                    } else {
+                        TimelinesView()
+                            .tabItem {
+                                Image(systemName: "1.circle")
+                                Text("All your notes")
+                        }
+                    }
                     TimelinesView()
                         .tabItem {
                             Image(systemName: "1.circle")

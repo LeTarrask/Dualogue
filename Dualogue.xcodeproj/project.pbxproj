@@ -28,6 +28,7 @@
 		794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B47AE23D9F582008A65DC /* AvatarView.swift */; };
 		79537EB323FD9A7B00DAEE09 /* EmptyAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79537EB223FD9A7B00DAEE09 /* EmptyAvatar.swift */; };
 		7954AF2723E0974600BF1294 /* NotePreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954AF2623E0974600BF1294 /* NotePreView.swift */; };
+		79BD10712403E1AC002AC051 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD10702403E1AC002AC051 /* NoteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		794B47AE23D9F582008A65DC /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		79537EB223FD9A7B00DAEE09 /* EmptyAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAvatar.swift; sourceTree = "<group>"; };
 		7954AF2623E0974600BF1294 /* NotePreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreView.swift; sourceTree = "<group>"; };
+		79BD10702403E1AC002AC051 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
+				79BD10702403E1AC002AC051 /* NoteManager.swift */,
 				7932F17823FEF9E900B438D5 /* TestNotes.swift */,
 			);
 			path = Model;
@@ -325,6 +328,7 @@
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
 				7954AF2723E0974600BF1294 /* NotePreView.swift in Sources */,
 				792E371423FD6FFF00A75B86 /* SingleNoteView.swift in Sources */,
+				79BD10712403E1AC002AC051 /* NoteManager.swift in Sources */,
 				7932F17923FEF9E900B438D5 /* TestNotes.swift in Sources */,
 				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
 				79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */,

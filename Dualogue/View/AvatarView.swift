@@ -9,26 +9,6 @@
 import SwiftUI
 
 // TO DO:
-// 3 different sizes of avatars & names
-
-//Type 1: (for main screen story scroll)
-//text regular size 12
-//Image 60px
-//border grey 2px
-//larger border white 4px
-
-//Type 2: (for note)
-//text regular size 12
-//Image 50px
-//border grey 2px
-//larger border white 4px
-
-//Type 3: (for user page)
-//text semibold size 12
-//Image 100px
-//border grey 2px
-//larger border white 4px
-
 //INIT empty image & empty text
 
 struct AvatarView: View {
