@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-struct MainScreen: View {
-    var noteManager = NoteManager()
-    
+struct MainScreen: View { 
     var body: some View {
         NavigationView {
             VStack {

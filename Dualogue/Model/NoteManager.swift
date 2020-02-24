@@ -15,16 +15,18 @@ class NoteManager: ObservableObject {
     @FetchRequest(entity: NoteStorage.entity(), sortDescriptors: []) var notes: FetchedResults<NoteStorage>
     @FetchRequest(entity: ContactStorage.entity(), sortDescriptors: []) var contacts: FetchedResults<NoteStorage>
     
-    var noteCollection: [DuaNote]
-    var contactCollection: [DuaContact]
-    var isLoading: Bool = true
+    @Published var noteCollection: [DuaNote]
+    @Published var contactCollection: [DuaContact]
+    var isLoading: Bool
     
     init() {
         noteCollection = [DuaNote]()
         contactCollection = [DuaContact]()
-        // isLoading = true
+        isLoading = true
+        
         // async get all input from (notes/memory) and turn them into notes data
         // after finised loading:
+        
         isLoading = false
     }
     

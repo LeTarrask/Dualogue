@@ -9,7 +9,16 @@
 import SwiftUI
 
 //MARK: NoteModel
-struct DuaNote: Identifiable {
+struct DuaNote: Identifiable, Hashable {
+    static func == (lhs: DuaNote, rhs: DuaNote) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    // TO DO: Maybe it shouldn't generate UUID automagically because old notes should already have an UUID
     let id = UUID().uuidString
     
     var user: DuaContact?

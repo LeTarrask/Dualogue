@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct FriendListScroll: View {
+    @EnvironmentObject var noteManager: NoteManager
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -24,16 +26,22 @@ struct FriendListScroll: View {
             ScrollView(.horizontal) {
                 HStack {
                     // TO DO: implement model generator for friend list
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face2", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
-                    AvatarView(image: "face", size: 60, name: "Testname")
+                    
+                    if noteManager.isLoading {
+                        Text("Loading")
+                    } else {
+                        // TO DO: For each (noteManager.contactCollection, id: \.self) { note in
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face2", size: 60, name: "Testname")
+                        AvatarView(image: "face2", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face2", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                        AvatarView(image: "face", size: 60, name: "Testname")
+                    }
                     // TO DO: when implementing this functionality, remove padding from sides
                 }.frame(minHeight: 100)
             }
