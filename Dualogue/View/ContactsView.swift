@@ -13,6 +13,9 @@ import SwiftUI
 // ADD CONTACTS CELLS FROM MODEL
 
 struct ContactsView: View {
+    @FetchRequest(entity: ContactStorage.entity(), sortDescriptors: [])
+    var contacts: FetchedResults<ContactStorage>
+    
     var body: some View {
         // TO DO: ADD SEARCH IN THE TOP
         
@@ -26,22 +29,24 @@ struct ContactsView: View {
                 Image("plussign")
                     .frame(width: 40, height: 40)
             }
-            ZStack {
-                Rectangle().fill(Color.accent1)
-                    .frame(width: 165, height: 195, alignment: .topLeading)
-                    .cornerRadius(20)
-                VStack {
-                    AvatarView(image: "face2", size: 100, name: "Jennifer Longmamenne")
-                        .foregroundColor(Color.main)
-                        .padding()
-                    Button(action: {print("button pressed")}, label: {
-                        Text("CREATE NOTE")
-                            .padding(5)
-                            .background(Color.accent3)
+            ForEach(contacts, id: \.self) { contact in
+                ZStack {
+                    Rectangle().fill(Color.accent1)
+                        .frame(width: 165, height: 195, alignment: .topLeading)
+                        .cornerRadius(20)
+                    VStack {
+                        AvatarView(image: contact.image ?? "face2", size: 100, name: contact.name ?? "Jennifer Longmamenne")
                             .foregroundColor(Color.main)
-                            .font(.body)
-                            .cornerRadius(10)
-                    })
+                            .padding()
+                        Button(action: {print("button pressed")}, label: {
+                            Text("CREATE NOTE")
+                                .padding(5)
+                                .background(Color.accent3)
+                                .foregroundColor(Color.main)
+                                .font(.body)
+                                .cornerRadius(10)
+                        })
+                    }
                 }.frame(width: 165, height: 195)
             }
         }

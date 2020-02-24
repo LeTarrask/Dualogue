@@ -28,7 +28,7 @@ struct FriendListScroll: View {
                 HStack {
                     // TO DO: implement model generator for friend list
                     ForEach(contacts, id: \.self) { contact in
-                        AvatarView(image: contact.image ?? "noimage", size: 60, name: contact.name ?? "")
+                        AvatarView(image: contact.image ?? "face", size: 60, name: contact.name ?? "")
                     }
                 }.frame(minHeight: 100)
             }

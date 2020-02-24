@@ -14,6 +14,7 @@ import SwiftUI
 //ADD NOTE LIST FILTERED BY CONTACT
 
 struct SingleContactView: View {
+    
     var body: some View {
         VStack {
             VStack {
