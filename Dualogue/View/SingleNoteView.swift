@@ -150,6 +150,8 @@ extension SingleNoteView {
         } catch {
             print(error.localizedDescription)
         }
+        
+        clearNote()
     }
     
     func clearNote() {
