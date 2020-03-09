@@ -23,7 +23,7 @@ class ImageStore {
         self.images = [DuaImage]()
     }
     
-    // MARK: -
+    // MARK: - stores images & info to DB
     func sendInfoToDB() {
         for image in images {
             // TO DO: Check if image already exists in moc
@@ -87,7 +87,6 @@ class ImageStore {
         return paths[0]
     }
 }
-
 
 extension URL {
     static var documentsDirectory: URL {
