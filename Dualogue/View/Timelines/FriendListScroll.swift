@@ -31,9 +31,7 @@ struct FriendListScroll: View {
             }
             // TO DO: Add searchbar here
         }
-        .background(Color.mainBG)
-        
-        
+        .background(Color.mainBG)       
     }
 }
 
