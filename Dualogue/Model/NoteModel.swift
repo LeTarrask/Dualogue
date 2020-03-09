@@ -51,17 +51,3 @@ struct DuaContact: Identifiable {
     }
 }
 
-//MARK: ImageModel
-struct DuaImage: Identifiable {
-    var id = UUID()
-    
-    let image: String
-    
-    var text: String?
-    
-    var title: String?
-    
-    init(image: String) {
-        self.image = image
-    }
-}

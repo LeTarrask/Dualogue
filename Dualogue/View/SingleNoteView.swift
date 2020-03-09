@@ -14,7 +14,7 @@ import ContactsUI
 
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var moc
- 
+    
     private var date = Date()
     
     @State private var imageStore = ImageStore()
@@ -84,33 +84,66 @@ struct SingleNoteView: View {
                         .cornerRadius(15)
                 })
             }
-            ZStack {
-                Rectangle().fill(Color.accent1)
-                    .cornerRadius(20)
-                    .padding()
-                
-                VStack(alignment: .leading) {
-                    // TO DO: turn this into a button that gets info to send it to var images, which will be stored in core data when savenote button is clicked
-                    GeometryReader { geometry in
-                        Image("plussign")
-                            .position(x: geometry.size.width/2, y: geometry.size.height/2)
+            
+            HStack {
+                if isEditing {
+                    ZStack {
+                        Rectangle().fill(Color.accent1)
+                            .cornerRadius(20)
+                            .padding()
                         
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading) {
-                                Text("add image title")
-                                    .font(.title)
-                                    .lineLimit(1)
-                                Text("add comment")
-                                    .lineLimit(3)
+                        VStack {
+                            GeometryReader { geometry in
+                                Image("plussign")
+                                    .position(x: geometry.size.width/2, y: geometry.size.height/2)
                                 
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text("Add title")
+                                            .font(.title)
+                                            .lineLimit(1)
+                                        Text("Add text")
+                                            .lineLimit(3)
+                                        
+                                    }
+                                    .foregroundColor(Color.main)
+                                    .position(x: geometry.size.width/2, y: geometry.size.height-80)
+                                }
                             }
-                            .foregroundColor(Color.main)
-                            .position(x: geometry.size.width/2, y: geometry.size.height-80)
                         }
                     }
                 }
-                .frame(maxWidth: .infinity)
+                
+                ForEach(imageStore.images, id: \.self) { duaImage in
+                    ZStack {
+                        Rectangle().fill(Color.accent1)
+                            .cornerRadius(20)
+                            .padding()
+                        
+                        VStack {
+                            GeometryReader { geometry in
+                                Image(duaImage.image)
+                                    .position(x: geometry.size.width/2, y: geometry.size.height/2)
+                                
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text(duaImage.title)
+                                            .font(.title)
+                                            .lineLimit(1)
+                                        Text(duaImage.text)
+                                            .lineLimit(3)
+                                        
+                                    }
+                                    .foregroundColor(Color.main)
+                                    .position(x: geometry.size.width/2, y: geometry.size.height-80)
+                                }
+                            }
+                        }
+                    }
+                }
             }
+            
+            
             if isEditing {
                 TextField("", text: $text)
                     .padding(20)
@@ -128,7 +161,6 @@ struct SingleNoteView: View {
                     .padding(35)
             }
         }
-        .frame(maxWidth: .infinity)
         .background(Color.mainBG)
     }
 }
@@ -178,22 +210,12 @@ struct contactPicker: UIViewControllerRepresentable {
     }
 }
 
-
-
-struct SingleNoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        SingleNoteView()
-    }
-}
-
-extension Date
-{
+extension Date {
     func toString(dateFormat format: String ) -> String
     {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-//        dateFormatter.dateStyle = .full
+        //        dateFormatter.dateStyle = .full
         return dateFormatter.string(from: self)
     }
-
 }
