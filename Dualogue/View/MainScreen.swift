@@ -29,14 +29,11 @@ struct MainScreen: View {
                             Text("Contacts")
                     }.tag(2)
                 }
+                
             }
             .navigationBarTitle("Dualogue", displayMode: .inline)
             .navigationBarItems(trailing: Image(systemName: "magnifyingglass"))
             .foregroundColor(.main)
-            .background(NavigationConfigurator { nc in
-                nc.navigationBar.barTintColor = .black
-                nc.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-            })
         }
     }
 }
@@ -45,20 +42,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainScreen()
     }
-}
-
-// MARK: To allow configuring main navigation
-// not working, this was supposed to let the background black
-struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-    }
-    
 }

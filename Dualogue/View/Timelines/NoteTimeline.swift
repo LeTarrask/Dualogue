@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-// TO DO: add toggle isExpanded on click (in a small check button, preferably)
-// TO DO: add mark as completed on swipe right
-// TO DO: figure out why it doesn't show the entire properties of the note
+// TO DO: add mark as completed on UI button
 // TO DO: add go to SingleNoteView and view note on long press
 
 struct NoteTimeline: View {
@@ -28,14 +26,13 @@ struct NoteTimeline: View {
                 }, label: {
                     NotePreView(note: note)
                 })
-                
-                // DOESNT WORK WITH A COMPLETE NOTE. MEMORY ISSUES????
-//                return NotePreView(title: title, date: date, imagePath: imagePath, text: text, completed: completed, contactName: contactName, contactImg: contactImg, isExpanded: isExpanded)
             }.onDelete(perform: { indexSet in
                 for index in indexSet {
                     self.moc.delete(self.notes[index])
                 }
             })
+        .padding(0)
+        .listRowBackground(Color.mainBG)
         }
     }
     

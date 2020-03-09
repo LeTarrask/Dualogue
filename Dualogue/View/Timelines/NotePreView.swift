@@ -9,9 +9,7 @@
 import SwiftUI
 
 // TO DO:
-//add expanding functionality
-//short version: shows date, title, contact
-//long version: shows every content
+// clear these strange white borders
 
 struct NotePreView: View {
     var title: String
@@ -31,7 +29,7 @@ struct NotePreView: View {
         self.isExpanded = false
         self.completed = note.isCompleted
         self.contactName = "Astolfo"
-        self.contactImg = "face2"
+        self.contactImg = "face"
     }
 
     var body: some View {
@@ -53,7 +51,7 @@ struct NotePreView: View {
                 
                 if contactImg != nil && contactName != nil {
                     // TO DO: add failsafe with image placeholder here as well
-                    AvatarView(image: contactImg!, size: 60, name: contactName ?? "")
+                    AvatarView(image: contactImg ?? "face", size: 60, name: contactName ?? "")
                         .offset(y: 8)
                         .padding()
                 }

@@ -18,8 +18,7 @@ struct DuaNote: Identifiable, Hashable {
         hasher.combine(id)
     }
     
-    // TO DO: Maybe it shouldn't generate UUID automagically because old notes should already have an UUID
-    var id = UUID().uuidString
+    var id: UUID
     
     var contact: DuaContact?
     
@@ -34,6 +33,7 @@ struct DuaNote: Identifiable, Hashable {
     init(title: String) {
         self.title = title
         self.date = Date()
+        self.id = UUID()
     }
 }
 

@@ -9,8 +9,8 @@
 import SwiftUI
 
 extension Color {
-    public static let main = Color.white
-    public static let mainBG = Color.black
+    public static let main = Color.blue
+    public static let mainBG = Color.clear
     public static let accent1 = Color("accent1")
     public static let accent2 = Color("accent2")
     public static let accent3 = Color("accent3")

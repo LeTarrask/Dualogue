@@ -23,6 +23,7 @@ struct FriendListScroll: View {
                     .font(.caption)
                     .foregroundColor(.accent3)
             }
+            .padding()
             
             ScrollView(.horizontal) {
                 HStack {

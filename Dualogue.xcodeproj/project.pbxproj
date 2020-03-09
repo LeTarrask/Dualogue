@@ -168,10 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				794B477E23D9E540008A65DC /* MainScreen.swift */,
-				7932F17623FEEE6200B438D5 /* TimelinesView.swift */,
-				7934EB9223FC467C00350C48 /* FriendListScroll.swift */,
-				7934EB8E23FC463500350C48 /* NoteTimeline.swift */,
-				7954AF2623E0974600BF1294 /* NotePreView.swift */,
+				79F817842405614000B4AD2C /* Timelines */,
 				792E371323FD6FFF00A75B86 /* SingleNoteView.swift */,
 				79410E7E23FABFE400C37120 /* SingleContactView.swift */,
 				79410E8023FAC01500C37120 /* ContactsView.swift */,
@@ -189,6 +186,17 @@
 				7932F17823FEF9E900B438D5 /* TestNotes.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		79F817842405614000B4AD2C /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				7932F17623FEEE6200B438D5 /* TimelinesView.swift */,
+				7934EB9223FC467C00350C48 /* FriendListScroll.swift */,
+				7934EB8E23FC463500350C48 /* NoteTimeline.swift */,
+				7954AF2623E0974600BF1294 /* NotePreView.swift */,
+			);
+			path = Timelines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.Dualogue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.Dualogue2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.Dualogue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.Dualogue2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -8,18 +8,21 @@
 
 import SwiftUI
 import CoreData
+import ContactsUI
 
 // TO DO: add animations on clear
 
-
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var moc
+ 
+    private var date = Date()
     
-    @State private var date = Date()
     @State private var images = [DuaImage]()
     @State var text: String = ""
     @State var title: String = "click to add your note title"
     @State var contact: DuaContact?
+    
+    @State var showingContacts = false
     
     @State private var isEditing: Bool = true
     
@@ -28,7 +31,7 @@ struct SingleNoteView: View {
             GeometryReader { geometry in
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text(String(describing: self.date))
+                        Text(self.date.toString())
                             .font(.caption)
                             .foregroundColor(.accent3)
                         TextField("click to add your note title", text: self.$title)
@@ -39,13 +42,21 @@ struct SingleNoteView: View {
                     .padding()
                     .frame(maxWidth: geometry.size.width*4/5)
                     
-                    if (self.contact == nil) {
-                        EmptyAvatar(size: 60)
-                            .frame(maxWidth: geometry.size.width*1/5)
+                    
+                    Button(action: { self.showingContacts.toggle() }) {
+                        if (self.contact?.name == nil) {
+                            EmptyAvatar(size: 60)
+                        } else {
+                            AvatarView(image: self.contact?.image ?? "face", size: 60, name: self.contact?.name ?? "")
+                        }
                     }
+                    .sheet(isPresented: self.$showingContacts, content: {
+                        contactPicker()
+                    })
                 }
-                .frame(maxWidth: .infinity, maxHeight: 90)
-            }
+            }.frame(maxWidth: .infinity, minHeight: 110, maxHeight: 150)
+                .padding()
+                .padding(.top, 40)
             HStack {
                 Button(action: {
                     self.clearNote()
@@ -93,7 +104,7 @@ struct SingleNoteView: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, minHeight: 350, maxHeight: 700)
+                .frame(maxWidth: .infinity)
             }
             if isEditing {
                 TextField("", text: $text)
@@ -105,6 +116,7 @@ struct SingleNoteView: View {
                     .padding(20)
             } else {
                 Text(text)
+                    .lineLimit(0)
                     .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
                     .background(Color.mainBG)
                     .foregroundColor(Color.main)
@@ -114,13 +126,17 @@ struct SingleNoteView: View {
         .frame(maxWidth: .infinity)
         .background(Color.mainBG)
     }
-    
+}
+
+// MARK: - Actions to clear and store information into a note that is sent to CoreData
+extension SingleNoteView {
     func storeNote() {
         let newNote = NoteStorage(context: self.moc)
         newNote.title = title
         newNote.text = text
+        newNote.date = date
         
-        if (contact != nil) {
+        if contact?.name != nil {
             let newContact = ContactStorage(context: self.moc)
             newContact.name = contact?.name
             newContact.image = contact?.image
@@ -144,8 +160,33 @@ struct SingleNoteView: View {
     }
 }
 
+// TO DO: -make a storyboard for contactpicker and get the information
+struct contactPicker: UIViewControllerRepresentable {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<contactPicker>) -> CNContactPickerViewController {
+        let picker = CNContactPickerViewController()
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: UIViewControllerRepresentableContext<contactPicker>) {
+    }
+}
+
+
+
 struct SingleNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleNoteView(text: "lelelelalala lelelelalala lelelelalala lelelelalalalelelelalalalelelelalala lelelelalala lelelelalala lelelelalala lelelelalala")
+        SingleNoteView()
     }
+}
+
+extension Date
+{
+    func toString(dateFormat format: String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+//        dateFormatter.dateStyle = .full
+        return dateFormatter.string(from: self)
+    }
+
 }
