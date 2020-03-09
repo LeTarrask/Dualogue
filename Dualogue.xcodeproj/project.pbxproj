@@ -11,6 +11,7 @@
 		7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932F17623FEEE6200B438D5 /* TimelinesView.swift */; };
 		7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB8E23FC463500350C48 /* NoteTimeline.swift */; };
 		7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB9223FC467C00350C48 /* FriendListScroll.swift */; };
+		7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC2E24168FD70063D101 /* ImageStore.swift */; };
 		79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7C23FAB21000C37120 /* ColorSchemes.swift */; };
 		79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7E23FABFE400C37120 /* SingleContactView.swift */; };
 		79410E8123FAC01500C37120 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E8023FAC01500C37120 /* ContactsView.swift */; };
@@ -51,6 +52,7 @@
 		7932F17623FEEE6200B438D5 /* TimelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinesView.swift; sourceTree = "<group>"; };
 		7934EB8E23FC463500350C48 /* NoteTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
 		7934EB9223FC467C00350C48 /* FriendListScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListScroll.swift; sourceTree = "<group>"; };
+		7940DC2E24168FD70063D101 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = Dualogue/Model/ImageStore.swift; sourceTree = SOURCE_ROOT; };
 		79410E7C23FAB21000C37120 /* ColorSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		79410E7E23FABFE400C37120 /* SingleContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleContactView.swift; sourceTree = "<group>"; };
 		79410E8023FAC01500C37120 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7940DC322416919E0063D101 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		794B476B23D9E540008A65DC = {
 			isa = PBXGroup;
 			children = (
@@ -127,10 +136,10 @@
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				7954AF2023E05E8800BF1294 /* View */,
 				7954AF2323E06E0B00BF1294 /* Model */,
+				7940DC322416919E0063D101 /* Extensions */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
 				794B478523D9E549008A65DC /* LaunchScreen.storyboard */,
 				794B478823D9E549008A65DC /* Info.plist */,
-				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
 				794B478223D9E549008A65DC /* Preview Content */,
 			);
 			path = Dualogue;
@@ -180,7 +189,9 @@
 		7954AF2323E06E0B00BF1294 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7940DC2E24168FD70063D101 /* ImageStore.swift */,
 				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
+				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +349,7 @@
 				79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */,
 				79537EB323FD9A7B00DAEE09 /* EmptyAvatar.swift in Sources */,
 				7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */,
+				7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* MainScreen.swift in Sources */,
 				79410E8123FAC01500C37120 /* ContactsView.swift in Sources */,

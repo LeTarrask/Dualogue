@@ -17,7 +17,7 @@ struct SingleNoteView: View {
  
     private var date = Date()
     
-    @State private var images = [DuaImage]()
+    @State private var imageStore = ImageStore()
     @State var text: String = ""
     @State var title: String = "click to add your note title"
     @State var contact: DuaContact?
@@ -163,7 +163,7 @@ extension SingleNoteView {
         self.title = "click to add your note title"
         self.text = ""
         self.contact = nil
-        self.images = []
+        self.imageStore = ImageStore()
     }
 }
 
