@@ -147,11 +147,10 @@ extension SingleNoteView {
         do {
             try self.moc.save()
             print("Saving new note")
+            clearNote()
         } catch {
             print(error.localizedDescription)
         }
-        
-        clearNote()
     }
     
     func clearNote() {
