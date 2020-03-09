@@ -15,21 +15,17 @@ import SwiftUI
 // to do this properly, it would be better if it's already storing contact properly, which is not implemented yet
 
 struct SingleContactView: View {
-    
-    
     var body: some View {
         VStack {
             VStack {
                 HStack {
-                    
                     AvatarView(image: "face", size: 100, name: "Jennifer Longname")
                     
                     VStack {
                         Text("20")
                         Text("NOTES")
                     }
-                    
-                    }
+                }
                 .padding()
                 .foregroundColor(Color.main)
 

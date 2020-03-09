@@ -43,7 +43,11 @@ struct SingleNoteView: View {
                     .frame(maxWidth: geometry.size.width*4/5)
                     
                     
-                    Button(action: { self.showingContacts.toggle() }) {
+                    Button(action: {
+                        self.showingContacts.toggle()
+                        let contact = DuaContact(name: "Store nome", image: "face")
+                        self.contact = contact
+                    }) {
                         if (self.contact?.name == nil) {
                             EmptyAvatar(size: 60)
                         } else {
@@ -86,6 +90,7 @@ struct SingleNoteView: View {
                     .padding()
                 
                 VStack(alignment: .leading) {
+                    // TO DO: turn this into a button that gets info to send it to var images, which will be stored in core data when savenote button is clicked
                     GeometryReader { geometry in
                         Image("plussign")
                             .position(x: geometry.size.width/2, y: geometry.size.height/2)
@@ -137,6 +142,7 @@ extension SingleNoteView {
         newNote.date = date
         
         if contact?.name != nil {
+            // TO DO: Check if contact already exists in moc
             let newContact = ContactStorage(context: self.moc)
             newContact.name = contact?.name
             newContact.image = contact?.image

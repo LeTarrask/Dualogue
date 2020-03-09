@@ -8,9 +8,6 @@
 
 import SwiftUI
 
-// TO DO:
-// clear these strange white borders
-
 struct NotePreView: View {
     var title: String
     var date: String
@@ -24,12 +21,16 @@ struct NotePreView: View {
     init(note: NoteStorage) {
         self.title = note.title ?? ""
         self.date = note.date?.toString() ?? ""
+        
+        // TO DO: - restore image from image stored in memory
         self.imagePath = ""
         self.text = note.text ?? ""
         self.isExpanded = false
         self.completed = note.isCompleted
+        
+        // TO DO: restore info from contact in Core Data and replace this temp data
         self.contactName = "Astolfo"
-        self.contactImg = "face"
+        self.contactImg = "face2"
     }
 
     var body: some View {
@@ -51,7 +52,7 @@ struct NotePreView: View {
                 
                 if contactImg != nil && contactName != nil {
                     // TO DO: add failsafe with image placeholder here as well
-                    AvatarView(image: contactImg ?? "face", size: 60, name: contactName ?? "")
+                    AvatarView(image: contactImg ?? "face.png", size: 60, name: contactName ?? "")
                         .offset(y: 8)
                         .padding()
                 }

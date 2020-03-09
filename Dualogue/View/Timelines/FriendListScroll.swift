@@ -18,16 +18,12 @@ struct FriendListScroll: View {
                 Text("Friends")
                     .font(.title).bold()
                     .foregroundColor(.main)
-                Spacer()
-                Text("View Contacts")
-                    .font(.caption)
-                    .foregroundColor(.accent3)
             }
             .padding()
             
             ScrollView(.horizontal) {
                 HStack {
-                    // add button here that goes to SingleContactView passing specific contact to it
+                    // TO DO: add button here that goes to SingleContactView passing specific contact to it
                     ForEach(contacts, id: \.self) { contact in
                         AvatarView(image: contact.image ?? "face", size: 60, name: contact.name ?? "")
                     }
