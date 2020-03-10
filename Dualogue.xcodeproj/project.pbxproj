@@ -13,6 +13,8 @@
 		7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB9223FC467C00350C48 /* FriendListScroll.swift */; };
 		7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC2E24168FD70063D101 /* ImageStore.swift */; };
 		7940DC382417DA050063D101 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC372417DA050063D101 /* ImageView.swift */; };
+		7940DC3C2417EE720063D101 /* ContactPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC3B2417EE720063D101 /* ContactPickerViewController.swift */; };
+		7940DC3F2417F1EB0063D101 /* EmbeddedContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC3E2417F1EB0063D101 /* EmbeddedContactPicker.swift */; };
 		79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7C23FAB21000C37120 /* ColorSchemes.swift */; };
 		79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7E23FABFE400C37120 /* SingleContactView.swift */; };
 		79410E8123FAC01500C37120 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E8023FAC01500C37120 /* ContactsView.swift */; };
@@ -55,6 +57,8 @@
 		7934EB9223FC467C00350C48 /* FriendListScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListScroll.swift; sourceTree = "<group>"; };
 		7940DC2E24168FD70063D101 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = Dualogue/Model/ImageStore.swift; sourceTree = SOURCE_ROOT; };
 		7940DC372417DA050063D101 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		7940DC3B2417EE720063D101 /* ContactPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerViewController.swift; sourceTree = "<group>"; };
+		7940DC3E2417F1EB0063D101 /* EmbeddedContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedContactPicker.swift; sourceTree = "<group>"; };
 		79410E7C23FAB21000C37120 /* ColorSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		79410E7E23FABFE400C37120 /* SingleContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleContactView.swift; sourceTree = "<group>"; };
 		79410E8023FAC01500C37120 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 			path = "Object Views";
 			sourceTree = "<group>";
 		};
+		7940DC3D2417F1C70063D101 /* Contact Picker Code */ = {
+			isa = PBXGroup;
+			children = (
+				7940DC3B2417EE720063D101 /* ContactPickerViewController.swift */,
+				7940DC3E2417F1EB0063D101 /* EmbeddedContactPicker.swift */,
+			);
+			path = "Contact Picker Code";
+			sourceTree = "<group>";
+		};
 		794B476B23D9E540008A65DC = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 				794B477E23D9E540008A65DC /* MainScreen.swift */,
 				79F817842405614000B4AD2C /* Timelines */,
 				7940DC392417EDC30063D101 /* Single Note View */,
+				7940DC3D2417F1C70063D101 /* Contact Picker Code */,
 				79410E7E23FABFE400C37120 /* SingleContactView.swift */,
 				79410E8023FAC01500C37120 /* ContactsView.swift */,
 				7940DC3A2417EDD60063D101 /* Object Views */,
@@ -369,9 +383,11 @@
 				79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */,
 				79537EB323FD9A7B00DAEE09 /* EmptyAvatar.swift in Sources */,
 				7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */,
+				7940DC3F2417F1EB0063D101 /* EmbeddedContactPicker.swift in Sources */,
 				7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* MainScreen.swift in Sources */,
+				7940DC3C2417EE720063D101 /* ContactPickerViewController.swift in Sources */,
 				79410E8123FAC01500C37120 /* ContactsView.swift in Sources */,
 				794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */,
 			);

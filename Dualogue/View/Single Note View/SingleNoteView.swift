@@ -8,7 +8,6 @@
 
 import SwiftUI
 import CoreData
-import ContactsUI
 
 // TO DO: add animations on clear
 
@@ -55,7 +54,7 @@ struct SingleNoteView: View {
                         }
                     }
                     .sheet(isPresented: self.$showingContacts, content: {
-                        contactPicker()
+                        EmbeddedContactPicker()
                     })
                 }
             }.frame(maxWidth: .infinity, minHeight: 110, maxHeight: 150)
@@ -169,17 +168,6 @@ extension SingleNoteView {
         self.text = ""
         self.contact = nil
         self.imageStore = ImageStore()
-    }
-}
-
-// TO DO: -make a storyboard for contactpicker and get the information
-struct contactPicker: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<contactPicker>) -> CNContactPickerViewController {
-        let picker = CNContactPickerViewController()
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: UIViewControllerRepresentableContext<contactPicker>) {
     }
 }
 
