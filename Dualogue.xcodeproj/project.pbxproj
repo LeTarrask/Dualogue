@@ -111,6 +111,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7940DC392417EDC30063D101 /* Single Note View */ = {
+			isa = PBXGroup;
+			children = (
+				792E371323FD6FFF00A75B86 /* SingleNoteView.swift */,
+				7940DC372417DA050063D101 /* ImageView.swift */,
+			);
+			path = "Single Note View";
+			sourceTree = "<group>";
+		};
+		7940DC3A2417EDD60063D101 /* Object Views */ = {
+			isa = PBXGroup;
+			children = (
+				794B47AE23D9F582008A65DC /* AvatarView.swift */,
+				79537EB223FD9A7B00DAEE09 /* EmptyAvatar.swift */,
+				79410E7C23FAB21000C37120 /* ColorSchemes.swift */,
+			);
+			path = "Object Views";
+			sourceTree = "<group>";
+		};
 		794B476B23D9E540008A65DC = {
 			isa = PBXGroup;
 			children = (
@@ -178,13 +197,10 @@
 			children = (
 				794B477E23D9E540008A65DC /* MainScreen.swift */,
 				79F817842405614000B4AD2C /* Timelines */,
-				792E371323FD6FFF00A75B86 /* SingleNoteView.swift */,
-				7940DC372417DA050063D101 /* ImageView.swift */,
+				7940DC392417EDC30063D101 /* Single Note View */,
 				79410E7E23FABFE400C37120 /* SingleContactView.swift */,
 				79410E8023FAC01500C37120 /* ContactsView.swift */,
-				794B47AE23D9F582008A65DC /* AvatarView.swift */,
-				79537EB223FD9A7B00DAEE09 /* EmptyAvatar.swift */,
-				79410E7C23FAB21000C37120 /* ColorSchemes.swift */,
+				7940DC3A2417EDD60063D101 /* Object Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
