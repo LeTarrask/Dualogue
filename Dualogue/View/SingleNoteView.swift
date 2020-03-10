@@ -19,7 +19,7 @@ struct SingleNoteView: View {
     
     @State private var imageStore = ImageStore()
     @State var text: String = ""
-    @State var title: String = "click to add your note title"
+    @State var title: String = "Click to add your note title"
     @State var contact: DuaContact?
     
     @State var showingContacts = false
