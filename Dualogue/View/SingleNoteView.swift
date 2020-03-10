@@ -87,6 +87,7 @@ struct SingleNoteView: View {
             
             HStack {
                 if isEditing {
+                    // TO DO: make this button add images to imagecollection
                     ZStack {
                         Rectangle().fill(Color.accent1)
                             .cornerRadius(20)
@@ -107,39 +108,11 @@ struct SingleNoteView: View {
                                         
                                     }
                                     .foregroundColor(Color.main)
-                                    .position(x: geometry.size.width/2, y: geometry.size.height-80)
-                                }
-                            }
-                        }
+                                    .position(x: geometry.size.width/2, y: geometry.size.height-80)}}}
                     }
                 }
-                
                 ForEach(imageStore.images, id: \.self) { duaImage in
-                    ZStack {
-                        Rectangle().fill(Color.accent1)
-                            .cornerRadius(20)
-                            .padding()
-                        
-                        VStack {
-                            GeometryReader { geometry in
-                                Image(duaImage.image)
-                                    .position(x: geometry.size.width/2, y: geometry.size.height/2)
-                                
-                                HStack(alignment: .top) {
-                                    VStack(alignment: .leading) {
-                                        Text(duaImage.title)
-                                            .font(.title)
-                                            .lineLimit(1)
-                                        Text(duaImage.text)
-                                            .lineLimit(3)
-                                        
-                                    }
-                                    .foregroundColor(Color.main)
-                                    .position(x: geometry.size.width/2, y: geometry.size.height-80)
-                                }
-                            }
-                        }
-                    }
+                    ImageView(duaImage: duaImage)
                 }
             }
             

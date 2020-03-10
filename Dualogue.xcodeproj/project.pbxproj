@@ -12,6 +12,7 @@
 		7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB8E23FC463500350C48 /* NoteTimeline.swift */; };
 		7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB9223FC467C00350C48 /* FriendListScroll.swift */; };
 		7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC2E24168FD70063D101 /* ImageStore.swift */; };
+		7940DC382417DA050063D101 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940DC372417DA050063D101 /* ImageView.swift */; };
 		79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7C23FAB21000C37120 /* ColorSchemes.swift */; };
 		79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E7E23FABFE400C37120 /* SingleContactView.swift */; };
 		79410E8123FAC01500C37120 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410E8023FAC01500C37120 /* ContactsView.swift */; };
@@ -53,6 +54,7 @@
 		7934EB8E23FC463500350C48 /* NoteTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
 		7934EB9223FC467C00350C48 /* FriendListScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListScroll.swift; sourceTree = "<group>"; };
 		7940DC2E24168FD70063D101 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = Dualogue/Model/ImageStore.swift; sourceTree = SOURCE_ROOT; };
+		7940DC372417DA050063D101 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		79410E7C23FAB21000C37120 /* ColorSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		79410E7E23FABFE400C37120 /* SingleContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleContactView.swift; sourceTree = "<group>"; };
 		79410E8023FAC01500C37120 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				794B477E23D9E540008A65DC /* MainScreen.swift */,
 				79F817842405614000B4AD2C /* Timelines */,
 				792E371323FD6FFF00A75B86 /* SingleNoteView.swift */,
+				7940DC372417DA050063D101 /* ImageView.swift */,
 				79410E7E23FABFE400C37120 /* SingleContactView.swift */,
 				79410E8023FAC01500C37120 /* ContactsView.swift */,
 				794B47AE23D9F582008A65DC /* AvatarView.swift */,
@@ -344,6 +347,7 @@
 				794B47AD23D9EE92008A65DC /* NoteModel.swift in Sources */,
 				79410E7F23FABFE400C37120 /* SingleContactView.swift in Sources */,
 				794B47AF23D9F582008A65DC /* AvatarView.swift in Sources */,
+				7940DC382417DA050063D101 /* ImageView.swift in Sources */,
 				7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */,
 				7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */,
 				79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */,
