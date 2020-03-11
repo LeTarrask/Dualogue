@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FADA7241909E300DC0C6D /* NoteStore.swift */; };
+		790FADAA24190B5500DC0C6D /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FADA924190B5500DC0C6D /* Date Extensions.swift */; };
 		792E371423FD6FFF00A75B86 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E371323FD6FFF00A75B86 /* SingleNoteView.swift */; };
 		7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932F17623FEEE6200B438D5 /* TimelinesView.swift */; };
 		7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB8E23FC463500350C48 /* NoteTimeline.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		790FADA7241909E300DC0C6D /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
+		790FADA924190B5500DC0C6D /* Date Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
 		792E371323FD6FFF00A75B86 /* SingleNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
 		7932F17623FEEE6200B438D5 /* TimelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinesView.swift; sourceTree = "<group>"; };
 		7934EB8E23FC463500350C48 /* NoteTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		7940DC322416919E0063D101 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				790FADA924190B5500DC0C6D /* Date Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				7940DC382417DA050063D101 /* ImageView.swift in Sources */,
 				7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */,
 				7934EB9323FC467C00350C48 /* FriendListScroll.swift in Sources */,
+				790FADAA24190B5500DC0C6D /* Date Extensions.swift in Sources */,
 				79410E7D23FAB21000C37120 /* ColorSchemes.swift in Sources */,
 				79537EB323FD9A7B00DAEE09 /* EmptyAvatar.swift in Sources */,
 				7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */,
