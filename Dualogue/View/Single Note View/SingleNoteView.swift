@@ -12,6 +12,8 @@ import CoreData
 // TO DO: add animations on clear
 
 struct SingleNoteView: View {
+    @ObservedObject var noteStore = NoteStore()
+
     @Environment(\.managedObjectContext) var moc
     
     private var date = Date()
@@ -62,7 +64,7 @@ struct SingleNoteView: View {
                 .padding(.top, 40)
             HStack {
                 Button(action: {
-                    self.clearNote()
+                    self.resetView()
                 }, label: {
                     Text("NEW NOTE")
                         .font(.callout)
@@ -137,33 +139,25 @@ struct SingleNoteView: View {
     }
 }
 
-// MARK: - Actions to clear and store information into a note that is sent to CoreData
+// MARK: - Actions to clear and sends info to NoteStorage
 extension SingleNoteView {
     func storeNote() {
-        let newNote = NoteStorage(context: self.moc)
-        newNote.title = title
+        var newNote = DuaNote(title: title)
         newNote.text = text
         newNote.date = date
         
         if contact?.name != nil {
             // TO DO: Check if contact already exists in moc
-            let newContact = ContactStorage(context: self.moc)
-            newContact.name = contact?.name
-            newContact.image = contact?.image
+            let newContact = DuaContact(name: contact?.name ?? "", image: contact?.image ?? "")
             
-            newNote.contacts = newContact
+            newNote.contact = newContact
         }
-        
-        do {
-            try self.moc.save()
-            print("Saving new note")
-            clearNote()
-        } catch {
-            print(error.localizedDescription)
-        }
+        // how to observe notestore???
+        noteStore.sendInfoToDB(note: newNote)
+        resetView()
     }
     
-    func clearNote() {
+    func resetView() {
         self.title = "click to add your note title"
         self.text = ""
         self.contact = nil

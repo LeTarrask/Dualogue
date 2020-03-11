@@ -9,10 +9,10 @@
 import Foundation
 import SwiftUI
 
-class NoteStore {
+class NoteStore: ObservableObject {
     @Environment(\.managedObjectContext) var moc
     
-    var notes = [DuaNote]()
+    @Published var notes = [DuaNote]()
     
     // MARK: - empties the collection
     func reset() {
