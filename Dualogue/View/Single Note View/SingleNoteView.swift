@@ -19,12 +19,10 @@ struct SingleNoteView: View {
     private var date = Date()
     
     @State private var imageStore = ImageStore()
-    @State var text: String = ""
-    @State var title: String = "Click to add your note title"
-    @State var contact: DuaContact?
-    
-    @State var showingContacts = false
-    
+    @State private var text: String = ""
+    @State private var title: String = "Click to add your note title"
+    @State private var contact: DuaContact?
+    @State private var showingContacts = false
     @State private var isEditing: Bool = true
     
     var body: some View {
