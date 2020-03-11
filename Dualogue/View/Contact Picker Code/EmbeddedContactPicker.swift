@@ -16,6 +16,7 @@ struct EmbeddedContactPicker: UIViewControllerRepresentable {
 
     final class Coordinator: NSObject, EmbeddedContactPickerViewControllerDelegate {
         func embeddedContactPickerViewController(_ viewController: EmbeddedContactPickerViewController, didSelect contact: CNContact) {
+            print(contact)
             viewController.dismiss(animated: true, completion: nil)
         }
 

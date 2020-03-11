@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FADA7241909E300DC0C6D /* NoteStore.swift */; };
 		792E371423FD6FFF00A75B86 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E371323FD6FFF00A75B86 /* SingleNoteView.swift */; };
 		7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932F17623FEEE6200B438D5 /* TimelinesView.swift */; };
 		7934EB8F23FC463500350C48 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934EB8E23FC463500350C48 /* NoteTimeline.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		790FADA7241909E300DC0C6D /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
 		792E371323FD6FFF00A75B86 /* SingleNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
 		7932F17623FEEE6200B438D5 /* TimelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinesView.swift; sourceTree = "<group>"; };
 		7934EB8E23FC463500350C48 /* NoteTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				7940DC2E24168FD70063D101 /* ImageStore.swift */,
+				790FADA7241909E300DC0C6D /* NoteStore.swift */,
 				794B47AC23D9EE91008A65DC /* NoteModel.swift */,
 				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
 			);
@@ -384,6 +387,7 @@
 				79537EB323FD9A7B00DAEE09 /* EmptyAvatar.swift in Sources */,
 				7932F17723FEEE6200B438D5 /* TimelinesView.swift in Sources */,
 				7940DC3F2417F1EB0063D101 /* EmbeddedContactPicker.swift in Sources */,
+				790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */,
 				7940DC2F24168FD70063D101 /* ImageStore.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
 				794B477F23D9E540008A65DC /* MainScreen.swift in Sources */,
