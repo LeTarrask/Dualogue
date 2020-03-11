@@ -20,7 +20,7 @@ struct NotePreView: View {
     
     init(note: NoteStorage) {
         self.title = note.title ?? ""
-        self.date = note.date?.toString() ?? ""
+        self.date = note.date?.toString(dateFormat: "ddMMYYYY") ?? ""
         
         // TO DO: - restore image from image stored in memory
         self.imagePath = ""

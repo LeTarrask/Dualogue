@@ -27,39 +27,39 @@ struct SingleNoteView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            GeometryReader { geometry in
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text(self.date.toString())
-                            .font(.caption)
-                            .foregroundColor(.accent3)
-                        TextField("click to add your note title", text: self.$title)
-                            .font(.title)
-                            .lineLimit(2)
-                            .foregroundColor(Color.main)
-                    }
-                    .padding()
-                    .frame(maxWidth: geometry.size.width*4/5)
+//            GeometryReader { geometry in
+//                HStack(alignment: .top) {
+//                    VStack(alignment: .leading) {
+//                        Text(self.date.toString())
+//                            .font(.caption)
+//                            .foregroundColor(.accent3)
+//                        TextField("click to add your note title", text: self.$title)
+//                            .font(.title)
+//                            .lineLimit(2)
+//                            .foregroundColor(Color.main)
+//                    }
+//                    .padding()
+//                    .frame(maxWidth: geometry.size.width*4/5)
                     
                     
-                    Button(action: {
-                        self.showingContacts.toggle()
-                        let contact = DuaContact(name: "Store nome", image: "face")
-                        self.contact = contact
-                    }) {
-                        if (self.contact?.name == nil) {
-                            EmptyAvatar(size: 60)
-                        } else {
-                            AvatarView(image: self.contact?.image ?? "face", size: 60, name: self.contact?.name ?? "")
-                        }
-                    }
-                    .sheet(isPresented: self.$showingContacts, content: {
-                        EmbeddedContactPicker()
-                    })
-                }
-            }.frame(maxWidth: .infinity, minHeight: 110, maxHeight: 150)
-                .padding()
-                .padding(.top, 40)
+//                    Button(action: {
+//                        self.showingContacts.toggle()
+//                        let contact = DuaContact(name: "Store nome", image: "face")
+//                        self.contact = contact
+//                    }) {
+//                        if (self.contact?.name == nil) {
+//                            EmptyAvatar(size: 60)
+//                        } else {
+//                            AvatarView(image: self.contact?.image ?? "face", size: 60, name: self.contact?.name ?? "")
+//                        }
+//                    }
+//                    .sheet(isPresented: self.$showingContacts, content: {
+//                        EmbeddedContactPicker()
+//                    })
+//                }
+//            }.frame(maxWidth: .infinity, minHeight: 110, maxHeight: 150)
+//                .padding()
+//                .padding(.top, 40)
             HStack {
                 Button(action: {
                     self.resetView()
@@ -151,7 +151,7 @@ extension SingleNoteView {
             newNote.contact = newContact
         }
         // how to observe notestore???
-        noteStore.sendInfoToDB(note: newNote)
+//        noteStore.sendInfoToDB(note: newNote)
         resetView()
     }
     
