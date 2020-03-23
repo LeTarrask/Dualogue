@@ -38,7 +38,6 @@ struct NoteTimeline: View {
     
     init() {
         fetchRequest = FetchRequest<NoteStorage>(entity: NoteStorage.entity(), sortDescriptors: [])
-        print(fetchRequest)
     }
 }
 

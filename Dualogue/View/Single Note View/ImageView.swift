@@ -17,7 +17,7 @@ struct ImageView: View {
                 .cornerRadius(20)
                 .padding()
             
-            Image(self.duaImage.image).resizable()
+            Image(self.duaImage.filename).resizable()
                 .scaledToFit()
                 .padding()
             

@@ -28,7 +28,7 @@ struct DuaNote: Identifiable, Hashable {
     
     var date: Date
     
-    var images: [String]?
+    var images: [DuaImage]?
     
     init(title: String) {
         self.title = title

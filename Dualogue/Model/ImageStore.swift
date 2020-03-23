@@ -13,14 +13,14 @@ import SwiftUI
 struct DuaImage: Identifiable, Hashable {
     var id = UUID()
     
-    let image: String
+    let filename: String
     
     var text: String?
     
     var title: String?
     
     init(image: String) {
-        self.image = image
+        self.filename = image
     }
 }
 
@@ -44,7 +44,7 @@ class ImageStore {
         for image in images {
             // TO DO: Check if image already exists in moc
             let newImage = ImageStorage(context: self.moc)
-            newImage.path = image.image
+            newImage.path = image.filename
             newImage.id = image.id
             if image.text != nil {
                 newImage.text = image.text
