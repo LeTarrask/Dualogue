@@ -9,11 +9,11 @@
 import Foundation
 
 extension Date {
-    func toString(dateFormat format: String) -> String
+    func toString() -> String
     {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        //        dateFormatter.dateStyle = .full
+        //dateFormatter.dateFormat = format
+        dateFormatter.dateStyle = .full
         return dateFormatter.string(from: self)
     }
 }

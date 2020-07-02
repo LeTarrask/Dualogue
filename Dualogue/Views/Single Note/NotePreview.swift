@@ -1,26 +1,27 @@
 //
-//  NoteView.swift
+//  NotePreview.swift
 //  Dualogue
 //
-//  Created by Alex Luna on 28/01/2020.
-//  Copyright © 2020 Garagem Infinita. All rights reserved.
+//  Created by Alex Luna on 29/06/2020.
 //
+
+
+// THIS FILE IS COMPLETELY BROKEN. WE KEEP THIS HERE JUST FOR REFERENCE
 
 import SwiftUI
 
-
-// This struct should get a note and display it. Right now it's getting trouble unwrapping the content that comes from NoteTimeline
-struct NotePreView: View {
+// TO DO: fix this super buggy file
+struct NotePreview: View {
     var title: String
     var date: String
     var imagePath: String?
     var text: String?
     var contactName: String?
     var contactImg: String?
-
+    
     @State var completed: Bool = false
     @State var isExpanded: Bool = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,12 +36,11 @@ struct NotePreView: View {
                             .lineLimit(2)
                     }
                     .padding()
-                Spacer()
+                    Spacer()
                 })
                 
                 if contactImg != nil && contactName != nil {
-                    // TO DO: add failsafe with image placeholder here as well
-                    AvatarView(image: contactImg ?? "face.png", size: 60, name: contactName ?? "")
+                    AvatarView(contactName: contactName!, contactImage: contactImg!, size: 60)
                         .offset(y: 8)
                         .padding()
                 }
@@ -49,43 +49,28 @@ struct NotePreView: View {
             if isExpanded {
                 HStack {
                     // TO DO: Implement carrousel
-
+                    
                     if (imagePath != nil) {
                         Image(imagePath!) // TO DO: add image placeholder
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxHeight: 200)
                             .cornerRadius(20)
-                        .padding()
+                            .padding()
                     }
                     
                 }
-                if text != "" {
-                    TextDisplay(text: text ?? "")
-                }
             }
             Divider()
-            .frame(height: 1)
-            .background(Color.main)
+                .frame(height: 1)
+                .background(Color.main)
         }
         .background(Color.mainBG)
     }
 }
 
-struct TextDisplay: View {
-    var text: String = ""
-    
-    var body: some View {
-        Text(text)
-            .font(.body)
-            .foregroundColor(Color.main)
-            .padding()
+struct NotePreview_Previews: PreviewProvider {
+    static var previews: some View {
+        NotePreview(title: "teste", date: "234124")
     }
 }
-
-//struct NotePreView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let notestorage = DuaNote(title: "text")
-//        NotePreView()
-//    }
-//}
