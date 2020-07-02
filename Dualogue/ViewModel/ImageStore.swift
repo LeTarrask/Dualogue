@@ -9,21 +9,6 @@
 import Foundation
 import SwiftUI
 
-//MARK: ImageModel
-struct DuaImage: Identifiable, Hashable {
-    var id = UUID()
-    
-    let filename: String
-    
-    var text: String?
-    
-    var title: String?
-    
-    init(image: String) {
-        self.filename = image
-    }
-}
-
 
 class ImageStore {
     @Environment(\.managedObjectContext) var moc

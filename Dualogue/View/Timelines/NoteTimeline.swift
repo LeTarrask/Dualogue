@@ -11,38 +11,40 @@ import SwiftUI
 // TO DO: add mark as completed on UI button
 // TO DO: add go to SingleNoteView and view note on long press
 
+
+// TO DO: shouldn't request data from storage here. It should get it from the model that should be bound to some state here
+
 struct NoteTimeline: View {
-    @Environment(\.managedObjectContext) var moc
-    
-    var fetchRequest: FetchRequest<NoteStorage>
-    var notes: FetchedResults<NoteStorage> { fetchRequest.wrappedValue }
-    var noteViews = [NotePreView]()
+//    @FetchRequest var notes: FetchedResults<NoteStorage>
+//
+//    init() {
+//        let request = NoteStorage.fetchRequest()
+//        _notes = FetchRequest(fetchRequest: request)
+//    }
     
     var body: some View {
         List {
-            ForEach(notes, id: \.self) { note in
+            ForEach(1..<5) { _ in
                 Button(action: {
-                    print(note)
+                    print("note touched")
                 }, label: {
-                    NotePreView(note: note)
+                    NotePreView(title: "teste 1", date: "2121312")
+                    NotePreView(title: "teste 2", date: "22020202", imagePath: "face", text: "Teste", contactName: "Joao", contactImg: "face", completed: false, isExpanded: true)
                 })
             }.onDelete(perform: { indexSet in
-                for index in indexSet {
-                    self.moc.delete(self.notes[index])
-                }
+                // TO DO: Delete Intention to store here
+//                for index in indexSet {
+//                    self.moc.delete(self.notes[index])
+//                }
             })
         .padding(0)
         .listRowBackground(Color.mainBG)
         }
     }
-    
-    init() {
-        fetchRequest = FetchRequest<NoteStorage>(entity: NoteStorage.entity(), sortDescriptors: [])
-    }
 }
 
-struct NoteTimeline_Previews: PreviewProvider {
-    static var previews: some View {
-        NoteTimeline()
-    }
-}
+//struct NoteTimeline_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NoteTimeline()
+//    }
+//}

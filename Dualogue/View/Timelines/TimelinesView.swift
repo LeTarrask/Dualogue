@@ -7,8 +7,9 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct TimelinesView: View {    
+struct TimelinesView: View {
     var body: some View {
         VStack {
             FriendListScroll()

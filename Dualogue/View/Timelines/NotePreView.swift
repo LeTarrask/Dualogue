@@ -8,30 +8,18 @@
 
 import SwiftUI
 
+
+// This struct should get a note and display it. Right now it's getting trouble unwrapping the content that comes from NoteTimeline
 struct NotePreView: View {
     var title: String
     var date: String
     var imagePath: String?
     var text: String?
-    @State var completed: Bool = false
     var contactName: String?
     var contactImg: String?
+
+    @State var completed: Bool = false
     @State var isExpanded: Bool = false
-    
-    init(note: NoteStorage) {
-        self.title = note.title ?? ""
-        self.date = note.date?.toString(dateFormat: "ddMMYYYY") ?? ""
-        
-        // TO DO: - restore image from image stored in memory
-        self.imagePath = ""
-        self.text = note.text ?? ""
-        self.isExpanded = false
-        self.completed = note.isCompleted
-        
-        // TO DO: restore info from contact in Core Data and replace this temp data
-        self.contactName = "Astolfo"
-        self.contactImg = "face2"
-    }
 
     var body: some View {
         VStack {
@@ -95,8 +83,9 @@ struct TextDisplay: View {
     }
 }
 
-//struct NoteView_Previews: PreviewProvider {
+//struct NotePreView_Previews: PreviewProvider {
 //    static var previews: some View {
+//        let notestorage = DuaNote(title: "text")
 //        NotePreView()
 //    }
 //}

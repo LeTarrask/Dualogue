@@ -7,9 +7,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MainScreen: View {
-    
+    @Environment(\.managedObjectContext) var context
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -19,16 +21,16 @@ struct MainScreen: View {
                             Image(systemName: "1.circle")
                             Text("All your notes")
                     }.tag(0)
-                    SingleNoteView()
-                        .tabItem {
-                            Image(systemName: "2.circle")
-                            Text("Add note")
-                    }.tag(1)
-                    ContactsView()
-                        .tabItem {
-                            Image(systemName: "3.circle")
-                            Text("Contacts")
-                    }.tag(2)
+//                    SingleNoteView()
+//                        .tabItem {
+//                            Image(systemName: "2.circle")
+//                            Text("Add note")
+//                    }.tag(1)
+//                    ContactsView()
+//                        .tabItem {
+//                            Image(systemName: "3.circle")
+//                            Text("Contacts")
+//                    }.tag(2)
                 }
                 
             }

@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct ImageView: View {
-    var duaImage: DuaImage
+    var image: String
+    var title: String
+    var subtitle: String
     
     var body: some View {
         ZStack {
@@ -17,16 +19,17 @@ struct ImageView: View {
                 .cornerRadius(20)
                 .padding()
             
-            Image(self.duaImage.filename).resizable()
+            Image(self.image)
+                .resizable()
                 .scaledToFit()
                 .padding()
             
             VStack (alignment: .leading) {
                 Spacer()
-                Text("duaImage.titleduaImage.titleduaImage.titleduaImage.titleduaImage.title")
+                Text(self.title)
                     .font(.title)
                     .lineLimit(1)
-                Text("duaImage.text")
+                Text(self.subtitle)
                     .lineLimit(3)
                 }
             .padding()
@@ -37,6 +40,6 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(duaImage: DuaImage(image: "face"))
+        ImageView(image: "face", title: "image title", subtitle: "subtitle title")
     }
 }
