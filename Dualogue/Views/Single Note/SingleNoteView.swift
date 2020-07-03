@@ -45,9 +45,7 @@ struct SingleNoteView: View {
                             contact.contactImage_ = contactImage
                             note.contacts = contact
                         }
-                        
                     }
-                    
                     try? self.context.save()
                 }
             }
@@ -69,7 +67,6 @@ struct SingleNoteView: View {
         catch {
             print("error executing fetch request: \(error)")
         }
-
         return results
     }
 }

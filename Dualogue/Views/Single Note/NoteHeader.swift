@@ -25,7 +25,8 @@ struct NoteHeader: View {
         self.contactName = contact.givenName + " " + contact.familyName
         let imageData = contact.imageData
         let thumbImageData = contact.thumbnailImageData
-        
+        print([imageData, thumbImageData])
+        // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
     }
         
     var body: some View {

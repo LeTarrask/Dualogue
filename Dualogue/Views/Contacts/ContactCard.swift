@@ -17,7 +17,7 @@ struct ContactCard: View {
                 print("sheet touched")
                 // Should go to single contact
             }) {
-                AvatarView(contactName: image, contactImage: name, size: 60)
+                AvatarView(contactName: name, contactImage: image, size: 60)
                     .foregroundColor(.white)
                     .padding()
             }
