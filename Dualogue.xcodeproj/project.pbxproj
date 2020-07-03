@@ -35,7 +35,7 @@
 		7982AC0224ADF10E00A03AC1 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABED24ADF10E00A03AC1 /* MainTab.swift */; };
 		7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */; };
 		7982AC0424ADF10E00A03AC1 /* FakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABF024ADF10E00A03AC1 /* FakeModel.swift */; };
-		79963A9B24AE2361006D42F1 /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79963A9A24AE2361006D42F1 /* ContactPicker.swift */; };
+		79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C098C824AF3BC900B3894E /* ContactPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,7 @@
 		7982ABED24ADF10E00A03AC1 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
 		7982ABF024ADF10E00A03AC1 /* FakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeModel.swift; sourceTree = "<group>"; };
-		79963A9A24AE2361006D42F1 /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
+		79C098C824AF3BC900B3894E /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				7982ABF024ADF10E00A03AC1 /* FakeModel.swift */,
 				7982ABD724ADF10E00A03AC1 /* Views */,
-				7954AF2323E06E0B00BF1294 /* ViewModel */,
+				7954AF2323E06E0B00BF1294 /* Model */,
 				7982ABEE24ADF10E00A03AC1 /* Helper Extensions */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
 				794B478523D9E549008A65DC /* LaunchScreen.storyboard */,
@@ -181,13 +181,13 @@
 			path = DualogueUITests;
 			sourceTree = "<group>";
 		};
-		7954AF2323E06E0B00BF1294 /* ViewModel */ = {
+		7954AF2323E06E0B00BF1294 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				790FADA7241909E300DC0C6D /* NoteStore.swift */,
 				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
 			);
-			path = ViewModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7982ABD724ADF10E00A03AC1 /* Views */ = {
@@ -230,7 +230,7 @@
 				7982ABE324ADF10E00A03AC1 /* SingleNoteView.swift */,
 				7982ABE424ADF10E00A03AC1 /* NotePreview.swift */,
 				7982ABE524ADF10E00A03AC1 /* NoteHeader.swift */,
-				79963A9A24AE2361006D42F1 /* ContactPicker.swift */,
+				79C098C824AF3BC900B3894E /* ContactPicker.swift */,
 				7982ABE624ADF10E00A03AC1 /* NoteBodyText.swift */,
 			);
 			path = "Single Note";
@@ -402,7 +402,7 @@
 				7982ABFF24ADF10E00A03AC1 /* NoteTimeline.swift in Sources */,
 				7982ABFD24ADF10E00A03AC1 /* Loading.swift in Sources */,
 				7982ABFE24ADF10E00A03AC1 /* NotelistView.swift in Sources */,
-				79963A9B24AE2361006D42F1 /* ContactPicker.swift in Sources */,
+				79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */,
 				7982ABFC24ADF10E00A03AC1 /* NoteBodyText.swift in Sources */,
 				7982ABFB24ADF10E00A03AC1 /* NoteHeader.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,

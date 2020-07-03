@@ -18,35 +18,45 @@ struct NoteHeader: View {
     
     @State var contact: CNContact?
     
-    @State var selectContact: Bool = false
+    @State var showPicker: Bool = false
     
     func loadContact() {
         guard let contact = contact else { return }
-        // GET CNContact data into contact name & contact image
+        self.contactName = contact.givenName
+        // TO DO: store contact image into system
+        // contactImage = contact.imageData
     }
         
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(date)
-                    .font(.caption)
-                    .foregroundColor(.accent3)
-                if isEditing {
-                    TextField("Write your note", text: $title)
-                } else {
-                    Text(title)
+        ZStack {
+            ContactPicker(
+                            showPicker: $showPicker,
+                            onSelectContact: { contact in
+                                self.contact = contact
+                                self.loadContact()
+                            }
+                        )
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(date)
+                        .font(.caption)
+                        .foregroundColor(.accent3)
+                    if isEditing {
+                        TextField("Write your note", text: $title)
+                    } else {
+                        Text(title)
+                    }
                 }
+                Spacer()
+                Button(action: {
+                    self.showPicker.toggle()
+                }, label: {
+                    AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
+                })
+            
             }
-            Spacer()
-            Button(action: {
-                self.selectContact.toggle()
-            }, label: {
-                AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
-            })
-        }.sheet(isPresented: $selectContact, onDismiss: { loadContact() }) {
-            ContactPicker(contact: $contact)
+            .padding()
         }
-        .padding()
     }
 }
 
