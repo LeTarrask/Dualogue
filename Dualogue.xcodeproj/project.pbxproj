@@ -204,6 +204,7 @@
 		7982ABD824ADF10E00A03AC1 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
+				79C098C824AF3BC900B3894E /* ContactPicker.swift */,
 				7982ABD924ADF10E00A03AC1 /* SearchBar.swift */,
 				7982ABDA24ADF10E00A03AC1 /* AvatarView.swift */,
 				7982ABDB24ADF10E00A03AC1 /* ColorSchemes.swift */,
@@ -227,7 +228,6 @@
 			children = (
 				7982ABE324ADF10E00A03AC1 /* SingleNoteView.swift */,
 				7982ABE524ADF10E00A03AC1 /* NoteHeader.swift */,
-				79C098C824AF3BC900B3894E /* ContactPicker.swift */,
 				7982ABE624ADF10E00A03AC1 /* NoteBodyText.swift */,
 			);
 			path = "Single Note";

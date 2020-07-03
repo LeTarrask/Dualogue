@@ -19,15 +19,6 @@ struct NoteHeader: View {
     @State var contact: CNContact?
     
     @State var showPicker: Bool = false
-    
-    func loadContact() {
-        guard let contact = contact else { return }
-        self.contactName = contact.givenName + " " + contact.familyName
-        let imageData = contact.imageData
-        let thumbImageData = contact.thumbnailImageData
-        print([imageData, thumbImageData])
-        // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
-    }
         
     var body: some View {
         ZStack {
@@ -35,7 +26,11 @@ struct NoteHeader: View {
                             showPicker: $showPicker,
                             onSelectContact: { contact in
                                 self.contact = contact
-                                self.loadContact()
+                                self.contactName = contact.givenName + " " + contact.familyName
+                                let imageData = contact.imageData
+                                let thumbImageData = contact.thumbnailImageData
+                                print([imageData, thumbImageData])
+                                // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
                             }
                         )
             HStack {
