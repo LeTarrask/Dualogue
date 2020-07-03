@@ -4,13 +4,15 @@
         <attribute name="contactImage_" optional="YES" attributeType="String"/>
         <attribute name="contactName_" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageStorage" inverseName="contact" inverseEntity="ImageStorage"/>
         <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="contacts" inverseEntity="NoteStorage"/>
     </entity>
     <entity name="ImageStorage" representedClassName="ImageStorage" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="path" optional="YES" attributeType="String"/>
         <attribute name="subtitle_" optional="YES" attributeType="String"/>
         <attribute name="title_" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactStorage" inverseName="image" inverseEntity="ContactStorage"/>
         <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="images" inverseEntity="NoteStorage"/>
     </entity>
     <entity name="NoteStorage" representedClassName="NoteStorage" syncable="YES" codeGenerationType="class">
@@ -23,8 +25,8 @@
         <relationship name="images" optional="YES" toMany="YES" maxCount="5" deletionRule="Cascade" destinationEntity="ImageStorage" inverseName="note" inverseEntity="ImageStorage"/>
     </entity>
     <elements>
-        <element name="ContactStorage" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="ImageStorage" positionX="-54" positionY="27" width="128" height="118"/>
-        <element name="NoteStorage" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="ContactStorage" positionX="73.94140625" positionY="-30.125" width="128" height="118"/>
+        <element name="ImageStorage" positionX="-581.47265625" positionY="87.48046875" width="128" height="133"/>
+        <element name="NoteStorage" positionX="-322.35546875" positionY="-194.33203125" width="128" height="148"/>
     </elements>
 </model>

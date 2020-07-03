@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var context
@@ -24,18 +25,27 @@ struct SingleNoteView: View {
                 }
                 Spacer()
                 Button("Save") {
-                    // TO DO NOW: SAVE NOTES
-                    print("Lets save this note")
                     let note = NoteStorage(context: context)
                     note.title_ = title
                     note.text_ = text
                     
-                    // TO DO: there's no catch if contact is already in DB
-                    if contactName != "Contact Name" {
-                        let contact = ContactStorage(context: context)
-                        contact.contactName_ = contactName
-                        contact.contactImage_ = contactImage
-                        note.contacts = contact
+                    if contactName != "Contact Name" { // USER HAS PICKED A CONTACT
+                        
+                        // Fetch contacts in Storage with that user name
+                        let fetchedContacts = fetchContacts(entity: "ContactStorage", uniqueIdentity: contactName)
+                        
+                        // If found, adds to note
+                        if fetchedContacts.count > 0 {
+                            let chosenContact = fetchedContacts.first as! ContactStorage
+                            note.contacts = chosenContact
+                        } else {
+                            // Else, creates one and adds to note
+                            let contact = ContactStorage(context: context)
+                            contact.contactName_ = contactName
+                            contact.contactImage_ = contactImage
+                            note.contacts = contact
+                        }
+                        
                     }
                     
                     try? self.context.save()
@@ -45,6 +55,22 @@ struct SingleNoteView: View {
             NoteBodyText(text: $text, isEditing: $isEditing)
             Spacer()
         }
+    }
+    
+    func fetchContacts(entity: String, uniqueIdentity: String) -> [NSManagedObject] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entity)
+        fetchRequest.predicate = NSPredicate(format: "\("contactName_") CONTAINS[cd] %@", uniqueIdentity)
+
+        var results: [NSManagedObject] = []
+
+        do {
+            results = try context.fetch(fetchRequest)
+        }
+        catch {
+            print("error executing fetch request: \(error)")
+        }
+
+        return results
     }
 }
 

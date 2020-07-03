@@ -22,9 +22,10 @@ struct NoteHeader: View {
     
     func loadContact() {
         guard let contact = contact else { return }
-        self.contactName = contact.givenName
-        // TO DO: store contact image into system
-        // contactImage = contact.imageData
+        self.contactName = contact.givenName + " " + contact.familyName
+        let imageData = contact.imageData
+        let thumbImageData = contact.thumbnailImageData
+        
     }
         
     var body: some View {
