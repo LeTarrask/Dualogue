@@ -20,24 +20,25 @@ struct FriendListScroll: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Friends")
-                    .font(.title).bold()
+                Text("Contacts")
+                    .font(.caption).bold()
                     .foregroundColor(.main)
                 Spacer()
-            }
+            }.padding()
             
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(contacts, id: \.self) { contact in
-                        AvatarView(contactName: contact.contactName_ ?? "Contact Name", contactImage: contact.contactImage_ ?? "face", size: 60)
-                            .onTapGesture {
-                                self.selectedContact = contact.contactName_
-                                self.showingDetail.toggle()
-                            }
+                        if contact.contactName_ != nil {
+                            NavigationLink(
+                                destination: SingleContactTimeline(selectedContact: contact.contactName_!),
+                                label: {
+                                    AvatarView(contactName: contact.contactName_ ?? "Contact Name", contactImage: contact.contactImage_ ?? "face", size: 60)
+                                })
+                        }
                     }
                 }.frame(minHeight: 100)
             }
-            .sheet(isPresented: $showingDetail) {} //SingleContactTimeline(selectedContact: selectedContact) }
         }
         .background(Color.mainBG)
     }

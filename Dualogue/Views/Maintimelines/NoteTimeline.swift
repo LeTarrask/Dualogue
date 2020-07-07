@@ -16,17 +16,28 @@ struct NoteTimeline: View {
     var notes: FetchedResults<NoteStorage>
     
     var body: some View {
-        List {
-            ForEach(notes, id: \.self) { note in
-                TimelineItem(isExpanded: false,
-                             date: note.date?.toString() ?? "",
-                             title: note.title_ ?? "",
-                             contactName: note.contacts?.contactName_ ?? "",
-                             contactImage: note.contacts?.contactImage_ ?? "face",
-                             text: note.text_)
-            }.onDelete(perform: deleteNote)
-            .padding(0)
-            .listRowBackground(Color.mainBG)
+        VStack {
+            HStack {
+                Text("Dualogues")
+                    .font(.caption).bold()
+                    .foregroundColor(.main)
+                Spacer()
+            }.padding()
+            
+            SearchBar()
+            
+            List {
+                ForEach(notes, id: \.self) { note in
+                    TimelineItem(isExpanded: false,
+                                 date: note.date?.toString() ?? "",
+                                 title: note.title_ ?? "",
+                                 contactName: note.contacts?.contactName_ ?? "",
+                                 contactImage: note.contacts?.contactImage_ ?? "face",
+                                 text: note.text_)
+                }.onDelete(perform: deleteNote)
+                .padding(0)
+                .listRowBackground(Color.mainBG)
+            }
         }
     }
     

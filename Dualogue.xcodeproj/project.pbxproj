@@ -34,6 +34,7 @@
 		7982AC0224ADF10E00A03AC1 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABED24ADF10E00A03AC1 /* MainTab.swift */; };
 		7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */; };
 		7982AC0424ADF10E00A03AC1 /* FakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABF024ADF10E00A03AC1 /* FakeModel.swift */; };
+		79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0215B24AF6F0E005E2E73 /* Caroussel.swift */; };
 		79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C098C824AF3BC900B3894E /* ContactPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		7982ABED24ADF10E00A03AC1 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
 		7982ABF024ADF10E00A03AC1 /* FakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeModel.swift; sourceTree = "<group>"; };
+		79A0215B24AF6F0E005E2E73 /* Caroussel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroussel.swift; sourceTree = "<group>"; };
 		79C098C824AF3BC900B3894E /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				7982ABD924ADF10E00A03AC1 /* SearchBar.swift */,
 				7982ABDA24ADF10E00A03AC1 /* AvatarView.swift */,
 				7982ABDB24ADF10E00A03AC1 /* ColorSchemes.swift */,
+				79A0215B24AF6F0E005E2E73 /* Caroussel.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				7982ABF924ADF10E00A03AC1 /* SingleNoteView.swift in Sources */,
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
 				7982AC0424ADF10E00A03AC1 /* FakeModel.swift in Sources */,
+				79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */,
 				7982ABF224ADF10E00A03AC1 /* AvatarView.swift in Sources */,
 				7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */,
 				790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */,

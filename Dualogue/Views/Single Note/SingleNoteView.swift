@@ -11,56 +11,92 @@ import CoreData
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var context
     
-    @State var isEditing: Bool = false
+    @State var isEditing: Bool = true
     @State var title: String = "Your string"
     @State var text: String = ""
     @State var contactName: String = "Contact Name"
     @State var contactImage: String = "face"
+    @State var date = Date()
+    
+    func resetNote() {
+        isEditing = false
+        title = "Your string"
+        text = ""
+        contactName = "Contact Name"
+        contactImage = "face"
+        date = Date()
+    }
     
     var body: some View {
-        VStack {
-            HStack {
-                Button("isediting toggle") {
-                    self.isEditing.toggle()
-                }
-                Spacer()
-                Button("Save") {
-                    let note = NoteStorage(context: context)
-                    note.title_ = title
-                    note.text_ = text
-                    
-                    if contactName != "Contact Name" { // USER HAS PICKED A CONTACT
-                        
-                        // Fetch contacts in Storage with that user name
-                        let fetchedContacts = fetchContacts(entity: "ContactStorage", uniqueIdentity: contactName)
-                        
-                        // If found, adds to note
-                        if fetchedContacts.count > 0 {
-                            let chosenContact = fetchedContacts.first as! ContactStorage
-                            note.contacts = chosenContact
-                        } else {
-                            // Else, creates one and adds to note
-                            let contact = ContactStorage(context: context)
-                            contact.contactName_ = contactName
-                            contact.contactImage_ = contactImage
-                            note.contacts = contact
-                        }
-                    }
-                    try? self.context.save()
-                }
-            }
-            NoteHeader(date: "date", title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
+        Group {
+            NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
             NoteBodyText(text: $text, isEditing: $isEditing)
-            Spacer()
+            
+            GeometryReader { geometry in
+                Caroussel(numberOfImages: 3) {
+                    Image("teste1")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .clipped()
+                    Image("teste2")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .clipped()
+                    Image("teste3")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .clipped()
+                }
+            }.frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+            // TO DO: Fix all layouts with this geometry reader, setting the frames to UIScreen.main.bounds, e então ir descendo para as subviews necessárias
+        }.navigationBarItems(trailing:
+                                HStack {
+                                    if !isEditing {
+                                        Button("Edit") {}
+                                    } else {
+                                        Button("Save") { saveNote() }
+                                    }
+                                    
+                                    
+                                }
+        )
+    }
+    
+    func saveNote() {
+        let note = NoteStorage(context: context)
+        note.title_ = title
+        note.text_ = text
+        
+        if contactName != "Contact Name" { // USER HAS PICKED A CONTACT
+            
+            // Fetch contacts in Storage with that user name
+            let fetchedContacts = fetchContacts(entity: "ContactStorage", uniqueIdentity: contactName)
+            
+            // If found, adds to note
+            if fetchedContacts.count > 0 {
+                let chosenContact = fetchedContacts.first as! ContactStorage
+                note.contacts = chosenContact
+            } else {
+                // Else, creates one and adds to note
+                let contact = ContactStorage(context: context)
+                contact.contactName_ = contactName
+                contact.contactImage_ = contactImage
+                note.contacts = contact
+            }
         }
+        try? self.context.save()
+        resetNote()
     }
     
     func fetchContacts(entity: String, uniqueIdentity: String) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entity)
         fetchRequest.predicate = NSPredicate(format: "\("contactName_") CONTAINS[cd] %@", uniqueIdentity)
-
+        
         var results: [NSManagedObject] = []
-
+        
         do {
             results = try context.fetch(fetchRequest)
         }

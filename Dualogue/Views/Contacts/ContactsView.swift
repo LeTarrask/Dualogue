@@ -48,8 +48,7 @@ struct ContactsGrid: View {
                 }
             }
         }.sheet(isPresented: $showingDetail) {
-//            NewContactView()
-//                .environmentObject(model)
+            NewContactView()
         }
     }
 }

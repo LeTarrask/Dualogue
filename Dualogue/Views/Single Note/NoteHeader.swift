@@ -19,20 +19,20 @@ struct NoteHeader: View {
     @State var contact: CNContact?
     
     @State var showPicker: Bool = false
-        
+    
     var body: some View {
         ZStack {
             ContactPicker(
-                            showPicker: $showPicker,
-                            onSelectContact: { contact in
-                                self.contact = contact
-                                self.contactName = contact.givenName + " " + contact.familyName
-                                let imageData = contact.imageData
-                                let thumbImageData = contact.thumbnailImageData
-                                print([imageData, thumbImageData])
-                                // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
-                            }
-                        )
+                showPicker: $showPicker,
+                onSelectContact: { contact in
+                    self.contact = contact
+                    self.contactName = contact.givenName + " " + contact.familyName
+                    let imageData = contact.imageData
+                    let thumbImageData = contact.thumbnailImageData
+                    print([imageData, thumbImageData])
+                    // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
+                }
+            )
             HStack {
                 VStack(alignment: .leading) {
                     Text(date)
@@ -50,7 +50,7 @@ struct NoteHeader: View {
                 }, label: {
                     AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
                 })
-            
+                
             }
             .padding()
         }
