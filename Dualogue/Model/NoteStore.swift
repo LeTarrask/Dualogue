@@ -36,6 +36,8 @@ extension ContactStorage: Identifiable, Comparable {
     }
 }
 
+
+
 struct NoteSearch {
     var note: NoteStorage
     var contact: ContactStorage?

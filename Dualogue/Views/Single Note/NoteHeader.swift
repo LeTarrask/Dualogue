@@ -28,6 +28,7 @@ struct NoteHeader: View {
                     self.contact = contact
                     self.contactName = contact.givenName + " " + contact.familyName
                     
+                    // TO DO: create a static func for ImageStorage, so I can reuse this code in other parts of the app.
                     if contact.imageDataAvailable {
                         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
                         var path = paths[0]

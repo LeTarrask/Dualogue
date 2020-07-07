@@ -36,6 +36,7 @@
 		7982AC0424ADF10E00A03AC1 /* FakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABF024ADF10E00A03AC1 /* FakeModel.swift */; };
 		79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0215B24AF6F0E005E2E73 /* Caroussel.swift */; };
 		79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C098C824AF3BC900B3894E /* ContactPicker.swift */; };
+		79DACAA124B4C22E004658CA /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DACAA024B4C22E004658CA /* AddImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		7982ABF024ADF10E00A03AC1 /* FakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeModel.swift; sourceTree = "<group>"; };
 		79A0215B24AF6F0E005E2E73 /* Caroussel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroussel.swift; sourceTree = "<group>"; };
 		79C098C824AF3BC900B3894E /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
+		79DACAA024B4C22E004658CA /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				7982ABE324ADF10E00A03AC1 /* SingleNoteView.swift */,
+				79DACAA024B4C22E004658CA /* AddImageView.swift */,
 				7982ABE524ADF10E00A03AC1 /* NoteHeader.swift */,
 				7982ABE624ADF10E00A03AC1 /* NoteBodyText.swift */,
 			);
@@ -389,6 +392,7 @@
 				7982ABF924ADF10E00A03AC1 /* SingleNoteView.swift in Sources */,
 				794B477823D9E540008A65DC /* AppDelegate.swift in Sources */,
 				7982AC0424ADF10E00A03AC1 /* FakeModel.swift in Sources */,
+				79DACAA124B4C22E004658CA /* AddImageView.swift in Sources */,
 				79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */,
 				7982ABF224ADF10E00A03AC1 /* AvatarView.swift in Sources */,
 				7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */,

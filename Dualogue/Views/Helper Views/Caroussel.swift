@@ -15,7 +15,7 @@ struct Caroussel<Content: View>: View {
     
     @State private var currentIndex: Int = 0
     
-    private let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    @State private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
     init(numberOfImages: Int, @ViewBuilder content: () -> Content) {
         self.numberOfImages = numberOfImages
@@ -42,6 +42,19 @@ struct Caroussel<Content: View>: View {
                     self.currentIndex = (self.currentIndex + 1) % 3
                 }
             }
+            
+            // Play / Pause
+            HStack {
+                Spacer()
+                Button(action: { self.timer.upstream.connect().cancel() }, label: {
+                    Image(systemName: "pause.fill")
+                })
+                Button(action: {
+                    self.timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+                }, label: {
+                    Image(systemName: "play.fill")
+                })
+            }.padding(5)
             
             // Dot indicator
             HStack(spacing: 3) {

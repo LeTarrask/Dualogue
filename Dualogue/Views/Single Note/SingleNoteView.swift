@@ -17,6 +17,7 @@ struct SingleNoteView: View {
     @State var contactName: String = "Contact Name"
     @State var contactImage: String = "face"
     @State var date = Date()
+    @State var images: [String] = ["teste1", "teste2", "teste3"]
     
     func resetNote() {
         isEditing = false
@@ -25,6 +26,7 @@ struct SingleNoteView: View {
         contactName = "Contact Name"
         contactImage = "face"
         date = Date()
+        images = [String]()
     }
     
     var body: some View {
@@ -32,25 +34,11 @@ struct SingleNoteView: View {
             NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
             NoteBodyText(text: $text, isEditing: $isEditing)
             
-            GeometryReader { geometry in
-                Caroussel(numberOfImages: 3) {
-                    Image("teste1")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
-                    Image("teste2")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
-                    Image("teste3")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
-                }
-            }.frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+            if isEditing {
+                AddImageView(images: $images)
+            } else {
+                // Caroussel(numberOfImages: <#T##Int#>, content: <#T##() -> _#>)
+            }
             // TO DO: Fix all layouts with this geometry reader, setting the frames to UIScreen.main.bounds, e então ir descendo para as subviews necessárias
         }.navigationBarItems(trailing:
                                 HStack {
