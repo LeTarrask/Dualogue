@@ -27,12 +27,21 @@ struct NoteHeader: View {
                 onSelectContact: { contact in
                     self.contact = contact
                     self.contactName = contact.givenName + " " + contact.familyName
-                    let imageData = contact.imageData
-                    let thumbImageData = contact.thumbnailImageData
-                    print([imageData, thumbImageData])
-                    // sometimes dá nil, então tem q fazer um check e alterar a imagem, se houver.
-                }
-            )
+                    
+                    if contact.imageDataAvailable {
+                        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+                        var path = paths[0]
+                        self.contactImage = self.contactName + ".jpg"
+                        path.appendPathComponent(self.contactImage)
+                        if let imageData = contact.imageData {
+                            print("Image Data Found")
+                            do {
+                                print("Trying to save image")
+                                try imageData.write(to: path, options: [])
+                            } catch {
+                                print(error)
+                            }}}})
+            
             HStack {
                 VStack(alignment: .leading) {
                     Text(date)
