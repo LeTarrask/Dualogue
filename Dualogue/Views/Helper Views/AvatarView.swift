@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AvatarView: View {
     let contactName: String
-    let contactImage: String
+    var contactImage: Image = Image("face")
     let size: CGFloat
     
     var body: some View {
         VStack {
-            Image(contactImage)
+            contactImage
                 .resizable()
                 .frame(width: size, height: size)
                 .cornerRadius(size/2)
@@ -28,10 +28,29 @@ struct AvatarView: View {
                 .font(.caption)
         }
     }
-}
-
-struct AvatarView_Previews: PreviewProvider {
-    static var previews: some View {
-        AvatarView(contactName: "tarrask", contactImage: "face", size: 60)
+    
+    init(for contact: ContactStorage, size: CGFloat) {
+        self.contactName = contact.contactName_ ?? "Error loading contact"
+        self.size = size
+        if let data = contact.contactImage_ {
+            if let uiImage = UIImage(data: data) {
+                self.contactImage = Image(uiImage: uiImage)
+            }
+        }
+    }
+    
+    init(for wipContact: WipContact, size: CGFloat) {
+        self.contactName = wipContact.contactName
+        self.size = size
+        if let uiImage = wipContact.contactImage {
+            self.contactImage = Image(uiImage: uiImage)
+        }
     }
 }
+    
+    struct AvatarView_Previews: PreviewProvider {
+        static var previews: some View {
+            let wipContact = WipContact(contactName: "Tarrask", contactImageName: "face", contactImage: nil)
+            return AvatarView(for: wipContact, size: 60)
+        }
+    }

@@ -22,7 +22,7 @@ struct NewContactView: View {
             Button(action: {
                 self.showContactPicker.toggle()
             }, label: {
-                AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
+                AvatarView(for: WipContact(contactName: contactName, contactImageName: contactImage, contactImage: nil), size: 60)
             })
 
             Button(action: {

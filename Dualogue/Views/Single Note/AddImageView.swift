@@ -15,7 +15,7 @@ struct AddImageView: View {
     
     var body: some View {
         ScrollView {
-            LazyHGrid(rows: rows, spacing: 10) {
+            LazyHGrid(rows: rows, alignment: .center, spacing: 10) {
                 AddImageButton()
                     .onTapGesture {
                         // call image picker, add selected image to array images
@@ -29,7 +29,7 @@ struct AddImageView: View {
                         .cornerRadius(5)
                 }
             }
-        }.frame(height: 110, alignment: .leading)
+        }.frame(height: 110)
     }
 }
 

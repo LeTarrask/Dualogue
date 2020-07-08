@@ -6,28 +6,25 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct SingleContactTimeline: View {
-    @Environment(\.managedObjectContext) var context
+    var selectedContact: ContactStorage
     
-    var selectedContact: String
-
     var body: some View {
         VStack {
             HStack(alignment: .center) {
-                AvatarView(contactName: selectedContact, contactImage: "face", size: 60)
+                AvatarView(for: selectedContact, size: 60)
                 VStack {
                     Text("20")
                     Text("notes")
                 }
             }
             NavigationLink(
-                destination: SingleNoteView(contactName: selectedContact),
+                destination: SingleNoteView(),
                 label: {
                     Text("Create note")
                 })
-                
+
 
             SearchBar()
 

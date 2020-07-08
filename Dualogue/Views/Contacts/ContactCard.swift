@@ -8,21 +8,32 @@
 import SwiftUI
 
 struct ContactCard: View {
-    var image: String
+    var contact: ContactStorage
+    var image: Image = Image("face")
     var name: String
+    
+    init(for contact: ContactStorage) {
+        self.contact = contact
+        self.name = contact.contactName_ ?? "Error Loading Name"
+        if let data = contact.contactImage_ {
+            if let uiImage = UIImage(data: data) {
+                self.image = Image(uiImage: uiImage)
+            } 
+        }
+    }
         
     var body: some View {
         VStack {
             NavigationLink(
-                destination: SingleContactTimeline(selectedContact: name),
+                destination: SingleContactTimeline(selectedContact: contact),
                 label: {
-                    AvatarView(contactName: name, contactImage: image, size: 60)
+                    AvatarView(for: contact, size: 60)
                         .foregroundColor(.white)
                         .padding()
                 })
 
             NavigationLink(
-                destination: SingleNoteView(contactName: name, contactImage: image),
+                destination: SingleNoteView(),
                 label: {
                     Text("CREATE NOTE")
                         .fontWeight(.bold)

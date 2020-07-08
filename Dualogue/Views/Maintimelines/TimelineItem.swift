@@ -6,18 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TimelineItem: View {
     @State var isExpanded: Bool = false
     var date = "date"
     var title: String
-    var contactName: String = ""
-    var contactImage: String = "face"
     var text: String?
+    var contact: ContactStorage?
     
     var body: some View {
         Group {
-            NoteTimelineHeader(date: date, title: title, contactName: contactName, contactImage: contactImage)
+            NoteTimelineHeader(date: date, title: title, contact: contact)
 
             if isExpanded {
                 NoteBody(text: text)
@@ -30,8 +30,7 @@ struct TimelineItem: View {
 struct NoteTimelineHeader: View {
     var date: String
     var title: String
-    var contactName: String = ""
-    var contactImage: String = "face"
+    var contact: ContactStorage?
 
         
     var body: some View {
@@ -43,7 +42,9 @@ struct NoteTimelineHeader: View {
                 Text(title)
             }
             Spacer()
-            AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
+            if contact != nil {
+                AvatarView(for: contact!, size: 60)
+            }
         }.padding()
     }
 }
@@ -55,9 +56,4 @@ struct NoteBody: View {
         Text(text ?? "")
             .lineLimit(nil)
     }
-}
-
-struct TimelineItem_Previews: PreviewProvider {
-    static var previews: some View {
-        TimelineItem(title: "test") }
 }

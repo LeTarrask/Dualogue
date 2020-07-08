@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct NotelistView: View {
-    @Environment(\.managedObjectContext) var context
-        
     var body: some View {
         VStack {
             FriendListScroll()
             
             NoteTimeline()
-        }.environment(\.managedObjectContext, self.context)
+        }
     }
 }
 

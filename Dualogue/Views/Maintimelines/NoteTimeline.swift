@@ -9,11 +9,7 @@ import SwiftUI
 import CoreData
 
 struct NoteTimeline: View {
-    @Environment(\.managedObjectContext) var context
-    
-    @FetchRequest(entity: NoteStorage.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.title_, ascending: true),])
-    var notes: FetchedResults<NoteStorage>
+    @EnvironmentObject var notesModel: NotesViewModel
     
     var body: some View {
         VStack {
@@ -27,13 +23,12 @@ struct NoteTimeline: View {
             SearchBar()
             
             List {
-                ForEach(notes, id: \.self) { note in
+                ForEach(notesModel.notes, id: \.self) { note in
                     TimelineItem(isExpanded: false,
                                  date: note.date?.toString() ?? "",
                                  title: note.title_ ?? "",
-                                 contactName: note.contacts?.contactName_ ?? "",
-                                 contactImage: note.contacts?.contactImage_ ?? "face",
-                                 text: note.text_)
+                                 text: note.text_,
+                                 contact: note.contacts)
                 }.onDelete(perform: deleteNote)
                 .padding(0)
                 .listRowBackground(Color.mainBG)
@@ -42,14 +37,14 @@ struct NoteTimeline: View {
     }
     
     func deleteNote(at offsets: IndexSet) {
-        for offset in offsets {
-            // find this note in our fetch request
-            let note = notes[offset]
-            
-            // delete it from the context
-            context.delete(note)
-        }
-        try? context.save()
+//        for offset in offsets {
+//            // find this note in our fetch request
+//            let note = notesModel.notes[offset]
+//            
+//            // delete it from the context
+//            context.delete(note) // TO DO: test: should delete all the related images
+//        }
+//        try? context.save()
     }
 }
 

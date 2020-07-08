@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct SingleNoteView: View {
-    @Environment(\.managedObjectContext) var context
-    
+    @EnvironmentObject var notesModel: NotesViewModel
+        
     @State var isEditing: Bool = true
     @State var title: String = "Your string"
     @State var text: String = ""
@@ -31,7 +30,7 @@ struct SingleNoteView: View {
     
     var body: some View {
         Group {
-            NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
+            //NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
             NoteBodyText(text: $text, isEditing: $isEditing)
             
             if isEditing {
@@ -54,44 +53,7 @@ struct SingleNoteView: View {
     }
     
     func saveNote() {
-        let note = NoteStorage(context: context)
-        note.title_ = title
-        note.text_ = text
-        
-        if contactName != "Contact Name" { // USER HAS PICKED A CONTACT
-            
-            // Fetch contacts in Storage with that user name
-            let fetchedContacts = fetchContacts(entity: "ContactStorage", uniqueIdentity: contactName)
-            
-            // If found, adds to note
-            if fetchedContacts.count > 0 {
-                let chosenContact = fetchedContacts.first as! ContactStorage
-                note.contacts = chosenContact
-            } else {
-                // Else, creates one and adds to note
-                let contact = ContactStorage(context: context)
-                contact.contactName_ = contactName
-                contact.contactImage_ = contactImage
-                note.contacts = contact
-            }
-        }
-        try? self.context.save()
-        resetNote()
-    }
-    
-    func fetchContacts(entity: String, uniqueIdentity: String) -> [NSManagedObject] {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entity)
-        fetchRequest.predicate = NSPredicate(format: "\("contactName_") CONTAINS[cd] %@", uniqueIdentity)
-        
-        var results: [NSManagedObject] = []
-        
-        do {
-            results = try context.fetch(fetchRequest)
-        }
-        catch {
-            print("error executing fetch request: \(error)")
-        }
-        return results
+        notesModel.saveNote()
     }
 }
 

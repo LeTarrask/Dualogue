@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct MainTab: View {
-    @Environment(\.managedObjectContext) var context
-    
     @State private var selection = 0
     
     @State var createNote: Bool = false
-    
-    // var model = FakeModel() OLD CODE FOR TESTING
-    
+        
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {
@@ -38,16 +34,12 @@ struct MainTab: View {
                                         label: {
                                             Image(systemName: "plus")
                                         }))
-            .environment(\.managedObjectContext, self.context)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         return MainTab()
-            .environment(\.managedObjectContext, context)
     }
 }

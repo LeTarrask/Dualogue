@@ -14,7 +14,8 @@ struct NoteHeader: View {
     @Binding var isEditing: Bool
     
     @Binding var contactName: String
-    @Binding var contactImage: String
+    @Binding var contactImageName: String
+    var imageData: Data?
     
     @State var contact: CNContact?
     
@@ -32,8 +33,8 @@ struct NoteHeader: View {
                     if contact.imageDataAvailable {
                         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
                         var path = paths[0]
-                        self.contactImage = self.contactName + ".jpg"
-                        path.appendPathComponent(self.contactImage)
+                        self.contactImageName = self.contactName + ".jpg"
+                        path.appendPathComponent(self.contactImageName)
                         if let imageData = contact.imageData {
                             print("Image Data Found")
                             do {
@@ -58,7 +59,7 @@ struct NoteHeader: View {
                 Button(action: {
                     self.showPicker.toggle()
                 }, label: {
-                    AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
+                    AvatarView(for: WipContact(contactName: contactName, contactImageName: contactImageName, contactImage: nil), size: 60)
                 })
                 
             }

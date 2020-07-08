@@ -30,11 +30,11 @@ struct FriendListScroll: View {
                 HStack {
                     ForEach(contacts, id: \.self) { contact in
                         if contact.contactName_ != nil {
-                            NavigationLink(
-                                destination: SingleContactTimeline(selectedContact: contact.contactName_!),
-                                label: {
-                                    AvatarView(contactName: contact.contactName_ ?? "Contact Name", contactImage: contact.contactImage_ ?? "face", size: 60)
-                                })
+//                            NavigationLink(
+//                                destination: SingleContactTimeline(selectedContact: contact, image: nil, name: ""),
+//                                label: {
+//                                    AvatarView(for: contact)
+//                                })
                         }
                     }
                 }.frame(minHeight: 100)
