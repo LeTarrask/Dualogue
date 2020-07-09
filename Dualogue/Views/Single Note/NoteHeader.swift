@@ -9,16 +9,14 @@ import SwiftUI
 import ContactsUI
 
 struct NoteHeader: View {
+    @ObservedObject var selectedContact: WipContact
+    
     var date: String
     @Binding var title: String
     @Binding var isEditing: Bool
     
     @Binding var contactName: String
-    @Binding var contactImageName: String
-    var imageData: Data?
-    
-    @State var contact: CNContact?
-    
+        
     @State var showPicker: Bool = false
     
     var body: some View {
@@ -26,23 +24,13 @@ struct NoteHeader: View {
             ContactPicker(
                 showPicker: $showPicker,
                 onSelectContact: { contact in
-                    self.contact = contact
                     self.contactName = contact.givenName + " " + contact.familyName
                     
-                    // TO DO: create a static func for ImageStorage, so I can reuse this code in other parts of the app.
                     if contact.imageDataAvailable {
-                        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                        var path = paths[0]
-                        self.contactImageName = self.contactName + ".jpg"
-                        path.appendPathComponent(self.contactImageName)
-                        if let imageData = contact.imageData {
-                            print("Image Data Found")
-                            do {
-                                print("Trying to save image")
-                                try imageData.write(to: path, options: [])
-                            } catch {
-                                print(error)
-                            }}}})
+                        selectedContact.contactName = contactName
+                        selectedContact.contactImage = UIImage(data: contact.imageData!)
+
+                    }})
             
             HStack {
                 VStack(alignment: .leading) {
@@ -59,7 +47,7 @@ struct NoteHeader: View {
                 Button(action: {
                     self.showPicker.toggle()
                 }, label: {
-                    AvatarView(for: WipContact(contactName: contactName, contactImageName: contactImageName, contactImage: nil), size: 60)
+                    AvatarView(for: selectedContact, size: 60)
                 })
                 
             }

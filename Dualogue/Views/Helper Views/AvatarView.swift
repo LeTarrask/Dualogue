@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AvatarView: View {
     let contactName: String
-    var contactImage: Image = Image("face")
+    var contactImage: UIImage = UIImage()
     let size: CGFloat
     
     var body: some View {
         VStack {
-            contactImage
+            Image(uiImage: contactImage)
                 .resizable()
                 .frame(width: size, height: size)
                 .cornerRadius(size/2)
@@ -34,7 +34,7 @@ struct AvatarView: View {
         self.size = size
         if let data = contact.contactImage_ {
             if let uiImage = UIImage(data: data) {
-                self.contactImage = Image(uiImage: uiImage)
+                self.contactImage = uiImage
             }
         }
     }
@@ -43,7 +43,7 @@ struct AvatarView: View {
         self.contactName = wipContact.contactName
         self.size = size
         if let uiImage = wipContact.contactImage {
-            self.contactImage = Image(uiImage: uiImage)
+            self.contactImage = uiImage
         }
     }
 }

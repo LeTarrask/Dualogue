@@ -37,6 +37,9 @@
 		7982AC0224ADF10E00A03AC1 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABED24ADF10E00A03AC1 /* MainTab.swift */; };
 		7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */; };
 		79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0215B24AF6F0E005E2E73 /* Caroussel.swift */; };
+		79A66FC124B72A58006A2BCC /* SearchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A66FC024B72A58006A2BCC /* SearchStorage.swift */; };
+		79A66FC324B73885006A2BCC /* NewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A66FC224B73884006A2BCC /* NewNoteViewModel.swift */; };
+		79A66FC524B7444F006A2BCC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A66FC424B7444F006A2BCC /* ImagePicker.swift */; };
 		79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C098C824AF3BC900B3894E /* ContactPicker.swift */; };
 		79DACAA124B4C22E004658CA /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DACAA024B4C22E004658CA /* AddImageView.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +98,9 @@
 		7982ABED24ADF10E00A03AC1 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		7982ABEF24ADF10E00A03AC1 /* Date Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
 		79A0215B24AF6F0E005E2E73 /* Caroussel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroussel.swift; sourceTree = "<group>"; };
+		79A66FC024B72A58006A2BCC /* SearchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStorage.swift; sourceTree = "<group>"; };
+		79A66FC224B73884006A2BCC /* NewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewModel.swift; sourceTree = "<group>"; };
+		79A66FC424B7444F006A2BCC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		79C098C824AF3BC900B3894E /* ContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPicker.swift; sourceTree = "<group>"; };
 		79DACAA024B4C22E004658CA /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,8 +196,9 @@
 		7954AF2323E06E0B00BF1294 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				790FADA7241909E300DC0C6D /* NoteStore.swift */,
 				790CB1D424B5D9A300481B32 /* WipStore.swift */,
+				790FADA7241909E300DC0C6D /* NoteStore.swift */,
+				79A66FC024B72A58006A2BCC /* SearchStorage.swift */,
 				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
 			);
 			path = Model;
@@ -218,6 +225,7 @@
 				7982ABDA24ADF10E00A03AC1 /* AvatarView.swift */,
 				7982ABDB24ADF10E00A03AC1 /* ColorSchemes.swift */,
 				79A0215B24AF6F0E005E2E73 /* Caroussel.swift */,
+				79A66FC424B7444F006A2BCC /* ImagePicker.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				790CB1D024B5C13700481B32 /* NotesViewModel.swift */,
+				79A66FC224B73884006A2BCC /* NewNoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 				7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */,
 				790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */,
 				7982ABF324ADF10E00A03AC1 /* ColorSchemes.swift in Sources */,
+				79A66FC124B72A58006A2BCC /* SearchStorage.swift in Sources */,
 				7982ABF624ADF10E00A03AC1 /* NewContactView.swift in Sources */,
 				7982AC0124ADF10E00A03AC1 /* TimelineItem.swift in Sources */,
 				7982ABF824ADF10E00A03AC1 /* SingleContactTimeline.swift in Sources */,
@@ -429,6 +439,8 @@
 				7982ABF524ADF10E00A03AC1 /* ContactCard.swift in Sources */,
 				7982ABF424ADF10E00A03AC1 /* ContactsView.swift in Sources */,
 				794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */,
+				79A66FC524B7444F006A2BCC /* ImagePicker.swift in Sources */,
+				79A66FC324B73885006A2BCC /* NewNoteViewModel.swift in Sources */,
 				7982ABF124ADF10E00A03AC1 /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,19 +49,3 @@ extension ContactStorage: Identifiable, Comparable {
     }
 }
 
-struct NoteSearch {
-    var note: NoteStorage
-    var contact: ContactStorage?
-}
-
-extension NoteSearch {
-    var predicate: NSPredicate {
-        var format = "title_ = %@"
-        var args: [NSManagedObject] = [note] // args could be [Any] if needed
-        if contact != nil {
-            format += " and contacts = %@"
-            args.append(contact!)
-        }
-        return NSPredicate(format: format, argumentArray: args)
-    }
-}

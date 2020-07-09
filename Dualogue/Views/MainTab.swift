@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-struct MainTab: View {
-    @Environment(\.managedObjectContext) var context
-    
-    @EnvironmentObject var notesModel: NotesViewModel
-    
+struct MainTab: View {   
     @State private var selection = 0
             
     var body: some View {

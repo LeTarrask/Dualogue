@@ -11,6 +11,8 @@ import SwiftUI
 
 class NotesViewModel: ObservableObject {
     @Environment(\.managedObjectContext) var context
+       
+    @Published var fetchedContacts = [ContactStorage]()
     
     // fetch all notes from CD
     @FetchRequest(entity: NoteStorage.entity(),
@@ -18,20 +20,24 @@ class NotesViewModel: ObservableObject {
     var fetchedNotes: FetchedResults<NoteStorage>
     
     // fecth all contacts from CD
-    @FetchRequest(entity: ContactStorage.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true),])
-    var fetchedContacts: FetchedResults<ContactStorage>
+//    @FetchRequest(entity: ContactStorage.entity(),
+//                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true),])
+//    var fetchedContacts: FetchedResults<ContactStorage>
     
     @Published var selectedContact: ContactStorage?
     
+    @Published var wipNote: WipNote?
+    
+    @Published var wipImages = [WipImage]()
+    
     // MARK: - store notes on core data
     func saveNote(wipNote: WipNote) {
-        let note = NoteStorage(context: context)
+        let note = NoteStorage(context: self.context)
         note.title_ = wipNote.title
         note.text_ = wipNote.text
-        print(note)
+        
         // USER HAS PICKED A CONTACT
-        if let wipContact = wipNote.contacts?.first {
+        if let wipContact = wipNote.contact {
             // Fetch contacts in Storage with that user name
             let fetchedContacts = fetchStorage(entity: "ContactStorage", searchParameter: "contactName_", uniqueIdentity: wipContact.contactName)
             
@@ -59,11 +65,23 @@ class NotesViewModel: ObservableObject {
                 note.images?.adding(image) // adding to the NSSet. Not tested yet. Doc here: https://developer.apple.com/documentation/foundation/nsset
             }
         }
-        print(note)
+
         // Store Changes in Core Data
-        try? self.context.save()
+        do {
+            try self.context.save()
+        } catch {
+            print("Couldn't save in Core Data")
+        }
     }
     
+    // MARK: - Remove info from Core Data
+    // delete notes on core data
+    func remove(note: NoteStorage) {
+        context.delete(note)
+    }
+    
+    
+    // MARK: - Fetch & Filter info from Core Data
     func fetchStorage(entity: String, searchParameter: String, uniqueIdentity: String) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entity)
         fetchRequest.predicate = NSPredicate(format: "\(searchParameter) CONTAINS[cd] %@", uniqueIdentity)
@@ -78,14 +96,9 @@ class NotesViewModel: ObservableObject {
         }
         return results
     }
-    
-    
-    // delete notes on core data
-    func remove(note: NoteStorage) {
-        context.delete(note)
-    }
 
     // filter notes according to user, title or UUID
     
+    // MARK: - Edit info from Storage
 }
 

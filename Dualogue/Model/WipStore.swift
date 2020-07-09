@@ -14,31 +14,35 @@ import CoreData
 class WipNote {
     var title: String
     var text: String
-    var contacts: [WipContact]?
+    var contact: WipContact?
     var images: [WipImage]?
     
-    init(title: String, text: String, contacts: [WipContact]?, images: [WipImage]?) {
+    init(title: String, text: String, contact: WipContact?, images: [WipImage]?) {
         self.title = title
         self.text = text
-        self.contacts = contacts
+        self.contact = contact
         self.images = images
     }
     
-    init(from noteStorage: NoteStorage) {
+    init?(from noteStorage: NoteStorage) {
         self.title = noteStorage.title_ ?? ""
         self.text = noteStorage.text_ ?? ""
-        self.contacts = [WipContact]()
+        self.contact = nil
         self.images = [WipImage]()
-//        if noteStorage.contacts != nil {
-//
-//        }
-//        if noteStorage.images != nil {
-//
-//        }
+        if noteStorage.contacts != nil {
+            guard let wipContact = WipContact(from: noteStorage.contacts!) else { return nil }
+            self.contact? = wipContact
+        }
+        if noteStorage.images != nil {
+            for image in noteStorage.images! {
+                guard let wipImage = WipImage(from: image as! ImageStorage) else  { return nil }
+                self.images?.append(wipImage)
+            }
+        }
     }
 }
 
-class WipContact {
+class WipContact: ObservableObject {
     var contactName: String
     var contactImageName: String?
     var contactImage: UIImage?

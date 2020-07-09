@@ -9,7 +9,17 @@
 import SwiftUI
 
 struct AddImageView: View {
-    @Binding var images: [String]
+    @ObservedObject var imageCollection: ImageCollection
+    
+    @State var showImagePicker: Bool = false
+    
+    var images: [UIImage] {
+        var array = [UIImage]()
+        for imageModel in imageCollection.images {
+            array.append(imageModel.imageData)
+        }
+        return array
+    }
     
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
     
@@ -18,11 +28,11 @@ struct AddImageView: View {
             LazyHGrid(rows: rows, alignment: .center, spacing: 10) {
                 AddImageButton()
                     .onTapGesture {
-                        // call image picker, add selected image to array images
-                        // https://developer.apple.com/videos/play/wwdc2020/10652
+                        // call image picker
+                        self.showImagePicker.toggle()
                     }
                 ForEach(images, id: \.self) { image in
-                    Image(image)
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100, alignment: .center)
@@ -30,6 +40,13 @@ struct AddImageView: View {
                 }
             }
         }.frame(height: 110)
+        .sheet(isPresented: $showImagePicker, content: {
+            ImagePickerView(sourceType: .photoLibrary, onImagePicked: { image in
+                // add selected image to array images
+                let newImage = NewImage(imageData: image, imageTitle: "", imageText: "")
+                self.imageCollection.images.append(newImage)
+            })
+        })
     }
 }
 
@@ -39,11 +56,5 @@ struct AddImageButton: View {
         Color.blue
             .frame(width: 100, height: 100, alignment: .center)
             .cornerRadius(5)
-    }
-}
-
-struct AddImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddImageView(images: .constant(["teste1", "teste2", "teste3"]))
     }
 }

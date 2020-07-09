@@ -9,8 +9,12 @@ import SwiftUI
 import CoreData
 
 struct NoteTimeline: View {
-    @EnvironmentObject var notesModel: NotesViewModel
+    @Environment(\.managedObjectContext) var context
     
+    @FetchRequest(entity: NoteStorage.entity(),
+                  sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.title_, ascending: true)])
+    var fetchedNotes: FetchedResults<NoteStorage>
+       
     var body: some View {
         VStack {
             HStack {
@@ -23,7 +27,7 @@ struct NoteTimeline: View {
             SearchBar()
             
             List {
-                ForEach(notesModel.fetchedNotes, id: \.id) { note in
+                ForEach(fetchedNotes, id: \.id) { note in
                     TimelineItem(isExpanded: false,
                                  date: note.date?.toString() ?? "",
                                  title: note.title_ ?? "",
@@ -39,10 +43,16 @@ struct NoteTimeline: View {
     func deleteNote(at offsets: IndexSet) {
         for offset in offsets {
             // find this note in our fetch request
-            let note = notesModel.fetchedNotes[offset]
+            let note = fetchedNotes[offset]
             
             // delete it from the context
-            self.notesModel.remove(note: note) // TO DO: test: should delete all the related images
+            context.delete(note) // TO DO: test: should delete all the related images
+            
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
         }
     }
 }
