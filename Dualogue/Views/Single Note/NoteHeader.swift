@@ -9,14 +9,12 @@ import SwiftUI
 import ContactsUI
 
 struct NoteHeader: View {
-    @ObservedObject var selectedContact: WipContact
+    @ObservedObject var contactSelector: ContactSelector
     
     var date: String
     @Binding var title: String
     @Binding var isEditing: Bool
-    
-    @Binding var contactName: String
-        
+            
     @State var showPicker: Bool = false
     
     var body: some View {
@@ -24,12 +22,10 @@ struct NoteHeader: View {
             ContactPicker(
                 showPicker: $showPicker,
                 onSelectContact: { contact in
-                    self.contactName = contact.givenName + " " + contact.familyName
+                    contactSelector.contact.contactName = contact.givenName + " " + contact.familyName
                     
                     if contact.imageDataAvailable {
-                        selectedContact.contactName = contactName
-                        selectedContact.contactImage = UIImage(data: contact.imageData!)
-
+                        contactSelector.contact.contactImage = UIImage(data: contact.imageData!)
                     }})
             
             HStack {
@@ -47,7 +43,7 @@ struct NoteHeader: View {
                 Button(action: {
                     self.showPicker.toggle()
                 }, label: {
-                    AvatarView(for: selectedContact, size: 60)
+                    AvatarView(for: contactSelector.contact, size: 60)
                 })
                 
             }

@@ -42,29 +42,7 @@ class WipNote {
     }
 }
 
-class WipContact: ObservableObject {
-    var contactName: String
-    var contactImageName: String?
-    var contactImage: UIImage?
-    
-    init(contactName: String, contactImageName: String?, contactImage: UIImage?){
-        self.contactName = contactName
-        self.contactImageName = contactImageName
-        self.contactImage = contactImage
-    }
-    
-    init?(from contactStorage: ContactStorage) {
-        if (contactStorage.contactName_ != nil) {
-            self.contactName = contactStorage.contactName_!
-        } else { return nil }
-        if let name = contactStorage.contactName_ {
-            self.contactImageName =  name + ".jpg"
-        }
-        if let imageData = contactStorage.contactImage_ {
-            self.contactImage = UIImage(data: imageData)
-        }
-    }
-}
+
 
 class WipImage {
     var imageData: UIImage
@@ -88,6 +66,30 @@ class WipImage {
         
         if imageStorage.subtitle_ != nil {
             self.imageText = imageStorage.subtitle_
+        }
+    }
+}
+
+class WipContact {
+    var contactName: String
+    var contactImageName: String?
+    var contactImage: UIImage?
+    
+    init(contactName: String, contactImageName: String?, contactImage: UIImage?){
+        self.contactName = contactName
+        self.contactImageName = contactImageName
+        self.contactImage = contactImage
+    }
+    
+    init?(from contactStorage: ContactStorage) {
+        if (contactStorage.contactName_ != nil) {
+            self.contactName = contactStorage.contactName_!
+        } else { return nil }
+        if let name = contactStorage.contactName_ {
+            self.contactImageName =  name + ".jpg"
+        }
+        if let imageData = contactStorage.contactImage_ {
+            self.contactImage = UIImage(data: imageData)
         }
     }
 }

@@ -13,22 +13,18 @@ struct SingleNoteView: View {
     
     @ObservedObject var imageCollection = ImageCollection()
     
-    @ObservedObject var selectedContact = WipContact(contactName: "Contact Name", contactImageName: "face", contactImage: nil)
-        
+    @ObservedObject var selectedContact = ContactSelector()
+    
     @State var isEditing: Bool = true
     @State var title: String = "Your string"
     @State var text: String = ""
-    @State var contactName: String = "Contact Name"
-    @State var contactImage: String = "face"
     @State var date = Date()
-    
-    let objectWillChange = ObservableObjectPublisher()
         
     var body: some View {
         Group {
             // here i can test the image loading part: if it adds to contact and everything else, instead of state vars
             // or I can just have an array of images sent to AddImageView, and just in this file, I use the newNoteManager
-            NoteHeader(selectedContact: selectedContact, date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName)
+            NoteHeader(contactSelector: selectedContact, date: date.toString(), title: $title, isEditing: $isEditing)
             NoteBodyText(text: $text, isEditing: $isEditing)
             
             if isEditing {
@@ -59,18 +55,26 @@ struct SingleNoteView: View {
         noteStore.date = date
         
         // Process all images in temp storage
+        let imageSet = NSSet(array: [])
         for image in imageCollection.images {
             print(image)
             let imageStore = ImageStorage(context: context)
             imageStore.data = image.imageData.pngData()
-            noteStore.images?.adding(imageStore)
+            imageSet.adding(imageStore)
         }
         
-        // Process contact
-        let contactStore = ContactStorage(context: context)
+        noteStore.images = imageSet
         
-        contactStore.contactImage_ = selectedContact.contactImage?.pngData()
-        contactStore.contactName_ = selectedContact.contactName
+        // Process contact
+        if selectedContact.contact.contactName != "Contact Name" {
+            // TO DO: Should test if contact already exists
+            let contactStore = ContactStorage(context: context)
+            
+            contactStore.contactImage_ = selectedContact.contact.contactImage?.pngData()
+            contactStore.contactName_ = selectedContact.contact.contactName
+            
+            noteStore.contacts = contactStore
+        }
         
         do {
             try context.save()
@@ -84,17 +88,15 @@ struct SingleNoteView: View {
         isEditing = true
         title = "Your string"
         text = ""
-        contactName = "Contact Name"
-        contactImage = "face"
         date = Date()
         
+        self.selectedContact.reset()
         self.imageCollection.reset()
     }
 }
 
 struct SingleNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        let imageCollection = ImageCollection()
-        return SingleNoteView(imageCollection: imageCollection)
+        SingleNoteView()
     }
 }

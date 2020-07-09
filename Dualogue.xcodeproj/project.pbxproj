@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		790CB1D124B5C13700481B32 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CB1D024B5C13700481B32 /* NotesViewModel.swift */; };
 		790CB1D324B5D8F500481B32 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CB1D224B5D8F500481B32 /* UIImage.swift */; };
 		790CB1D524B5D9A300481B32 /* WipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CB1D424B5D9A300481B32 /* WipStore.swift */; };
 		790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FADA7241909E300DC0C6D /* NoteStore.swift */; };
+		79326CDC24B7745F0004290F /* ContactSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79326CDB24B7745F0004290F /* ContactSelector.swift */; };
 		794B477823D9E540008A65DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B477723D9E540008A65DC /* AppDelegate.swift */; };
 		794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B477923D9E540008A65DC /* SceneDelegate.swift */; };
 		794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */; };
@@ -62,10 +62,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		790CB1D024B5C13700481B32 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		790CB1D224B5D8F500481B32 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		790CB1D424B5D9A300481B32 /* WipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipStore.swift; sourceTree = "<group>"; };
 		790FADA7241909E300DC0C6D /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
+		79326CDB24B7745F0004290F /* ContactSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSelector.swift; sourceTree = "<group>"; };
 		794B477423D9E540008A65DC /* Dualogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dualogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794B477723D9E540008A65DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794B477923D9E540008A65DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 		79A66FBF24B7245F006A2BCC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				790CB1D024B5C13700481B32 /* NotesViewModel.swift */,
 				79A66FC224B73884006A2BCC /* NewNoteViewModel.swift */,
+				79326CDB24B7745F0004290F /* ContactSelector.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -417,6 +417,7 @@
 				79DACAA124B4C22E004658CA /* AddImageView.swift in Sources */,
 				79A0215C24AF6F0E005E2E73 /* Caroussel.swift in Sources */,
 				7982ABF224ADF10E00A03AC1 /* AvatarView.swift in Sources */,
+				79326CDC24B7745F0004290F /* ContactSelector.swift in Sources */,
 				790CB1D324B5D8F500481B32 /* UIImage.swift in Sources */,
 				7982AC0324ADF10E00A03AC1 /* Date Extensions.swift in Sources */,
 				790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */,
@@ -429,7 +430,6 @@
 				7982AC0024ADF10E00A03AC1 /* FriendListScroll.swift in Sources */,
 				7982ABFF24ADF10E00A03AC1 /* NoteTimeline.swift in Sources */,
 				7982ABFD24ADF10E00A03AC1 /* Loading.swift in Sources */,
-				790CB1D124B5C13700481B32 /* NotesViewModel.swift in Sources */,
 				7982ABFE24ADF10E00A03AC1 /* NotelistView.swift in Sources */,
 				79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */,
 				790CB1D524B5D9A300481B32 /* WipStore.swift in Sources */,
