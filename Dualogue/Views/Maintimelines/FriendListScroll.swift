@@ -9,14 +9,14 @@ import SwiftUI
 import CoreData
 
 struct FriendListScroll: View {
+    @EnvironmentObject var notesModel: NotesViewModel
+    
     @FetchRequest(entity: ContactStorage.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true),])
-    var contacts: FetchedResults<ContactStorage>
+    var fetchedContacts: FetchedResults<ContactStorage>
     
     @State var showingDetail = false
-    
-    @State var selectedContact: String?
-    
+        
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -28,14 +28,12 @@ struct FriendListScroll: View {
             
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(contacts, id: \.self) { contact in
-                        if contact.contactName_ != nil {
-//                            NavigationLink(
-//                                destination: SingleContactTimeline(selectedContact: contact, image: nil, name: ""),
-//                                label: {
-//                                    AvatarView(for: contact)
-//                                })
-                        }
+                    ForEach(fetchedContacts, id: \.self) { contact in
+//                        NavigationLink(destination: {
+//                            Text(contact) //SingleContactTimeline(selectedContact: contact as ContactStorage)
+//                        }) {
+//                            AvatarView(for: contact, size: 60)
+//                        }
                     }
                 }.frame(minHeight: 100)
             }

@@ -23,7 +23,7 @@ struct NoteTimeline: View {
             SearchBar()
             
             List {
-                ForEach(notesModel.notes, id: \.self) { note in
+                ForEach(notesModel.fetchedNotes, id: \.id) { note in
                     TimelineItem(isExpanded: false,
                                  date: note.date?.toString() ?? "",
                                  title: note.title_ ?? "",
@@ -37,14 +37,13 @@ struct NoteTimeline: View {
     }
     
     func deleteNote(at offsets: IndexSet) {
-//        for offset in offsets {
-//            // find this note in our fetch request
-//            let note = notesModel.notes[offset]
-//            
-//            // delete it from the context
-//            context.delete(note) // TO DO: test: should delete all the related images
-//        }
-//        try? context.save()
+        for offset in offsets {
+            // find this note in our fetch request
+            let note = notesModel.fetchedNotes[offset]
+            
+            // delete it from the context
+            self.notesModel.remove(note: note) // TO DO: test: should delete all the related images
+        }
     }
 }
 

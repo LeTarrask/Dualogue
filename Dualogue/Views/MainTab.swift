@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MainTab: View {
-    @State private var selection = 0
+    @Environment(\.managedObjectContext) var context
     
-    @State var createNote: Bool = false
-        
+    @EnvironmentObject var notesModel: NotesViewModel
+    
+    @State private var selection = 0
+            
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {

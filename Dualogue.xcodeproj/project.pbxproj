@@ -150,6 +150,7 @@
 				794B477723D9E540008A65DC /* AppDelegate.swift */,
 				794B477923D9E540008A65DC /* SceneDelegate.swift */,
 				7982ABD724ADF10E00A03AC1 /* Views */,
+				79A66FBF24B7245F006A2BCC /* ViewModel */,
 				7954AF2323E06E0B00BF1294 /* Model */,
 				7982ABEE24ADF10E00A03AC1 /* Helper Extensions */,
 				794B478023D9E549008A65DC /* Assets.xcassets */,
@@ -189,7 +190,6 @@
 		7954AF2323E06E0B00BF1294 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				790CB1D024B5C13700481B32 /* NotesViewModel.swift */,
 				790FADA7241909E300DC0C6D /* NoteStore.swift */,
 				790CB1D424B5D9A300481B32 /* WipStore.swift */,
 				794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */,
@@ -262,6 +262,14 @@
 				790CB1D224B5D8F500481B32 /* UIImage.swift */,
 			);
 			path = "Helper Extensions";
+			sourceTree = "<group>";
+		};
+		79A66FBF24B7245F006A2BCC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				790CB1D024B5C13700481B32 /* NotesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

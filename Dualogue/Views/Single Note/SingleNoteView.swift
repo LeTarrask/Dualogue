@@ -17,20 +17,10 @@ struct SingleNoteView: View {
     @State var contactImage: String = "face"
     @State var date = Date()
     @State var images: [String] = ["teste1", "teste2", "teste3"]
-    
-    func resetNote() {
-        isEditing = false
-        title = "Your string"
-        text = ""
-        contactName = "Contact Name"
-        contactImage = "face"
-        date = Date()
-        images = [String]()
-    }
-    
+        
     var body: some View {
         Group {
-            //NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImage: $contactImage)
+            NoteHeader(date: date.toString(), title: $title, isEditing: $isEditing, contactName: $contactName, contactImageName: $contactImage)
             NoteBodyText(text: $text, isEditing: $isEditing)
             
             if isEditing {
@@ -42,7 +32,7 @@ struct SingleNoteView: View {
         }.navigationBarItems(trailing:
                                 HStack {
                                     if !isEditing {
-                                        Button("Edit") {}
+                                        Button("Edit") { isEditing.toggle() }
                                     } else {
                                         Button("Save") { saveNote() }
                                     }
@@ -53,7 +43,19 @@ struct SingleNoteView: View {
     }
     
     func saveNote() {
-        notesModel.saveNote()
+        let wipNote = WipNote(title: title, text: text, contacts: [], images: [])
+        notesModel.saveNote(wipNote: wipNote)
+        resetNote()
+    }
+    
+    func resetNote() {
+        isEditing = true
+        title = "Your string"
+        text = ""
+        contactName = "Contact Name"
+        contactImage = "face"
+        date = Date()
+        images = [String]()
     }
 }
 
