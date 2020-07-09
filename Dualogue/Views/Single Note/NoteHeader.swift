@@ -12,10 +12,12 @@ struct NoteHeader: View {
     @ObservedObject var contactSelector: ContactSelector
     
     var date: String
-    @Binding var title: String
+    @Binding var title: String 
     @Binding var isEditing: Bool
             
     @State var showPicker: Bool = false
+    
+    var isEdited: Bool = false
     
     var body: some View {
         ZStack {

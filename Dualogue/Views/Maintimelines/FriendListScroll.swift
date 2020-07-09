@@ -26,13 +26,9 @@ struct FriendListScroll: View {
             
             ScrollView(.horizontal) {
                 HStack {
-//                    ForEach(fetchedContacts, id: \.self) { contact in
-//                        NavigationLink(destination: {
-//                            Text("")
-//                        }) {
-//                            AvatarView(for: contact, size: 60)
-//                        }
-//                    }
+                    ForEach(fetchedContacts, id: \.self) { contact in
+                        AvatarView(for: contact, size: 60)
+                    }
                 }.frame(minHeight: 100)
             }
         }

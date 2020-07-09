@@ -27,7 +27,7 @@ struct NoteTimeline: View {
             SearchBar()
             
             List {
-                ForEach(fetchedNotes, id: \.id) { note in
+                ForEach(fetchedNotes, id: \.self) { note in
                     TimelineItem(isExpanded: false,
                                  date: note.date?.toString() ?? "",
                                  title: note.title_ ?? "",
