@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingleContactTimeline: View {
     var selectedContact: ContactStorage
-    
+
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -24,7 +24,6 @@ struct SingleContactTimeline: View {
                 label: {
                     Text("Create note")
                 })
-
 
             SearchBar()
 

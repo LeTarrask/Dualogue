@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SearchBar: View {
     @State var searchValue: String = "Search"
-    
+
     var body: some View {
         TextField("Search", text: $searchValue)
             .foregroundColor(.gray)
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
             .padding(10)
-            
+
     }
 }
 

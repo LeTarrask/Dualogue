@@ -20,7 +20,7 @@ public struct ContactPicker: UIViewControllerRepresentable {
     public var onSelectContact: ((_: CNContact) -> Void)?
     public var onSelectContacts: ((_: [CNContact]) -> Void)?
     public var onCancel: (() -> Void)?
-    
+
     public init(showPicker: Binding<Bool>,
                 onSelectContact: ((_: CNContact) -> Void)? = nil,
                 onSelectContacts: ((_: [CNContact]) -> Void)? = nil,
@@ -37,24 +37,24 @@ public struct ContactPicker: UIViewControllerRepresentable {
         viewModel.dummy = dummy
         return dummy
     }
-    
+
     public func updateUIViewController(_ uiViewController: _DummyViewController,
                                        context: UIViewControllerRepresentableContext<ContactPicker>) {
 
         guard viewModel.dummy != nil else {
             return
         }
-        
+
         // able to present when
         // 1. no current presented view
         // 2. current presented view is being dismissed
         // swiftlint:disable line_length
         let ableToPresent = viewModel.dummy.presentedViewController == nil || viewModel.dummy.presentedViewController?.isBeingDismissed == true
-        
+
         // able to dismiss when
         // 1. cncpvc is presented
         let ableToDismiss = viewModel.viewC != nil
-        
+
         if showPicker && viewModel.viewC == nil && ableToPresent {
             let pickerVC = CNContactPickerViewController()
             pickerVC.delegate = context.coordinator
@@ -65,7 +65,7 @@ public struct ContactPicker: UIViewControllerRepresentable {
             self.viewModel.viewC = nil
         }
     }
-    
+
     public func makeCoordinator() -> Coordinator {
         if self.onSelectContacts != nil {
             return MultipleSelectionCoordinator(self)
@@ -73,37 +73,37 @@ public struct ContactPicker: UIViewControllerRepresentable {
             return SingleSelectionCoordinator(self)
         }
     }
-    
+
     public final class SingleSelectionCoordinator: NSObject, Coordinator {
         var parent: ContactPicker
-        
+
         init(_ parent: ContactPicker) {
             self.parent = parent
         }
-        
+
         public func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
             parent.showPicker = false
             parent.onCancel?()
         }
-        
+
         public func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
             parent.showPicker = false
             parent.onSelectContact?(contact)
         }
     }
-    
+
     public final class MultipleSelectionCoordinator: NSObject, Coordinator {
         var parent: ContactPicker
-        
+
         init(_ parent: ContactPicker) {
             self.parent = parent
         }
-        
+
         public func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
             parent.showPicker = false
             parent.onCancel?()
         }
-        
+
         public func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
             parent.showPicker = false
             parent.onSelectContacts?(contacts)

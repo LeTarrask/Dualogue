@@ -11,17 +11,17 @@ struct ContactCard: View {
     var contact: ContactStorage
     var image: Image = Image("face")
     var name: String
-    
+
     init(for contact: ContactStorage) {
         self.contact = contact
         self.name = contact.contactName_ ?? "Error Loading Name"
         if let data = contact.contactImage_ {
             if let uiImage = UIImage(data: data) {
                 self.image = Image(uiImage: uiImage)
-            } 
+            }
         }
     }
-        
+
     var body: some View {
         VStack {
             NavigationLink(

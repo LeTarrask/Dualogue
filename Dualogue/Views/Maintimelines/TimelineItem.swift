@@ -14,7 +14,7 @@ struct TimelineItem: View {
     var title: String
     var text: String?
     var contact: ContactStorage?
-    
+
     var body: some View {
         Group {
             NoteTimelineHeader(date: date, title: title, contact: contact)
@@ -32,7 +32,6 @@ struct NoteTimelineHeader: View {
     var title: String
     var contact: ContactStorage?
 
-        
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -51,7 +50,7 @@ struct NoteTimelineHeader: View {
 
 struct NoteBody: View {
     var text: String?
-    
+
     var body: some View {
         Text(text ?? "")
             .lineLimit(nil)

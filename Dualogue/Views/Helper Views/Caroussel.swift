@@ -12,21 +12,21 @@ import Combine
 struct Caroussel<Content: View>: View {
     private var numberOfImages: Int
     private var content: Content
-    
+
     @State private var currentIndex: Int = 0
-    
+
     @State private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
-    
+
     init(numberOfImages: Int, @ViewBuilder content: () -> Content) {
         self.numberOfImages = numberOfImages
         self.content = content()
     }
-    
+
     var body: some View {
         /* TO DO: Swipe the images left and right. Maybe this:
         https://github.com/danielsaidi/SwiftUIKit/tree/1c91395e5793634c445d12fab79978fe88f5c41e
         */
-        
+
         ZStack(alignment: .bottom) {
             // Carrousel
             GeometryReader { geometry in
@@ -43,7 +43,7 @@ struct Caroussel<Content: View>: View {
                     self.currentIndex = (self.currentIndex + 1) % 3
                 }
             }
-            
+
             // Play / Pause
             HStack {
                 Spacer()
@@ -56,7 +56,7 @@ struct Caroussel<Content: View>: View {
                     Image(systemName: "play.fill")
                 })
             }.padding(5)
-            
+
             // Dot indicator
             HStack(spacing: 3) {
                 // 3

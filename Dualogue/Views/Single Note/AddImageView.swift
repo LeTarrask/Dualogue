@@ -10,9 +10,9 @@ import SwiftUI
 
 struct AddImageView: View {
     @ObservedObject var imageCollection: ImageCollection
-    
+
     @State var showImagePicker: Bool = false
-    
+
     var images: [UIImage] {
         var array = [UIImage]()
         for imageModel in imageCollection.images {
@@ -20,9 +20,9 @@ struct AddImageView: View {
         }
         return array
     }
-    
+
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
-    
+
     var body: some View {
         ScrollView {
             LazyHGrid(rows: rows, alignment: .center, spacing: 10) {

@@ -16,14 +16,14 @@ class WipNote {
     var text: String
     var contact: WipContact?
     var images: [WipImage]?
-    
+
     init(title: String, text: String, contact: WipContact?, images: [WipImage]?) {
         self.title = title
         self.text = text
         self.contact = contact
         self.images = images
     }
-    
+
     init?(from noteStorage: NoteStorage) {
         self.title = noteStorage.title_ ?? ""
         self.text = noteStorage.text_ ?? ""
@@ -43,24 +43,22 @@ class WipNote {
     }
 }
 
-
-
 class WipImage {
     var imageData: UIImage
     var imageTitle: String?
     var imageText: String?
-    
+
     init(imageData: UIImage, imageTitle: String?, imageText: String?) {
         self.imageData = imageData
         self.imageTitle = imageTitle
         self.imageText = imageText
     }
-    
+
     init?(from imageStorage: ImageStorage) {
         if let imageData = imageStorage.data {
             self.imageData = UIImage(data: imageData)!
         } else { return nil }
-        
+
         if imageStorage.title_ != nil {
             self.imageTitle = imageStorage.title_
         }

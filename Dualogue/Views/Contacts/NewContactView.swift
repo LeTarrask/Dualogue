@@ -11,13 +11,13 @@ import CoreData
 struct NewContactView: View {
     @State var contactName: String = ""
     @State var contactImage: String = ""
-    
+
     @State var showContactPicker: Bool = false
 
     var body: some View {
         Form {
             TextField("Contact Name", text: $contactName)
-            
+
             Text("Choose a contact")
             Button(action: {
                 self.showContactPicker.toggle()
@@ -43,4 +43,3 @@ struct NewContactView: View {
         }
     }
 }
-

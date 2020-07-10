@@ -10,11 +10,11 @@ import CoreData
 
 struct NoteTimeline: View {
     @Environment(\.managedObjectContext) var context
-    
+
     @FetchRequest(entity: NoteStorage.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.title_, ascending: true)])
     var fetchedNotes: FetchedResults<NoteStorage>
-       
+
     var body: some View {
         VStack {
             HStack {
@@ -23,9 +23,9 @@ struct NoteTimeline: View {
                     .foregroundColor(.main)
                 Spacer()
             }.padding()
-            
+
             SearchBar()
-            
+
             List {
                 ForEach(fetchedNotes, id: \.self) { note in
                     TimelineItem(isExpanded: false,
@@ -39,15 +39,15 @@ struct NoteTimeline: View {
             }
         }
     }
-    
+
     func deleteNote(at offsets: IndexSet) {
         for offset in offsets {
             // find this note in our fetch request
             let note = fetchedNotes[offset]
-            
+
             // delete it from the context
             context.delete(note) // TO DO: test: should delete all the related images
-            
+
             do {
                 try context.save()
             } catch {
@@ -56,6 +56,3 @@ struct NoteTimeline: View {
         }
     }
 }
-
-
-

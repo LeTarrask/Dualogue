@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MainTab: View {   
+struct MainTab: View {
     @State private var selection = 0
-            
+
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {
@@ -18,7 +18,7 @@ struct MainTab: View {
                         Image(systemName: "1.circle")
                         Text("Your notes")
                     }.tag(0)
-                
+
                 ContactsView()
                     .tabItem {
                         Image(systemName: "3.circle")

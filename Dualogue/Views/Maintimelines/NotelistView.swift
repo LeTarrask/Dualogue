@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-struct NotelistView: View {  
+struct NotelistView: View {
     var body: some View {
         VStack {
             FriendListScroll()
-            
+
             NoteTimeline()
         }
     }
 }
-
-

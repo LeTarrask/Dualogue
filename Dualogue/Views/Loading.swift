@@ -21,25 +21,24 @@ struct Loading: View {
                     .foregroundColor(Color.white)
                     .fontWeight(.black)
             }
-            
+
         }.edgesIgnoringSafeArea(.all)
     }
 }
 
-
 struct LoadingRectangle: View {
-    
+
     @State var width: CGFloat
     @State var height: CGFloat
     @State var curveHeight: CGFloat = 0
     @State var curveLength: CGFloat
     @State var speed: Double
     @State var color: Color
-    
+
     @State private var time: Double = 0
     @State private var offsetY = 0
     @State private var animate = true
-    
+
     var body: some View {
         VStack {
             ZStack {
@@ -95,7 +94,7 @@ struct Fluid: Shape {
     let height: CGFloat
     let curveHeight: CGFloat
     let curveLength: CGFloat
-    
+
     func path(in rect: CGRect) -> Path {
         return (
             Path { path in
@@ -103,7 +102,8 @@ struct Fluid: Shape {
                 path.addLine(to: CGPoint(x: 0, y: height*2))
                 for identifier in stride(from: 0, to: CGFloat(rect.width), by: 1) {
                     path.addLine(to: CGPoint(x: identifier,
-                                             y: sin(((identifier / rect.height) + time) * curveLength * .pi) * curveHeight + rect.midY))
+                                             y: sin(((identifier / rect.height) + time) * curveLength * .pi)
+                                                * curveHeight + rect.midY))
                 }
                 path.addLine(to: CGPoint(x: width, y: height*2))
             }

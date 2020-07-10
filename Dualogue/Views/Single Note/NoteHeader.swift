@@ -10,26 +10,26 @@ import ContactsUI
 
 struct NoteHeader: View {
     @ObservedObject var contactSelector: ContactSelector
-    
+
     var date: String
-    @Binding var title: String 
+    @Binding var title: String
     @Binding var isEditing: Bool
-            
+
     @State var showPicker: Bool = false
-    
+
     var isEdited: Bool = false
-    
+
     var body: some View {
         ZStack {
             ContactPicker(
                 showPicker: $showPicker,
                 onSelectContact: { contact in
                     contactSelector.contact.contactName = contact.givenName + " " + contact.familyName
-                    
+
                     if contact.imageDataAvailable {
                         contactSelector.contact.contactImage = UIImage(data: contact.imageData!)
                     }})
-            
+
             HStack {
                 VStack(alignment: .leading) {
                     Text(date)
@@ -47,11 +47,9 @@ struct NoteHeader: View {
                 }, label: {
                     AvatarView(for: contactSelector.contact, size: 60)
                 })
-                
+
             }
             .padding()
         }
     }
 }
-
-

@@ -12,9 +12,9 @@ struct FriendListScroll: View {
     @FetchRequest(entity: ContactStorage.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true)])
     var fetchedContacts: FetchedResults<ContactStorage>
-    
+
     @State var showingDetail = false
-        
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -23,7 +23,7 @@ struct FriendListScroll: View {
                     .foregroundColor(.main)
                 Spacer()
             }.padding()
-            
+
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(fetchedContacts, id: \.self) { contact in
@@ -35,7 +35,6 @@ struct FriendListScroll: View {
         .background(Color.mainBG)
     }
 }
-
 
 struct FriendListScroll_Previews: PreviewProvider {
     static var previews: some View {

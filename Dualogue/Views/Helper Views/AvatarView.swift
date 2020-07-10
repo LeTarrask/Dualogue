@@ -11,7 +11,7 @@ struct AvatarView: View {
     let contactName: String
     var contactImage: UIImage = UIImage()
     let size: CGFloat
-    
+
     var body: some View {
         VStack {
             Image(uiImage: contactImage)
@@ -28,7 +28,7 @@ struct AvatarView: View {
                 .font(.caption)
         }
     }
-    
+
     init(for contact: ContactStorage, size: CGFloat) {
         self.contactName = contact.contactName_ ?? "Error loading contact"
         self.size = size
@@ -38,7 +38,7 @@ struct AvatarView: View {
             }
         }
     }
-    
+
     init(for wipContact: WipContact, size: CGFloat) {
         self.contactName = wipContact.contactName
         self.size = size
@@ -47,7 +47,7 @@ struct AvatarView: View {
         }
     }
 }
-    
+
     struct AvatarView_Previews: PreviewProvider {
         static var previews: some View {
             let wipContact = WipContact(contactName: "Tarrask", contactImageName: "face", contactImage: nil)
