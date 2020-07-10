@@ -278,8 +278,8 @@
 			children = (
 				7982ABDD24ADF10E00A03AC1 /* ContactsView.swift */,
 				7982ABDE24ADF10E00A03AC1 /* ContactCard.swift */,
-				7982ABDF24ADF10E00A03AC1 /* NewContactView.swift */,
 				7982ABE124ADF10E00A03AC1 /* SingleContactTimeline.swift */,
+				7982ABDF24ADF10E00A03AC1 /* NewContactView.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";

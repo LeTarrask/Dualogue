@@ -26,16 +26,16 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         }
     }
 
-    init(searchFor: String, filterTerm: String, @ViewBuilder content: @escaping (T) -> Content) {
+    init(predicate: NSPredicate, @ViewBuilder content: @escaping (T) -> Content) {
             fetchRequest = FetchRequest<T>(entity: T.entity(),
                                            sortDescriptors: [],
-                                           predicate: NSPredicate(format: "%K CONTAINS %@",
-                                                                  searchFor, filterTerm))
+                                           predicate: predicate)
             self.content = content
     }
 
     func deleteEntity(at offsets: IndexSet) {
         for offset in offsets {
+            print(fetchRequest.wrappedValue[offset])
             // find this note in our fetch request
             let note = fetchRequest.wrappedValue[offset]
 

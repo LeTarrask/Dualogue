@@ -35,7 +35,6 @@ struct NewContactView: View {
             })
             // swiftlint:disable multiple_closures_with_trailing_closure
         }.sheet(isPresented: $showContactPicker, onDismiss: { }) {
-            // TO DO: Lint this
             ContactPicker(showPicker: $showContactPicker,
                           onSelectContact: { selected in
                 self.contactName = selected.namePrefix + " " + selected.nameSuffix

@@ -22,7 +22,7 @@ struct NoteTimeline: View {
 
             SearchBar(filterTerm: $filterTerm)
 
-            FilteredList(searchFor: "title_", filterTerm: filterTerm) { (note: NoteStorage) in
+            FilteredList(predicate: getPredicate()) { (note: NoteStorage) in
                 TimelineItem(isExpanded: false,
                              date: note.date?.toString() ?? "",
                              title: note.title_ ?? "",
@@ -31,6 +31,10 @@ struct NoteTimeline: View {
             }
         }
     }
+
+    func getPredicate() -> NSPredicate {
+        if filterTerm != "" {
+            return NSPredicate(format: "title_ CONTAINS[c] %@", filterTerm)
+        } else { return NSPredicate(value: true) }
+    }
 }
-
-

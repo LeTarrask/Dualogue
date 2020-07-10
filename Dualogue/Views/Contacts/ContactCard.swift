@@ -25,7 +25,7 @@ struct ContactCard: View {
     var body: some View {
         VStack {
             NavigationLink(
-                destination: SingleContactTimeline(selectedContact: contact, filterTerm: name),
+                destination: SingleContactTimeline(selectedContact: contact, filterTerm: "Search"),
                 label: {
                     AvatarView(for: contact, size: 60)
                         .foregroundColor(.white)
