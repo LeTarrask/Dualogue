@@ -29,7 +29,14 @@ struct SingleContactTimeline: View {
 
             SearchBar(filterTerm: $filterTerm)
 
-            //NoteTimeline() // TO DO: filter this timeline to get just this specific contact's predicate
+            FilteredList(searchFor: "contacts.contactName_",
+                         filterTerm: selectedContact.contactName_ ?? "") { (note: NoteStorage) in
+                TimelineItem(isExpanded: false,
+                             date: note.date?.toString() ?? "",
+                             title: note.title_ ?? "",
+                             text: note.text_,
+                             contact: note.contacts)
+            }
         }
     }
 }

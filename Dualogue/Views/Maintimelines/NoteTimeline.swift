@@ -9,13 +9,7 @@ import SwiftUI
 import CoreData
 
 struct NoteTimeline: View {
-    @Environment(\.managedObjectContext) var context
-
-    @FetchRequest(entity: NoteStorage.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.title_, ascending: true)])
-    var fetchedNotes: FetchedResults<NoteStorage>
-
-    @State var filterTerm: String = ""
+    @State var filterTerm: String = "" // TO DO: - how to pass an initial value here that gets ALL notes?
 
     var body: some View {
         VStack {
@@ -28,33 +22,15 @@ struct NoteTimeline: View {
 
             SearchBar(filterTerm: $filterTerm)
 
-            List {
-                ForEach(fetchedNotes, id: \.self) { note in
-                    TimelineItem(isExpanded: false,
-                                 date: note.date?.toString() ?? "",
-                                 title: note.title_ ?? "",
-                                 text: note.text_,
-                                 contact: note.contacts)
-                }.onDelete(perform: deleteNote)
-                .padding(0)
-                .listRowBackground(Color.mainBG)
-            }
-        }
-    }
-
-    func deleteNote(at offsets: IndexSet) {
-        for offset in offsets {
-            // find this note in our fetch request
-            let note = fetchedNotes[offset]
-
-            // delete it from the context
-            context.delete(note) // TO DO: test: should delete all the related images
-
-            do {
-                try context.save()
-            } catch {
-                print(error)
+            FilteredList(searchFor: "title_", filterTerm: filterTerm) { (note: NoteStorage) in
+                TimelineItem(isExpanded: false,
+                             date: note.date?.toString() ?? "",
+                             title: note.title_ ?? "",
+                             text: note.text_,
+                             contact: note.contacts)
             }
         }
     }
 }
+
+

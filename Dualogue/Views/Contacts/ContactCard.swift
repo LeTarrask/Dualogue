@@ -25,7 +25,7 @@ struct ContactCard: View {
     var body: some View {
         VStack {
             NavigationLink(
-                destination: self.createNewNoteView(),
+                destination: SingleContactTimeline(selectedContact: contact, filterTerm: name),
                 label: {
                     AvatarView(for: contact, size: 60)
                         .foregroundColor(.white)
@@ -33,7 +33,7 @@ struct ContactCard: View {
                 })
 
             NavigationLink(
-                destination: SingleNoteView(),
+                destination: self.createNewNoteView(),
                 label: {
                     Text("CREATE NOTE")
                         .fontWeight(.bold)

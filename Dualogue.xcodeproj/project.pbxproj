@@ -12,6 +12,7 @@
 		790CB1D524B5D9A300481B32 /* WipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CB1D424B5D9A300481B32 /* WipStore.swift */; };
 		790FADA8241909E300DC0C6D /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FADA7241909E300DC0C6D /* NoteStore.swift */; };
 		79326CDC24B7745F0004290F /* ContactSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79326CDB24B7745F0004290F /* ContactSelector.swift */; };
+		7934F76E24B8B72F00846111 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934F76D24B8B72F00846111 /* FilteredList.swift */; };
 		794B477823D9E540008A65DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B477723D9E540008A65DC /* AppDelegate.swift */; };
 		794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B477923D9E540008A65DC /* SceneDelegate.swift */; };
 		794B477D23D9E540008A65DC /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 794B477B23D9E540008A65DC /* Dualogue.xcdatamodeld */; };
@@ -71,6 +72,7 @@
 		790CB1D424B5D9A300481B32 /* WipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipStore.swift; sourceTree = "<group>"; };
 		790FADA7241909E300DC0C6D /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
 		79326CDB24B7745F0004290F /* ContactSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSelector.swift; sourceTree = "<group>"; };
+		7934F76D24B8B72F00846111 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilteredList.swift; path = "Dualogue/Views/Helper Views/FilteredList.swift"; sourceTree = SOURCE_ROOT; };
 		794B477423D9E540008A65DC /* Dualogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dualogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794B477723D9E540008A65DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794B477923D9E540008A65DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		7982ABD824ADF10E00A03AC1 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
+				7934F76D24B8B72F00846111 /* FilteredList.swift */,
 				79C098C824AF3BC900B3894E /* ContactPicker.swift */,
 				7982ABD924ADF10E00A03AC1 /* SearchBar.swift */,
 				7982ABDA24ADF10E00A03AC1 /* AvatarView.swift */,
@@ -563,6 +566,7 @@
 				7982ABFE24ADF10E00A03AC1 /* NotelistView.swift in Sources */,
 				79C098C924AF3BC900B3894E /* ContactPicker.swift in Sources */,
 				790CB1D524B5D9A300481B32 /* WipStore.swift in Sources */,
+				7934F76E24B8B72F00846111 /* FilteredList.swift in Sources */,
 				7982ABFC24ADF10E00A03AC1 /* NoteBodyText.swift in Sources */,
 				7982ABFB24ADF10E00A03AC1 /* NoteHeader.swift in Sources */,
 				794B477A23D9E540008A65DC /* SceneDelegate.swift in Sources */,
