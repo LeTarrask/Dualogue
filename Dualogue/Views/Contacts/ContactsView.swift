@@ -10,7 +10,7 @@ import CoreData
 
 struct ContactsView: View {
     @FetchRequest(entity: ContactStorage.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true),])
+                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true)])
     var contacts: FetchedResults<ContactStorage>
     
     var columns: [GridItem] = Array(repeating: .init(.flexible(), alignment: .center), count: 2)

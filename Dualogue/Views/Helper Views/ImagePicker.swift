@@ -45,7 +45,8 @@ public struct ImagePickerView: UIViewControllerRepresentable {
             self.onImagePicked = onImagePicked
         }
 
-        public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        public func imagePickerController(_ picker: UIImagePickerController,
+                                          didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.originalImage] as? UIImage {
                 self.onImagePicked(image)
             }

@@ -30,15 +30,15 @@ class DualogueTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
     func testSingleNoteSave() {
         // search note in db
-        
+
         // Adds a note to fake DB with this data
         notesModel.saveNote(title: "Note title", text: "Note Text", contactName: "Tarrask", contactImage: "face")
-        
+
         // retrieve note from db
-        
+
         // checks if note is the same
         //XCTAssert(<#T##expression: Bool##Bool#>)
     }

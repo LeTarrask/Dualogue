@@ -11,13 +11,13 @@ import Combine
 
 class ContactSelector: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
-    
-    var contact: WipContact  {
+
+    var contact: WipContact {
         didSet {
             objectWillChange.send()
         }
     }
-    
+
     init() {
         self.contact = WipContact(contactName: "Contact Name", contactImageName: "face", contactImage: nil)
     }

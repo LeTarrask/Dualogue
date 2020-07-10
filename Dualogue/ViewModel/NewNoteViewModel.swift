@@ -11,7 +11,7 @@ import Combine
 
 class ImageCollection: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
-    
+
     var images: [NewImage] {
         didSet { objectWillChange.send() }
     }
@@ -19,7 +19,7 @@ class ImageCollection: ObservableObject {
     init() {
         self.images = [NewImage]()
     }
-    
+
     func reset() {
         self.images = [NewImage]()
     }
@@ -30,7 +30,3 @@ struct NewImage {
     var imageTitle: String?
     var imageText: String?
 }
-
-
-
-

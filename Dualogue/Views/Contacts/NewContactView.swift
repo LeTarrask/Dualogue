@@ -22,7 +22,10 @@ struct NewContactView: View {
             Button(action: {
                 self.showContactPicker.toggle()
             }, label: {
-                AvatarView(for: WipContact(contactName: contactName, contactImageName: contactImage, contactImage: nil), size: 60)
+                AvatarView(for: WipContact(contactName: contactName,
+                                           contactImageName: contactImage,
+                                           contactImage: nil),
+                           size: 60)
             })
 
             Button(action: {
@@ -30,8 +33,11 @@ struct NewContactView: View {
             }, label: {
                 Text("Save contact")
             })
+            // swiftlint:disable multiple_closures_with_trailing_closure
         }.sheet(isPresented: $showContactPicker, onDismiss: { }) {
-            ContactPicker(showPicker: $showContactPicker, onSelectContact: { selected in
+            // TO DO: Lint this
+            ContactPicker(showPicker: $showContactPicker,
+                          onSelectContact: { selected in
                 self.contactName = selected.namePrefix + " " + selected.nameSuffix
             })
         }

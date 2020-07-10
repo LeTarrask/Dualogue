@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ContactPicker.swift
 //
 //
 //  Created by Youjin Phea on 27/06/20.
@@ -21,20 +21,25 @@ public struct ContactPicker: UIViewControllerRepresentable {
     public var onSelectContacts: ((_: [CNContact]) -> Void)?
     public var onCancel: (() -> Void)?
     
-    public init(showPicker: Binding<Bool>, onSelectContact: ((_: CNContact) -> Void)? = nil, onSelectContacts: ((_: [CNContact]) -> Void)? = nil, onCancel: (() -> Void)? = nil) {
+    public init(showPicker: Binding<Bool>,
+                onSelectContact: ((_: CNContact) -> Void)? = nil,
+                onSelectContacts: ((_: [CNContact]) -> Void)? = nil,
+                onCancel: (() -> Void)? = nil) {
         self._showPicker = showPicker
         self.onSelectContact = onSelectContact
         self.onSelectContacts = onSelectContacts
         self.onCancel = onCancel
     }
-    
+
+    // swiftlint:disable line_length
     public func makeUIViewController(context: UIViewControllerRepresentableContext<ContactPicker>) -> ContactPicker.UIViewControllerType {
         let dummy = _DummyViewController()
         viewModel.dummy = dummy
         return dummy
     }
     
-    public func updateUIViewController(_ uiViewController: _DummyViewController, context: UIViewControllerRepresentableContext<ContactPicker>) {
+    public func updateUIViewController(_ uiViewController: _DummyViewController,
+                                       context: UIViewControllerRepresentableContext<ContactPicker>) {
 
         guard viewModel.dummy != nil else {
             return
@@ -43,20 +48,21 @@ public struct ContactPicker: UIViewControllerRepresentable {
         // able to present when
         // 1. no current presented view
         // 2. current presented view is being dismissed
+        // swiftlint:disable line_length
         let ableToPresent = viewModel.dummy.presentedViewController == nil || viewModel.dummy.presentedViewController?.isBeingDismissed == true
         
         // able to dismiss when
         // 1. cncpvc is presented
-        let ableToDismiss = viewModel.vc != nil
+        let ableToDismiss = viewModel.viewC != nil
         
-        if showPicker && viewModel.vc == nil && ableToPresent {
+        if showPicker && viewModel.viewC == nil && ableToPresent {
             let pickerVC = CNContactPickerViewController()
             pickerVC.delegate = context.coordinator
-            viewModel.vc = pickerVC
+            viewModel.viewC = pickerVC
             viewModel.dummy.present(pickerVC, animated: true)
         } else if !showPicker && ableToDismiss {
             viewModel.dummy.dismiss(animated: true)
-            self.viewModel.vc = nil
+            self.viewModel.viewC = nil
         }
     }
     
@@ -69,9 +75,9 @@ public struct ContactPicker: UIViewControllerRepresentable {
     }
     
     public final class SingleSelectionCoordinator: NSObject, Coordinator {
-        var parent : ContactPicker
+        var parent: ContactPicker
         
-        init(_ parent: ContactPicker){
+        init(_ parent: ContactPicker) {
             self.parent = parent
         }
         
@@ -87,9 +93,9 @@ public struct ContactPicker: UIViewControllerRepresentable {
     }
     
     public final class MultipleSelectionCoordinator: NSObject, Coordinator {
-        var parent : ContactPicker
+        var parent: ContactPicker
         
-        init(_ parent: ContactPicker){
+        init(_ parent: ContactPicker) {
             self.parent = parent
         }
         
@@ -107,9 +113,10 @@ public struct ContactPicker: UIViewControllerRepresentable {
 
 class ContactPickerViewModel {
     var dummy: _DummyViewController!
-    var vc: CNContactPickerViewController?
+    var viewC: CNContactPickerViewController?
 }
 
 public protocol Coordinator: CNContactPickerDelegate {}
 
+// swiftlint:disable type_name
 public class _DummyViewController: UIViewController {}

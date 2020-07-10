@@ -23,7 +23,9 @@ struct Caroussel<Content: View>: View {
     }
     
     var body: some View {
-        // TO DO: Swipe the images left and right. Maybe this: https://github.com/danielsaidi/SwiftUIKit/tree/1c91395e5793634c445d12fab79978fe88f5c41e
+        /* TO DO: Swipe the images left and right. Maybe this:
+        https://github.com/danielsaidi/SwiftUIKit/tree/1c91395e5793634c445d12fab79978fe88f5c41e
+        */
         
         ZStack(alignment: .bottom) {
             // Carrousel

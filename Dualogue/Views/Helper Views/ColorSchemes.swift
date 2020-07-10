@@ -16,20 +16,29 @@ extension Color {
     public static let accent3 = Color("accent3")
 }
 
-
 struct ColorSchemes: View {
     var body: some View {
         VStack {
             Text("main")
-            RoundedRectangle(cornerRadius: 5).foregroundColor(Color.main).frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color.main)
+                .frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
             Text("mainBG")
-            RoundedRectangle(cornerRadius: 5).foregroundColor(Color.mainBG).frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color.mainBG)
+                .frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
             Text("accentColor1")
-            RoundedRectangle(cornerRadius: 5).foregroundColor(Color.accent1).frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color.accent1)
+                .frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
             Text("accentColor2")
-            RoundedRectangle(cornerRadius: 5).foregroundColor(Color.accent2).frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color.accent2)
+                .frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
             Text("accentColor3")
-            RoundedRectangle(cornerRadius: 5).foregroundColor(Color.accent3).frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(Color.accent3)
+                .frame(width: 20, height: 20, alignment: .leading).border(Color.mainBG, width: 1)
         }
     }
 }
@@ -39,5 +48,3 @@ struct ColorSchemes_Previews: PreviewProvider {
         ColorSchemes()
     }
 }
-
-

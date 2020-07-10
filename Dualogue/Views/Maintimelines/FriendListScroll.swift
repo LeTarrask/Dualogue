@@ -10,7 +10,7 @@ import CoreData
 
 struct FriendListScroll: View {
     @FetchRequest(entity: ContactStorage.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true),])
+                  sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true)])
     var fetchedContacts: FetchedResults<ContactStorage>
     
     @State var showingDetail = false

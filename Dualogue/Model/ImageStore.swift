@@ -9,21 +9,20 @@
 import Foundation
 import SwiftUI
 
-
 class ImageStore {
     @Environment(\.managedObjectContext) var moc
-    
+
     var images: [DuaImage]
-    
+
     init() {
         self.images = [DuaImage]()
     }
-    
+
     // MARK: - empties the collection
     func reset() {
         self.images = [DuaImage]()
     }
-    
+
     // MARK: - stores images & info to DB
     func sendInfoToDB() {
         for image in images {
@@ -37,7 +36,7 @@ class ImageStore {
             if image.title != nil {
                 newImage.title = image.title
             }
-            
+
             do {
                 try self.moc.save()
                 print("Saving new image")
@@ -46,7 +45,7 @@ class ImageStore {
             }
         }
     }
-    
+
     // MARK: - loads images & info in model format, but doesn't store permanently
     func collect(image: UIImage, title: String?, text: String?) {
         let path = saveToUserDir(image: image)
@@ -59,7 +58,7 @@ class ImageStore {
         }
         images.append(storageImage)
     }
-    
+
     // MARK: - stores the image file in app memory and returns an image name
     func saveToUserDir(image: UIImage) -> String? {
         let imageName = UUID().uuidString
@@ -72,7 +71,7 @@ class ImageStore {
         }
         return nil
     }
-    
+
     // MARK: - reloads the image file from app memory and returns it
     func loadImage(imageName: String) -> UIImage {
         let filename = getDocumentsDirectory().appendingPathComponent(imageName)
@@ -82,7 +81,7 @@ class ImageStore {
         }
         return image
     }
-    
+
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]

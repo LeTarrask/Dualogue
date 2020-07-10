@@ -47,10 +47,18 @@ struct LoadingRectangle: View {
                     .fill(Color.white)
                     .frame(width: width, height: height)
                 ZStack {
-                    Fluid(time: CGFloat(time*1.4), width: width, height: height, curveHeight: curveHeight, curveLength: curveLength)
+                    Fluid(time: CGFloat(time*1.4),
+                          width: width,
+                          height: height,
+                          curveHeight: curveHeight,
+                          curveLength: curveLength)
                         .fill(color)
                         .frame(width: width, height: height)
-                    Fluid(time: CGFloat(time), width: width, height: height, curveHeight: curveHeight, curveLength: curveLength)
+                    Fluid(time: CGFloat(time),
+                          width: width,
+                          height: height,
+                          curveHeight: curveHeight,
+                          curveLength: curveLength)
                         .fill(color)
                         .opacity(0.5)
                         .frame(width: width, height: height)
@@ -93,8 +101,9 @@ struct Fluid: Shape {
             Path { path in
                 path.move(to: CGPoint(x: width, y: height*2))
                 path.addLine(to: CGPoint(x: 0, y: height*2))
-                for i in stride(from: 0, to: CGFloat(rect.width), by: 1) {
-                    path.addLine(to: CGPoint(x: i, y: sin(((i / rect.height) + time) * curveLength * .pi) * curveHeight + rect.midY))
+                for identifier in stride(from: 0, to: CGFloat(rect.width), by: 1) {
+                    path.addLine(to: CGPoint(x: identifier,
+                                             y: sin(((identifier / rect.height) + time) * curveLength * .pi) * curveHeight + rect.midY))
                 }
                 path.addLine(to: CGPoint(x: width, y: height*2))
             }

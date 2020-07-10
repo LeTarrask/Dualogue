@@ -14,7 +14,7 @@ extension NoteStorage: Identifiable, Comparable {
     public static func < (lhs: NoteStorage, rhs: NoteStorage) -> Bool {
         lhs.id < rhs.id
     }
-    
+
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<NoteStorage> {
         let request = NSFetchRequest<NoteStorage>(entityName: "NoteStorage")
         request.sortDescriptors = [NSSortDescriptor(key: "title_", ascending: true)]
@@ -27,7 +27,7 @@ extension ImageStorage: Identifiable, Comparable {
     public static func < (lhs: ImageStorage, rhs: ImageStorage) -> Bool {
         lhs.id < rhs.id
     }
-    
+
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<ImageStorage> {
         let request = NSFetchRequest<ImageStorage>(entityName: "ImageStorage")
         request.sortDescriptors = [NSSortDescriptor(key: "UUID", ascending: true)]
@@ -40,7 +40,7 @@ extension ContactStorage: Identifiable, Comparable {
     public static func < (lhs: ContactStorage, rhs: ContactStorage) -> Bool {
         lhs.id < rhs.id
     }
-    
+
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<ContactStorage> {
         let request = NSFetchRequest<ContactStorage>(entityName: "ContactStorage")
         request.sortDescriptors = [NSSortDescriptor(key: "contactName_", ascending: true)]
@@ -48,4 +48,3 @@ extension ContactStorage: Identifiable, Comparable {
         return request
     }
 }
-
