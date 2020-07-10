@@ -25,7 +25,7 @@ struct ContactCard: View {
     var body: some View {
         VStack {
             NavigationLink(
-                destination: SingleContactTimeline(selectedContact: contact),
+                destination: self.createNewNoteView(),
                 label: {
                     AvatarView(for: contact, size: 60)
                         .foregroundColor(.white)
@@ -46,5 +46,14 @@ struct ContactCard: View {
         .padding(10)
         .background(Color.accent1)
         .cornerRadius(20)
+    }
+
+    func createNewNoteView() -> SingleNoteView {
+        let contactSelector = ContactSelector()
+        if let wipContact = WipContact(from: contact) {
+            contactSelector.contact = wipContact
+        }
+        let view = SingleNoteView(selectedContact: contactSelector)
+        return view
     }
 }

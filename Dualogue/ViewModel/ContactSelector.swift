@@ -13,9 +13,7 @@ class ContactSelector: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
 
     var contact: WipContact {
-        didSet {
-            objectWillChange.send()
-        }
+        didSet { objectWillChange.send() }
     }
 
     init() {

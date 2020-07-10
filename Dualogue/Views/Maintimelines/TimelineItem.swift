@@ -16,11 +16,16 @@ struct TimelineItem: View {
     var contact: ContactStorage?
 
     var body: some View {
-        Group {
-            NoteTimelineHeader(date: date, title: title, contact: contact)
+        ZStack {
+            // TO DO: Add navigation link to view full note
+            Color.white
 
-            if isExpanded {
-                NoteBody(text: text)
+            Group {
+                NoteTimelineHeader(date: date, title: title, contact: contact)
+
+                if isExpanded {
+                    NoteBody(text: text)
+                }
             }
         }
         .onTapGesture { self.isExpanded.toggle() }

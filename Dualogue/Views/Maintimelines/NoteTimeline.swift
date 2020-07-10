@@ -15,6 +15,8 @@ struct NoteTimeline: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.title_, ascending: true)])
     var fetchedNotes: FetchedResults<NoteStorage>
 
+    @State var filterTerm: String = ""
+
     var body: some View {
         VStack {
             HStack {
@@ -24,7 +26,7 @@ struct NoteTimeline: View {
                 Spacer()
             }.padding()
 
-            SearchBar()
+            SearchBar(filterTerm: $filterTerm)
 
             List {
                 ForEach(fetchedNotes, id: \.self) { note in

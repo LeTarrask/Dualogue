@@ -8,20 +8,14 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @State var searchValue: String = "Search"
+    @Binding var filterTerm: String
 
     var body: some View {
-        TextField("Search", text: $searchValue)
+        TextField("Search", text: $filterTerm)
             .foregroundColor(.gray)
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
             .padding(10)
 
-    }
-}
-
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar()
     }
 }

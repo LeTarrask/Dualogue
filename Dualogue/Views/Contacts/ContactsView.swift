@@ -17,9 +17,11 @@ struct ContactsView: View {
 
     @State var showingDetail = false
 
+    @State var filterTerm: String = "Search"
+
     var body: some View {
         VStack {
-            SearchBar()
+            SearchBar(filterTerm: $filterTerm)
 
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 5) {

@@ -28,7 +28,11 @@ struct NoteHeader: View {
 
                     if contact.imageDataAvailable {
                         contactSelector.contact.contactImage = UIImage(data: contact.imageData!)
-                    }})
+                    }
+                    /* TO DO: Here it should ask the view to refresh and update the Avatarview
+                     It actually refreshes when I select am image in imageloader
+                     */
+                })
 
             HStack {
                 VStack(alignment: .leading) {

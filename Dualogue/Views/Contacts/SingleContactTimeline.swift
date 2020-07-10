@@ -10,6 +10,8 @@ import SwiftUI
 struct SingleContactTimeline: View {
     var selectedContact: ContactStorage
 
+    @State var filterTerm: String = "Search"
+
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -25,7 +27,7 @@ struct SingleContactTimeline: View {
                     Text("Create note")
                 })
 
-            SearchBar()
+            SearchBar(filterTerm: $filterTerm)
 
             //NoteTimeline() // TO DO: filter this timeline to get just this specific contact's predicate
         }
