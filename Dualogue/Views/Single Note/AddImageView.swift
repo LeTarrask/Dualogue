@@ -44,6 +44,7 @@ struct AddImageView: View {
             ImagePickerView(sourceType: .photoLibrary, onImagePicked: { image in
                 // add selected image to array images
                 let newImage = NewImage(imageData: image, imageTitle: "", imageText: "")
+                // TO DO: resize image to make it a lot smaller
                 self.imageCollection.images.append(newImage)
             })
         })

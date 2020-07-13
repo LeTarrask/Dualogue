@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct NoteTimeline: View {
-    @State var filterTerm: String = "" // TO DO: - how to pass an initial value here that gets ALL notes?
+    @State var filterTerm: String = ""
 
     var body: some View {
         VStack {

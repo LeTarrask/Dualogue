@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+// TO DO: Refactor this FORM
 struct NewContactView: View {
     @State var contactName: String = ""
     @State var contactImage: String = ""

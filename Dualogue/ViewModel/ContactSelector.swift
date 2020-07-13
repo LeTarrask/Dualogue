@@ -12,7 +12,7 @@ import Combine
 class ContactSelector: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
 
-    var contact: WipContact {
+    @Published var contact: WipContact {
         didSet { objectWillChange.send() }
     }
 

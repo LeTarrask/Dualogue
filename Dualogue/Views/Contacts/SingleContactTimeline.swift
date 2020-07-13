@@ -16,10 +16,6 @@ struct SingleContactTimeline: View {
         VStack {
             HStack(alignment: .center) {
                 AvatarView(for: selectedContact, size: 60)
-                VStack {
-                    Text("20")
-                    Text("notes")
-                }
             }
             NavigationLink(
                 destination: createNewNoteView(),

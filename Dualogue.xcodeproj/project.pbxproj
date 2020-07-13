@@ -263,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				7934F76D24B8B72F00846111 /* FilteredList.swift */,
+				7982ABEC24ADF10E00A03AC1 /* TimelineItem.swift */,
 				79C098C824AF3BC900B3894E /* ContactPicker.swift */,
 				7982ABD924ADF10E00A03AC1 /* SearchBar.swift */,
 				7982ABDA24ADF10E00A03AC1 /* AvatarView.swift */,
@@ -278,8 +279,8 @@
 			children = (
 				7982ABDD24ADF10E00A03AC1 /* ContactsView.swift */,
 				7982ABDE24ADF10E00A03AC1 /* ContactCard.swift */,
-				7982ABE124ADF10E00A03AC1 /* SingleContactTimeline.swift */,
 				7982ABDF24ADF10E00A03AC1 /* NewContactView.swift */,
+				7982ABE124ADF10E00A03AC1 /* SingleContactTimeline.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -288,9 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				7982ABE324ADF10E00A03AC1 /* SingleNoteView.swift */,
-				79DACAA024B4C22E004658CA /* AddImageView.swift */,
 				7982ABE524ADF10E00A03AC1 /* NoteHeader.swift */,
 				7982ABE624ADF10E00A03AC1 /* NoteBodyText.swift */,
+				79DACAA024B4C22E004658CA /* AddImageView.swift */,
 			);
 			path = "Single Note";
 			sourceTree = "<group>";
@@ -300,7 +301,6 @@
 			children = (
 				7982ABE924ADF10E00A03AC1 /* NotelistView.swift */,
 				7982ABEA24ADF10E00A03AC1 /* NoteTimeline.swift */,
-				7982ABEC24ADF10E00A03AC1 /* TimelineItem.swift */,
 				7982ABEB24ADF10E00A03AC1 /* FriendListScroll.swift */,
 			);
 			path = Maintimelines;

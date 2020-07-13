@@ -22,11 +22,6 @@ struct SingleNoteView: View {
 
     var body: some View {
         Group {
-            /* here i can test the image loading part:
-             if it adds to contact and everything else, instead of state vars
-            or I can just have an array of images sent to AddImageView,
-            and just in this file, I use the newNoteManager
-            */
             NoteHeader(contactSelector: selectedContact, date: date.toString(), title: $title, isEditing: $isEditing)
             NoteBodyText(text: $text, isEditing: $isEditing)
 

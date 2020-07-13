@@ -36,6 +36,10 @@ struct AvatarView: View {
             if let uiImage = UIImage(data: data) {
                 self.contactImage = uiImage
             }
+        } else {
+            if let uiImage = UIImage(contentsOfFile: "face") {
+                self.contactImage = uiImage
+            }
         }
     }
 
