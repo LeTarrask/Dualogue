@@ -18,7 +18,7 @@ struct SingleNoteView: View {
     @State var isEditing: Bool = true
     @State var title: String = "Your string"
     @State var text: String = ""
-    @State var date = Date() // TO DO: Here, instead of date, it should include hour, as well.
+    @State var date = Date()
 
     var body: some View {
         Group {

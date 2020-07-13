@@ -8,10 +8,13 @@
 import SwiftUI
 import CoreData
 
-// TO DO: Refactor this FORM
 struct NewContactView: View {
+    @Environment(\.managedObjectContext) var context
+
     @State var contactName: String = ""
     @State var contactImage: String = ""
+
+    var selectedContact = ContactSelector()
 
     @State var showContactPicker: Bool = false
 
@@ -19,7 +22,7 @@ struct NewContactView: View {
         Form {
             TextField("Contact Name", text: $contactName)
 
-            Text("Choose a contact")
+            Text("Choose from your Contacts")
             Button(action: {
                 self.showContactPicker.toggle()
             }, label: {
@@ -30,7 +33,7 @@ struct NewContactView: View {
             })
 
             Button(action: {
-                // TO DO: store this property contact to DB
+                self.storeContact()
             }, label: {
                 Text("Save contact")
             })
@@ -38,8 +41,31 @@ struct NewContactView: View {
         }.sheet(isPresented: $showContactPicker, onDismiss: { }) {
             ContactPicker(showPicker: $showContactPicker,
                           onSelectContact: { selected in
-                self.contactName = selected.namePrefix + " " + selected.nameSuffix
+                            self.contactName = selected.namePrefix + " " + selected.nameSuffix
+                            self.selectedContact.contact.contactName = self.contactName
+                            if selected.imageDataAvailable {
+                                selectedContact.contact.contactImage = UIImage(data: selected.imageData!)
+                            }
             })
+        }
+    }
+
+    private func storeContact() {
+        // Process contact
+        print("storing contact")
+
+        // TO DO: Should test if contact already exists
+        let contactStore = ContactStorage(context: context)
+        contactStore.contactName_ = contactName
+
+        if selectedContact.contact.contactImage != nil {
+            contactStore.contactImage_ = selectedContact.contact.contactImage?.pngData()
+        }
+
+        do {
+            try context.save()
+        } catch {
+            print(error)
         }
     }
 }

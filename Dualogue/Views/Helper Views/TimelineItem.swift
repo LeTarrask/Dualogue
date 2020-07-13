@@ -38,7 +38,10 @@ struct NoteTimelineHeader: View {
     var contact: ContactStorage?
 
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
+            if contact != nil {
+                AvatarView(for: contact!, size: 60)
+            }
             VStack(alignment: .leading) {
                 Text(date)
                     .font(.caption)
@@ -46,9 +49,6 @@ struct NoteTimelineHeader: View {
                 Text(title)
             }
             Spacer()
-            if contact != nil {
-                AvatarView(for: contact!, size: 60)
-            }
         }.padding()
     }
 }

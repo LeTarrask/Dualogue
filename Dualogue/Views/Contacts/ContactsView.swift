@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContactsView: View {
+    @Environment(\.managedObjectContext) var context
+
     @FetchRequest(entity: ContactStorage.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true)])
     var contacts: FetchedResults<ContactStorage>
@@ -43,7 +45,7 @@ struct ContactsView: View {
                     }
                 }
             }.sheet(isPresented: $showingDetail) {
-                NewContactView()
+                NewContactView().environment(\.managedObjectContext, context)
             }
         }
 

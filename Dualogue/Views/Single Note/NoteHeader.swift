@@ -35,6 +35,11 @@ struct NoteHeader: View {
                 })
 
             HStack {
+                Button(action: {
+                    self.showPicker.toggle()
+                }, label: {
+                    AvatarView(for: contactSelector.contact, size: 60)
+                })
                 VStack(alignment: .leading) {
                     Text(date)
                         .font(.caption)
@@ -45,13 +50,6 @@ struct NoteHeader: View {
                         Text(title)
                     }
                 }
-                Spacer()
-                Button(action: {
-                    self.showPicker.toggle()
-                }, label: {
-                    AvatarView(for: contactSelector.contact, size: 60)
-                })
-
             }
             .padding()
         }
