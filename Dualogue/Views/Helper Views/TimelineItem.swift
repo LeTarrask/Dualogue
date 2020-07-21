@@ -10,6 +10,7 @@ import CoreData
 
 struct TimelineItem: View {
     @State var isExpanded: Bool = false
+    @State var presentFullNote: Bool = false
     var date = "date"
     var title: String
     var text: String?
@@ -17,18 +18,31 @@ struct TimelineItem: View {
 
     var body: some View {
         ZStack {
-            // TO DO: Add navigation link to view full note
             Color.white
 
             Group {
-                NoteTimelineHeader(date: date, title: title, contact: contact)
+                VStack {
+                    NoteTimelineHeader(date: date, title: title, contact: contact)
 
-                if isExpanded {
-                    NoteBody(text: text)
+                    if isExpanded {
+                        NoteBody(text: text)
+                    }
                 }
             }
-        }
+        } // TO DO: sheet is not working because double tap. Should be long press maybe
+        .sheet(isPresented: $presentFullNote) { self.presentFullNoteView() }
         .onTapGesture { self.isExpanded.toggle() }
+        .onTapGesture(count: 2, perform: { self.presentFullNote.toggle() })
+    }
+
+    func presentFullNoteView() -> SingleNoteView {
+        let contactSelector = ContactSelector()
+        if contact != nil {
+            contactSelector.contact = WipContact(from: contact!)!
+        }
+
+        let view = SingleNoteView(selectedContact: contactSelector)
+        return view
     }
 }
 
