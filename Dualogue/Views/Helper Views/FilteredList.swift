@@ -19,7 +19,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     let content: (T) -> Content
 
     var body: some View {
-        ScrollView {
+        List {
             ForEach(fetchRequest.wrappedValue, id: \.self) { note in
                 self.content(note)
             }.onDelete(perform: deleteEntity) // TO DO: - Fix the deletion part
