@@ -6,7 +6,7 @@
 //  Copyright © 2020 Garagem Infinita. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class ContactSelector: ObservableObject {

@@ -22,7 +22,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         List {
             ForEach(fetchRequest.wrappedValue, id: \.self) { note in
                 self.content(note)
-            }.onDelete(perform: deleteEntity) // TO DO: - Fix the deletion part
+            }.onDelete(perform: deleteEntity)
         }
     }
 

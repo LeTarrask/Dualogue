@@ -41,7 +41,7 @@ struct TimelineItem: View {
             contactSelector.contact = WipContact(from: contact!)!
         }
 
-        let view = SingleNoteView(selectedContact: contactSelector)
+        let view = SingleNoteView(contactSelector: contactSelector)
         return view
     }
 }

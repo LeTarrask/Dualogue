@@ -40,7 +40,7 @@ struct SingleContactTimeline: View {
         if let wipContact = WipContact(from: selectedContact) {
             contactSelector.contact = wipContact
         }
-        let view = SingleNoteView(selectedContact: contactSelector)
+        let view = SingleNoteView(contactSelector: contactSelector)
         return view
     }
 

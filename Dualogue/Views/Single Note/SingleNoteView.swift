@@ -7,13 +7,14 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 struct SingleNoteView: View {
     @Environment(\.managedObjectContext) var context
 
     @ObservedObject var imageCollection = ImageCollection()
 
-    @ObservedObject var selectedContact = ContactSelector()
+    @ObservedObject var contactSelector = ContactSelector()
 
     @State var isEditing: Bool = true
     @State var title: String = "Your string"
@@ -22,7 +23,7 @@ struct SingleNoteView: View {
 
     var body: some View {
         Group {
-            NoteHeader(contactSelector: selectedContact, date: date.toString(), title: $title, isEditing: $isEditing)
+            NoteHeader(contactSelector: contactSelector, date: date.toString(), title: $title, isEditing: $isEditing)
             NoteBodyText(text: $text, isEditing: $isEditing)
 
             if isEditing {
@@ -64,14 +65,27 @@ struct SingleNoteView: View {
         noteStore.images = imageSet
 
         // Process contact
-        if selectedContact.contact.contactName != "Contact Name" {
-            // TO DO: Should test if contact already exists
-            let contactStore = ContactStorage(context: context)
+        if contactSelector.contact.contactName != "Contact Name" {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ContactStorage")
+            let descriptors = [NSSortDescriptor(keyPath: \ContactStorage.contactName_, ascending: true)]
+            let predicate = NSPredicate(format: "contactName_ == %@", contactSelector.contact.contactName)
+            fetchRequest.sortDescriptors = descriptors
+            fetchRequest.predicate = predicate
+            let result = try? context.fetch(fetchRequest)
 
-            contactStore.contactImage_ = selectedContact.contact.contactImage?.pngData()
-            contactStore.contactName_ = selectedContact.contact.contactName
+            if result != nil && result!.count > 0 {
+                noteStore.contacts = result!.first as? ContactStorage
 
-            noteStore.contacts = contactStore
+            } else {
+                print("theres no contact")
+                // Creates new contact
+                let contactStore = ContactStorage(context: context)
+
+                contactStore.contactImage_ = contactSelector.contact.contactImage?.pngData()
+                contactStore.contactName_ = contactSelector.contact.contactName
+
+                noteStore.contacts = contactStore
+            }
         }
 
         do {
@@ -88,7 +102,7 @@ struct SingleNoteView: View {
         text = ""
         date = Date()
 
-        self.selectedContact.reset()
+        self.contactSelector.reset()
         self.imageCollection.reset()
     }
 }

@@ -53,7 +53,7 @@ struct ContactCard: View {
         if let wipContact = WipContact(from: contact) {
             contactSelector.contact = wipContact
         }
-        let view = SingleNoteView(selectedContact: contactSelector)
+        let view = SingleNoteView(contactSelector: contactSelector)
         return view
     }
 }
