@@ -1,0 +1,6 @@
+framework module Pods_DualogueTests {
+  umbrella header "Pods-DualogueTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
