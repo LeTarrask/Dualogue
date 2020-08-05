@@ -10,7 +10,7 @@ import CoreData
 import Combine
 import SwiftUI
 
-extension NoteStorage: Identifiable, Comparable {
+extension NoteStorage: Comparable {
     public static func < (lhs: NoteStorage, rhs: NoteStorage) -> Bool {
         lhs.id < rhs.id
     }
@@ -23,7 +23,7 @@ extension NoteStorage: Identifiable, Comparable {
     }
 }
 
-extension ImageStorage: Identifiable, Comparable {
+extension ImageStorage: Comparable {
     public static func < (lhs: ImageStorage, rhs: ImageStorage) -> Bool {
         lhs.id < rhs.id
     }
@@ -36,7 +36,7 @@ extension ImageStorage: Identifiable, Comparable {
     }
 }
 
-extension ContactStorage: Identifiable, Comparable {
+extension ContactStorage: Comparable {
     public static func < (lhs: ContactStorage, rhs: ContactStorage) -> Bool {
         lhs.id < rhs.id
     }
