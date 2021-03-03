@@ -154,11 +154,11 @@
 		7973572A24AA638700A63209 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				7973572E24AA6A4700A63209 /* SingleContactTimeline.swift */,
 				7973571624AA634E00A63209 /* ContactsView.swift */,
 				79AE312725F00452009811EB /* ContactsGrid.swift */,
 				79A9DA4824ACED60001501CB /* ContactCard.swift */,
 				79A9DA4624ACE8E1001501CB /* NewContactView.swift */,
-				7973572E24AA6A4700A63209 /* SingleContactTimeline.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";

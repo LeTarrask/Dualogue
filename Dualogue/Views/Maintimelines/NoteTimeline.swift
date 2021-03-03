@@ -31,11 +31,11 @@ struct NoteTimeline: View {
         List {
             ForEach(notes.wrappedValue, id: \.self) { note in
                 TimelineItem(isExpanded: false,
-                             date: note.date?.toString() ?? "",
-                             title: note.title ?? "",
-                             contactName: note.contact?.contactName ?? "",
+                             date: note.stringDate,
+                             title: note.stringTitle,
+                             contactName: note.contact?.name ?? "",
                              contactImage: "face",
-                             text: note.text)
+                             text: note.stringText)
             }.onDelete(perform: { indexSet in
 //                self.model.notes.remove(atOffsets: indexSet)
             })

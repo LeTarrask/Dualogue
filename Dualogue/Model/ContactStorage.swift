@@ -16,6 +16,10 @@ extension ContactStorage {
 //        contactImage ?? "face"
 //    }
     
+    var attachedNotes: [NoteStorage] {
+        notes?.allObjects as? [NoteStorage] ?? []
+    }
+    
     static var example: ContactStorage {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

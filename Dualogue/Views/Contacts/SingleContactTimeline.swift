@@ -28,10 +28,10 @@ struct SingleContactTimeline: View {
         VStack {
             HStack {
                 Spacer()
-                Text(contact.wrappedValue.first?.contactName ?? "no contact found")
+                Text(contact.wrappedValue.first?.name ?? "")
                 //                AvatarView(contact: selectedContact, size: 60)
                 VStack {
-                    Text(String(describing: contact.wrappedValue.first?.note?.count))
+                    Text(String(describing: contact.wrappedValue.first?.notes?.count))
                     Text("notes")
                 }
             }
@@ -43,7 +43,7 @@ struct SingleContactTimeline: View {
             
             SearchBar()
             
-            NoteTimeline(filterName: contactName)
+//            NoteTimeline(filterName: contactName)
         }
     }
 }

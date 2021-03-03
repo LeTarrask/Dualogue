@@ -51,8 +51,6 @@ class DataController: ObservableObject {
         container.viewContext.delete(object)
     }
     
-    
-    
     // MARK: Methos for testing purposes
     /// Populatesa viewContext instance with contacts and notes so we can visualize and test the app
     func createSampleData() throws {
@@ -109,34 +107,3 @@ class DataController: ObservableObject {
         _ = try? container.viewContext.execute(batchDeleteRequest3)
     }
 }
-
-//struct Note: Identifiable, Hashable {
-//    var title: String
-//    var text: String?
-//    var contact: Contact?
-//    var id: UUID
-//    var date = Date()
-//    
-//    init(title: String, text: String?, contactName: String?, contactImage: String?) {
-//        self.id = UUID()
-//        self.title = title
-//        self.text = text
-//        
-//        // TO DO: should have a method to attach contact to note, not do this subrepticiously
-//        if (contactName != nil) {
-//            contact = Contact(contactName: contactName ?? "No name", contactImage: contactImage)
-//        }
-//    }
-//}
-//
-//struct Contact: Identifiable, Hashable {
-//    var contactName: String
-//    var contactImage: String
-//    var id: UUID
-//    
-//    init(contactName: String, contactImage: String?) {
-//        self.id = UUID()
-//        self.contactName = contactName
-//        self.contactImage = contactImage ?? "face"
-//    }
-//}

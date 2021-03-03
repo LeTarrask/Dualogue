@@ -5,7 +5,7 @@
         <attribute name="contactName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageStorage" inverseName="contact" inverseEntity="ImageStorage"/>
-        <relationship name="note" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="contact" inverseEntity="NoteStorage"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteStorage" inverseName="contact" inverseEntity="NoteStorage"/>
     </entity>
     <entity name="ImageStorage" representedClassName="ImageStorage" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary"/>
@@ -21,7 +21,7 @@
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactStorage" inverseName="note" inverseEntity="ContactStorage"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactStorage" inverseName="notes" inverseEntity="ContactStorage"/>
         <relationship name="images" optional="YES" toMany="YES" maxCount="5" deletionRule="Cascade" destinationEntity="ImageStorage" inverseName="note" inverseEntity="ImageStorage"/>
     </entity>
     <elements>
