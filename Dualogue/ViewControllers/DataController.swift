@@ -8,7 +8,11 @@
 import CoreData
 import SwiftUI
 
+
+/// A contoller interface to our information stored in Core Data
 class DataController: ObservableObject {
+    
+    
     let container: NSPersistentContainer
     // TO DO: changed this to persistent container. should change to icloud later to after fixing this huge bug
     
@@ -77,7 +81,7 @@ class DataController: ObservableObject {
             }
         try viewContext.save()
     }
-    
+
     /// Creates a preview instance of DataController, with sample data we can use to test and visualize while coding the app.
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
@@ -91,7 +95,7 @@ class DataController: ObservableObject {
 
         return dataController
     }()
-    
+
     /// Delete all testing data from the app
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = NoteStorage.fetchRequest()

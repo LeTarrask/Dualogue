@@ -12,7 +12,6 @@ extension Date {
     func toString() -> String
     {
         let dateFormatter = DateFormatter()
-        //dateFormatter.dateFormat = format
         dateFormatter.dateStyle = .full
         return dateFormatter.string(from: self)
     }

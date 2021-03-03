@@ -34,6 +34,10 @@
 		79AE312825F00452009811EB /* ContactsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312725F00452009811EB /* ContactsGrid.swift */; };
 		79AE312D25F00724009811EB /* NoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312C25F00724009811EB /* NoteStorage.swift */; };
 		79AE313225F00851009811EB /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
+		79AE313925F00FC7009811EB /* NoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312C25F00724009811EB /* NoteStorage.swift */; };
+		79AE313D25F00FCB009811EB /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
+		79AE314125F0148B009811EB /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573024AA6D4900A63209 /* Date Extensions.swift */; };
+		79AE314525F01494009811EB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573B24AB7C2A00A63209 /* DataController.swift */; };
 		79AEB3B025EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */; };
 		79AEB3B125EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */; };
 		79AEB3B925EFE46F0096A29C /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3B825EFE46F0096A29C /* FilteredList.swift */; };
@@ -205,6 +209,7 @@
 		79A8F58D24AA5AAB00890E29 /* Dualogue */ = {
 			isa = PBXGroup;
 			children = (
+				79A8F59724AA5AB000890E29 /* Info.plist */,
 				79A8F58E24AA5AAB00890E29 /* DualogueApp.swift */,
 				7973571E24AA634E00A63209 /* MainTab.swift */,
 				7973573324AA6DEE00A63209 /* Loading.swift */,
@@ -214,7 +219,6 @@
 				7973572B24AA63AD00A63209 /* Helper Views */,
 				7973573224AA6D4F00A63209 /* Extensions */,
 				79A8F59224AA5AB000890E29 /* Assets.xcassets */,
-				79A8F59724AA5AB000890E29 /* Info.plist */,
 				79A8F59424AA5AB000890E29 /* Preview Content */,
 			);
 			path = Dualogue;
@@ -425,8 +429,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79AE313D25F00FCB009811EB /* ContactStorage.swift in Sources */,
+				79AE314525F01494009811EB /* DataController.swift in Sources */,
+				79AE314125F0148B009811EB /* Date Extensions.swift in Sources */,
 				79A8F5A124AA5AB100890E29 /* DualogueTests.swift in Sources */,
 				79AEB3B125EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */,
+				79AE313925F00FC7009811EB /* NoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
