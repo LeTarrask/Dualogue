@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct NotelistView: View {
-    @EnvironmentObject var model: FakeModel
-
     var body: some View {
         VStack {
-            FriendListScroll()
+            FriendListScrollView()
             
             SearchBar()
             
@@ -24,5 +22,5 @@ struct NotelistView: View {
 struct NotelistView_Previews: PreviewProvider {
     static var previews: some View {
         NotelistView()
-            .environmentObject(FakeModel())    }
+    }
 }

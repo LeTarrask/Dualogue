@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct NoteTimeline: View {
-    @EnvironmentObject var model: FakeModel
+    @EnvironmentObject var model: DataController
+    
+    let notes: FetchRequest<NoteStorage>
+        
+    init(filterName: String) {
+        
+        let predicate = NSPredicate(format: "contacts = %d", filterName)
+        
+        notes = FetchRequest<NoteStorage>(entity: NoteStorage.entity(),
+                                          sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.date, ascending: false)],
+                                          predicate: predicate)
+    }
+    
+    init() {
+        notes = FetchRequest<NoteStorage>(entity: NoteStorage.entity(),
+                                          sortDescriptors: [NSSortDescriptor(keyPath: \NoteStorage.date, ascending: false)],
+                                          predicate: nil)
+    }
     
     var body: some View {
         List {
-            ForEach(model.notes, id: \.self) { note in
-                TimelineItem(date: note.date.toString(),
-                             title: note.title,
-                             contact: Contact(contactName: note.contact?.contactName ?? "", contactImage: note.contact?.contactImage ?? ""),
+            ForEach(notes.wrappedValue, id: \.self) { note in
+                TimelineItem(isExpanded: false,
+                             date: note.date?.toString() ?? "",
+                             title: note.title ?? "",
+                             contactName: note.contact?.contactName ?? "",
+                             contactImage: "face",
                              text: note.text)
             }.onDelete(perform: { indexSet in
-                self.model.notes.remove(atOffsets: indexSet)
+//                self.model.notes.remove(atOffsets: indexSet)
             })
             .padding(0)
             .listRowBackground(Color.mainBG)
@@ -27,9 +46,18 @@ struct NoteTimeline: View {
 }
 
 struct NoteTimeline_Previews: PreviewProvider {
+    static var dataController = DataController.preview
+    
     static var previews: some View {
-        NoteTimeline()
-            .environmentObject(FakeModel())    }
-}
+        Group {
+            NoteTimeline()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
 
+            NoteTimeline(filterName: "Contato 1")
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
+        }
+    }
+}
 

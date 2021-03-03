@@ -14,8 +14,6 @@ struct NoteHeader: View {
     
     @Binding var contactName: String
     @Binding var contactImage: String
-    
-    var contact:Contact { Contact(contactName: contactName, contactImage: contactImage) }
         
     var body: some View {
         HStack {
@@ -33,7 +31,7 @@ struct NoteHeader: View {
             Button(action: {
                 // TO DO: call contact picker and change name and image
             }, label: {
-                AvatarView(contact: contact, size: 60)
+                AvatarView(contactName: contactName, contactImage: contactImage, size: 60)
             })
         }.padding()
     }

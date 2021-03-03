@@ -9,14 +9,18 @@ import SwiftUI
 
 struct TimelineItem: View {
     @State var isExpanded: Bool = false
+    
     var date = "date"
     var title: String
-    var contact: Contact?
+    
+    var contactName: String?
+    var contactImage: String?
+    
     var text: String?
     
     var body: some View {
         Group {
-            NoteTimelineHeader(date: date, title: title, contact: contact)
+            NoteTimelineHeader(date: date, title: title, contactName: contactName, contactImage: contactImage)
 
             if isExpanded {
                 NoteBody(text: text)
@@ -30,7 +34,8 @@ struct NoteTimelineHeader: View {
     var date: String
     var title: String
     
-    var contact: Contact?
+    var contactName: String?
+    var contactImage: String?
         
     var body: some View {
         HStack {
@@ -41,8 +46,8 @@ struct NoteTimelineHeader: View {
                 Text(title)
             }
             Spacer()
-            if contact != nil {
-                AvatarView(contact: contact!, size: 60)
+            if contactName != nil {
+                AvatarView(contactName: contactName!, contactImage: "face", size: 60)
             }
         }.padding()
     }
@@ -58,7 +63,9 @@ struct NoteBody: View {
 }
 
 struct TimelineItem_Previews: PreviewProvider {
+    static let contact = ContactStorage.example
+    static let note = NoteStorage.example
     static var previews: some View {
-        TimelineItem(title: "test")
-            .environmentObject(FakeModel())    }
+        TimelineItem(isExpanded: note.isCompleted, date: note.stringDate, title: note.stringTitle, contactName: contact.contactName, contactImage: "face", text: note.stringText)
+    }
 }

@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct DualogueApp: App {
+    @StateObject var dataController: DataController
+    
     var body: some Scene {
         WindowGroup {
             MainTab()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
         }
+    }
+    
+    init() {
+        let dataController = DataController()
+        _dataController = StateObject(wrappedValue: dataController)
     }
 }

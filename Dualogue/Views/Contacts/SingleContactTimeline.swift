@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct SingleContactTimeline: View {
-    @EnvironmentObject var model: FakeModel
+    @EnvironmentObject var model: DataController
     
-    var selectedContact: Contact
-
+    var contactName: String
+    
+    var contact: FetchRequest<ContactStorage>
+    
+    init(_ name: String) {
+        self.contactName = name
+        
+        let predicate = NSPredicate(format: "contactName = %d", contactName)
+        
+        contact = FetchRequest<ContactStorage>(entity: ContactStorage.entity(),
+                                               sortDescriptors: [NSSortDescriptor(keyPath: \ContactStorage.contactName, ascending: false)],
+                                               predicate: predicate)
+    }
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                AvatarView(contact: selectedContact, size: 60)
+                Text(contact.wrappedValue.first?.contactName ?? "no contact found")
+                //                AvatarView(contact: selectedContact, size: 60)
                 VStack {
-                    Text("20")
+                    Text(String(describing: contact.wrappedValue.first?.note?.count))
                     Text("notes")
                 }
             }
@@ -30,14 +43,17 @@ struct SingleContactTimeline: View {
             
             SearchBar()
             
-            NoteTimeline() // TO DO: filter this timeline to get just this specific contact's predicate
+            NoteTimeline(filterName: contactName)
         }
     }
 }
 
 struct SingleContactView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
+    
     static var previews: some View {
-        let contact = Contact(contactName: "Tarrask 1", contactImage: "face")
-        return SingleContactTimeline(selectedContact: contact)
-            .environmentObject(FakeModel())    }
+        SingleContactTimeline("Contato 1")
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
+    }
 }

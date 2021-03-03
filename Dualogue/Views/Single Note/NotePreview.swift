@@ -40,7 +40,7 @@ struct NotePreview: View {
                 })
                 
                 if contactImg != nil && contactName != nil {
-                    AvatarView(contact: Contact(contactName: contactName ?? "", contactImage: contactImg), size: 60)
+                    AvatarView(contactName: contactName!, contactImage: contactImg!, size: 60)
                         .offset(y: 8)
                         .padding()
                 }

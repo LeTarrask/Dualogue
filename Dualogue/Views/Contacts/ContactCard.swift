@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct ContactCard: View {
-    @EnvironmentObject var model: FakeModel
-    
-    var contact: Contact
     var image: String
     var name: String
-    
-    init(contact: Contact) {
-        self.contact = contact
-        self.image = contact.contactImage
-        self.name = contact.contactName
-    }
         
     var body: some View {
         VStack {
@@ -26,7 +17,7 @@ struct ContactCard: View {
                 print("sheet touched")
                 // Should go to single contact
             }) {
-                AvatarView(contact: contact, size: 120)
+                AvatarView(contactName: name, contactImage: image, size: 120)
                     .foregroundColor(.white)
                     .padding()
             }
@@ -51,8 +42,6 @@ struct ContactCard: View {
 
 struct ContactCard_Previews: PreviewProvider {
     static var previews: some View {
-        let contact = Contact(contactName: "Tarrask", contactImage: "face")
-        return ContactCard(contact: contact)
-            .environmentObject(FakeModel())
+        ContactCard(image: "face", name: "tarrask")
     }
 }

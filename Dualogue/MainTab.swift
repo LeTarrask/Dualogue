@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTab: View {
     @State private var selection = 0
     
-    var model = FakeModel()
+    var model = DataController()
     
     // TO DO: here we should fetch the database, and bind the data to the views. So we send all the notes to notelist view, and all the contacts to contactlistview. Singlenoteview goes to a new note in editing mode on.
     
