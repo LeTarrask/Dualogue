@@ -12,6 +12,34 @@
 		7962BD7525F110A2008B0449 /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
 		7962BD7A25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */; };
 		7962BD7B25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */; };
+		7962BD9425F137DD008B0449 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8425F137DC008B0449 /* ContactsView.swift */; };
+		7962BD9525F137DD008B0449 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8425F137DC008B0449 /* ContactsView.swift */; };
+		7962BD9625F137DD008B0449 /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8525F137DC008B0449 /* ContactCard.swift */; };
+		7962BD9725F137DD008B0449 /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8525F137DC008B0449 /* ContactCard.swift */; };
+		7962BD9825F137DD008B0449 /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8625F137DC008B0449 /* NewContactView.swift */; };
+		7962BD9925F137DD008B0449 /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8625F137DC008B0449 /* NewContactView.swift */; };
+		7962BD9A25F137DD008B0449 /* ContactsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8725F137DC008B0449 /* ContactsGrid.swift */; };
+		7962BD9B25F137DD008B0449 /* ContactsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8725F137DC008B0449 /* ContactsGrid.swift */; };
+		7962BD9C25F137DD008B0449 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8825F137DC008B0449 /* SingleContactView.swift */; };
+		7962BD9D25F137DD008B0449 /* SingleContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8825F137DC008B0449 /* SingleContactView.swift */; };
+		7962BD9E25F137DD008B0449 /* SingleContactTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8925F137DC008B0449 /* SingleContactTimeline.swift */; };
+		7962BD9F25F137DD008B0449 /* SingleContactTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8925F137DC008B0449 /* SingleContactTimeline.swift */; };
+		7962BDA025F137DD008B0449 /* NotelistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8B25F137DD008B0449 /* NotelistView.swift */; };
+		7962BDA125F137DD008B0449 /* NotelistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8B25F137DD008B0449 /* NotelistView.swift */; };
+		7962BDA225F137DD008B0449 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8C25F137DD008B0449 /* NoteTimeline.swift */; };
+		7962BDA325F137DD008B0449 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8C25F137DD008B0449 /* NoteTimeline.swift */; };
+		7962BDA425F137DD008B0449 /* FriendListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8D25F137DD008B0449 /* FriendListScrollView.swift */; };
+		7962BDA525F137DD008B0449 /* FriendListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8D25F137DD008B0449 /* FriendListScrollView.swift */; };
+		7962BDA625F137DD008B0449 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8E25F137DD008B0449 /* TimelineItem.swift */; };
+		7962BDA725F137DD008B0449 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD8E25F137DD008B0449 /* TimelineItem.swift */; };
+		7962BDA825F137DD008B0449 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9025F137DD008B0449 /* SingleNoteView.swift */; };
+		7962BDA925F137DD008B0449 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9025F137DD008B0449 /* SingleNoteView.swift */; };
+		7962BDAA25F137DD008B0449 /* NotePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9125F137DD008B0449 /* NotePreview.swift */; };
+		7962BDAB25F137DD008B0449 /* NotePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9125F137DD008B0449 /* NotePreview.swift */; };
+		7962BDAC25F137DD008B0449 /* NoteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9225F137DD008B0449 /* NoteHeader.swift */; };
+		7962BDAD25F137DD008B0449 /* NoteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9225F137DD008B0449 /* NoteHeader.swift */; };
+		7962BDAE25F137DD008B0449 /* NoteBodyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9325F137DD008B0449 /* NoteBodyText.swift */; };
+		7962BDAF25F137DD008B0449 /* NoteBodyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD9325F137DD008B0449 /* NoteBodyText.swift */; };
 		7973572524AA634E00A63209 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571C24AA634E00A63209 /* AvatarView.swift */; };
 		7973572624AA634E00A63209 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571D24AA634E00A63209 /* ColorSchemes.swift */; };
 		7973572724AA634E00A63209 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571E24AA634E00A63209 /* MainTab.swift */; };
@@ -44,6 +72,20 @@
 		7926102125F01D7500E3CC57 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		7926102C25F021DC00E3CC57 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		7962BD7925F112FB008B0449 /* Dualogue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dualogue.xcdatamodel; sourceTree = "<group>"; };
+		7962BD8425F137DC008B0449 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		7962BD8525F137DC008B0449 /* ContactCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCard.swift; sourceTree = "<group>"; };
+		7962BD8625F137DC008B0449 /* NewContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
+		7962BD8725F137DC008B0449 /* ContactsGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsGrid.swift; sourceTree = "<group>"; };
+		7962BD8825F137DC008B0449 /* SingleContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleContactView.swift; sourceTree = "<group>"; };
+		7962BD8925F137DC008B0449 /* SingleContactTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleContactTimeline.swift; sourceTree = "<group>"; };
+		7962BD8B25F137DD008B0449 /* NotelistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotelistView.swift; sourceTree = "<group>"; };
+		7962BD8C25F137DD008B0449 /* NoteTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
+		7962BD8D25F137DD008B0449 /* FriendListScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListScrollView.swift; sourceTree = "<group>"; };
+		7962BD8E25F137DD008B0449 /* TimelineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
+		7962BD9025F137DD008B0449 /* SingleNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
+		7962BD9125F137DD008B0449 /* NotePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotePreview.swift; sourceTree = "<group>"; };
+		7962BD9225F137DD008B0449 /* NoteHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteHeader.swift; sourceTree = "<group>"; };
+		7962BD9325F137DD008B0449 /* NoteBodyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteBodyText.swift; sourceTree = "<group>"; };
 		7973571C24AA634E00A63209 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		7973571D24AA634E00A63209 /* ColorSchemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		7973571E24AA634E00A63209 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
@@ -81,6 +123,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7962BD8225F137CD008B0449 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7962BD8325F137DC008B0449 /* Contacts */,
+				7962BD8A25F137DD008B0449 /* Maintimelines */,
+				7962BD8F25F137DD008B0449 /* Single Note */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7962BD8325F137DC008B0449 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7962BD8425F137DC008B0449 /* ContactsView.swift */,
+				7962BD8525F137DC008B0449 /* ContactCard.swift */,
+				7962BD8625F137DC008B0449 /* NewContactView.swift */,
+				7962BD8725F137DC008B0449 /* ContactsGrid.swift */,
+				7962BD8825F137DC008B0449 /* SingleContactView.swift */,
+				7962BD8925F137DC008B0449 /* SingleContactTimeline.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		7962BD8A25F137DD008B0449 /* Maintimelines */ = {
+			isa = PBXGroup;
+			children = (
+				7962BD8B25F137DD008B0449 /* NotelistView.swift */,
+				7962BD8C25F137DD008B0449 /* NoteTimeline.swift */,
+				7962BD8D25F137DD008B0449 /* FriendListScrollView.swift */,
+				7962BD8E25F137DD008B0449 /* TimelineItem.swift */,
+			);
+			path = Maintimelines;
+			sourceTree = "<group>";
+		};
+		7962BD8F25F137DD008B0449 /* Single Note */ = {
+			isa = PBXGroup;
+			children = (
+				7962BD9025F137DD008B0449 /* SingleNoteView.swift */,
+				7962BD9125F137DD008B0449 /* NotePreview.swift */,
+				7962BD9225F137DD008B0449 /* NoteHeader.swift */,
+				7962BD9325F137DD008B0449 /* NoteBodyText.swift */,
+			);
+			path = "Single Note";
+			sourceTree = "<group>";
+		};
 		7973572B24AA63AD00A63209 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +212,7 @@
 				79A8F58E24AA5AAB00890E29 /* DualogueApp.swift */,
 				7973571E24AA634E00A63209 /* MainTab.swift */,
 				7973573324AA6DEE00A63209 /* Loading.swift */,
+				7962BD8225F137CD008B0449 /* Views */,
 				79AEB3C125EFE4750096A29C /* Model */,
 				79AEB3D425EFE5290096A29C /* ViewControllers */,
 				7973572B24AA63AD00A63209 /* Helper Views */,
@@ -272,14 +360,28 @@
 			files = (
 				79A8F58F24AA5AAB00890E29 /* DualogueApp.swift in Sources */,
 				7973572624AA634E00A63209 /* ColorSchemes.swift in Sources */,
+				7962BDA825F137DD008B0449 /* SingleNoteView.swift in Sources */,
+				7962BD9A25F137DD008B0449 /* ContactsGrid.swift in Sources */,
+				7962BDAE25F137DD008B0449 /* NoteBodyText.swift in Sources */,
+				7962BD9825F137DD008B0449 /* NewContactView.swift in Sources */,
 				7973573424AA6DEE00A63209 /* Loading.swift in Sources */,
 				79AEB3B925EFE46F0096A29C /* FilteredList.swift in Sources */,
 				7973572724AA634E00A63209 /* MainTab.swift in Sources */,
 				79AE313225F00851009811EB /* ContactStorage.swift in Sources */,
+				7962BD9625F137DD008B0449 /* ContactCard.swift in Sources */,
+				7962BDA625F137DD008B0449 /* TimelineItem.swift in Sources */,
 				7973573124AA6D4900A63209 /* Date Extensions.swift in Sources */,
+				7962BDA225F137DD008B0449 /* NoteTimeline.swift in Sources */,
+				7962BD9C25F137DD008B0449 /* SingleContactView.swift in Sources */,
+				7962BDA025F137DD008B0449 /* NotelistView.swift in Sources */,
+				7962BDAC25F137DD008B0449 /* NoteHeader.swift in Sources */,
 				7973573C24AB7C2A00A63209 /* DataController.swift in Sources */,
 				7973572524AA634E00A63209 /* AvatarView.swift in Sources */,
+				7962BD9E25F137DD008B0449 /* SingleContactTimeline.swift in Sources */,
 				7973572D24AA646C00A63209 /* SearchBar.swift in Sources */,
+				7962BDA425F137DD008B0449 /* FriendListScrollView.swift in Sources */,
+				7962BDAA25F137DD008B0449 /* NotePreview.swift in Sources */,
+				7962BD9425F137DD008B0449 /* ContactsView.swift in Sources */,
 				7962BD7A25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */,
 				79AE312D25F00724009811EB /* NoteStorage.swift in Sources */,
 			);
@@ -289,13 +391,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7962BDA925F137DD008B0449 /* SingleNoteView.swift in Sources */,
+				7962BD9B25F137DD008B0449 /* ContactsGrid.swift in Sources */,
 				7962BD7525F110A2008B0449 /* ContactStorage.swift in Sources */,
 				7926102D25F021DC00E3CC57 /* CoreDataTests.swift in Sources */,
+				7962BDA525F137DD008B0449 /* FriendListScrollView.swift in Sources */,
+				7962BD9D25F137DD008B0449 /* SingleContactView.swift in Sources */,
+				7962BDA125F137DD008B0449 /* NotelistView.swift in Sources */,
+				7962BD9925F137DD008B0449 /* NewContactView.swift in Sources */,
 				7962BD7B25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */,
 				79AE314525F01494009811EB /* DataController.swift in Sources */,
+				7962BDAD25F137DD008B0449 /* NoteHeader.swift in Sources */,
+				7962BDAB25F137DD008B0449 /* NotePreview.swift in Sources */,
+				7962BDA725F137DD008B0449 /* TimelineItem.swift in Sources */,
+				7962BD9F25F137DD008B0449 /* SingleContactTimeline.swift in Sources */,
 				79AE314125F0148B009811EB /* Date Extensions.swift in Sources */,
+				7962BDA325F137DD008B0449 /* NoteTimeline.swift in Sources */,
 				7926102225F01D7500E3CC57 /* BaseTestCase.swift in Sources */,
 				79AE313925F00FC7009811EB /* NoteStorage.swift in Sources */,
+				7962BD9525F137DD008B0449 /* ContactsView.swift in Sources */,
+				7962BD9725F137DD008B0449 /* ContactCard.swift in Sources */,
+				7962BDAF25F137DD008B0449 /* NoteBodyText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
