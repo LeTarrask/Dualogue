@@ -8,11 +8,8 @@
 import CoreData
 import SwiftUI
 
-
 /// A contoller interface to our information stored in Core Data
 class DataController: ObservableObject {
-    
-    
     let container: NSPersistentContainer
     // TO DO: changed this to persistent container. should change to icloud later to after fixing this huge bug
     
@@ -62,7 +59,6 @@ class DataController: ObservableObject {
         
         let tarrask = ContactStorage(context: viewContext)
         tarrask.contactName = "tarrask"
-//        tarrask.contactImage = "face"
         
         for counter in 1...5 {
             let contact = ContactStorage(context: viewContext)
@@ -106,8 +102,14 @@ class DataController: ObservableObject {
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
         
-        let fetchRequest3: NSFetchRequest<NSFetchRequestResult> = ImageStorage.fetchRequest()
-        let batchDeleteRequest3 = NSBatchDeleteRequest(fetchRequest: fetchRequest3)
-        _ = try? container.viewContext.execute(batchDeleteRequest3)
+//        let fetchRequest3: NSFetchRequest<NSFetchRequestResult> = ImageStorage.fetchRequest()
+//        let batchDeleteRequest3 = NSBatchDeleteRequest(fetchRequest: fetchRequest3)
+//        _ = try? container.viewContext.execute(batchDeleteRequest3)
+        // this is blank because we've not added image sample data, should uncomment to test it
+    }
+    
+    /// Counts the amount of requested items in container
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
 }

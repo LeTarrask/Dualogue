@@ -7,39 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7973571F24AA634E00A63209 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571624AA634E00A63209 /* ContactsView.swift */; };
-		7973572024AA634E00A63209 /* NotelistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571724AA634E00A63209 /* NotelistView.swift */; };
-		7973572124AA634E00A63209 /* NoteTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571824AA634E00A63209 /* NoteTimeline.swift */; };
-		7973572224AA634E00A63209 /* SingleNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571924AA634E00A63209 /* SingleNoteView.swift */; };
-		7973572324AA634E00A63209 /* NotePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571A24AA634E00A63209 /* NotePreview.swift */; };
-		7973572424AA634E00A63209 /* FriendListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571B24AA634E00A63209 /* FriendListScrollView.swift */; };
+		7926102225F01D7500E3CC57 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926102125F01D7500E3CC57 /* BaseTestCase.swift */; };
+		7926102D25F021DC00E3CC57 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926102C25F021DC00E3CC57 /* CoreDataTests.swift */; };
+		7962BD7525F110A2008B0449 /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
+		7962BD7A25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */; };
+		7962BD7B25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */; };
 		7973572524AA634E00A63209 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571C24AA634E00A63209 /* AvatarView.swift */; };
 		7973572624AA634E00A63209 /* ColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571D24AA634E00A63209 /* ColorSchemes.swift */; };
 		7973572724AA634E00A63209 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973571E24AA634E00A63209 /* MainTab.swift */; };
 		7973572D24AA646C00A63209 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973572C24AA646C00A63209 /* SearchBar.swift */; };
-		7973572F24AA6A4700A63209 /* SingleContactTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973572E24AA6A4700A63209 /* SingleContactTimeline.swift */; };
 		7973573124AA6D4900A63209 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573024AA6D4900A63209 /* Date Extensions.swift */; };
 		7973573424AA6DEE00A63209 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573324AA6DEE00A63209 /* Loading.swift */; };
-		7973573624AB5EDF00A63209 /* NoteBodyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573524AB5EDF00A63209 /* NoteBodyText.swift */; };
-		7973573824AB5F5600A63209 /* NoteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573724AB5F5600A63209 /* NoteHeader.swift */; };
-		7973573A24AB6FD700A63209 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573924AB6FD700A63209 /* TimelineItem.swift */; };
 		7973573C24AB7C2A00A63209 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573B24AB7C2A00A63209 /* DataController.swift */; };
 		79A8F58F24AA5AAB00890E29 /* DualogueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8F58E24AA5AAB00890E29 /* DualogueApp.swift */; };
 		79A8F59324AA5AB000890E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A8F59224AA5AB000890E29 /* Assets.xcassets */; };
 		79A8F59624AA5AB000890E29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A8F59524AA5AB000890E29 /* Preview Assets.xcassets */; };
-		79A8F5A124AA5AB100890E29 /* DualogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8F5A024AA5AB100890E29 /* DualogueTests.swift */; };
-		79A8F5AC24AA5AB100890E29 /* DualogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8F5AB24AA5AB100890E29 /* DualogueUITests.swift */; };
-		79A9DA4724ACE8E1001501CB /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9DA4624ACE8E1001501CB /* NewContactView.swift */; };
-		79A9DA4924ACED60001501CB /* ContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9DA4824ACED60001501CB /* ContactCard.swift */; };
-		79AE312825F00452009811EB /* ContactsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312725F00452009811EB /* ContactsGrid.swift */; };
 		79AE312D25F00724009811EB /* NoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312C25F00724009811EB /* NoteStorage.swift */; };
 		79AE313225F00851009811EB /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
 		79AE313925F00FC7009811EB /* NoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE312C25F00724009811EB /* NoteStorage.swift */; };
-		79AE313D25F00FCB009811EB /* ContactStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AE313125F00851009811EB /* ContactStorage.swift */; };
 		79AE314125F0148B009811EB /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573024AA6D4900A63209 /* Date Extensions.swift */; };
 		79AE314525F01494009811EB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973573B24AB7C2A00A63209 /* DataController.swift */; };
-		79AEB3B025EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */; };
-		79AEB3B125EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */; };
 		79AEB3B925EFE46F0096A29C /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEB3B825EFE46F0096A29C /* FilteredList.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,32 +38,18 @@
 			remoteGlobalIDString = 79A8F58A24AA5AAB00890E29;
 			remoteInfo = Dualogue;
 		};
-		79A8F5A824AA5AB100890E29 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 79A8F58324AA5AAB00890E29 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79A8F58A24AA5AAB00890E29;
-			remoteInfo = Dualogue;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7973571624AA634E00A63209 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
-		7973571724AA634E00A63209 /* NotelistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotelistView.swift; sourceTree = "<group>"; };
-		7973571824AA634E00A63209 /* NoteTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTimeline.swift; sourceTree = "<group>"; };
-		7973571924AA634E00A63209 /* SingleNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleNoteView.swift; sourceTree = "<group>"; };
-		7973571A24AA634E00A63209 /* NotePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotePreview.swift; sourceTree = "<group>"; };
-		7973571B24AA634E00A63209 /* FriendListScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListScrollView.swift; sourceTree = "<group>"; };
+		7926102125F01D7500E3CC57 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		7926102C25F021DC00E3CC57 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		7962BD7925F112FB008B0449 /* Dualogue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dualogue.xcdatamodel; sourceTree = "<group>"; };
 		7973571C24AA634E00A63209 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		7973571D24AA634E00A63209 /* ColorSchemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemes.swift; sourceTree = "<group>"; };
 		7973571E24AA634E00A63209 /* MainTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		7973572C24AA646C00A63209 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		7973572E24AA6A4700A63209 /* SingleContactTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleContactTimeline.swift; sourceTree = "<group>"; };
 		7973573024AA6D4900A63209 /* Date Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
 		7973573324AA6DEE00A63209 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		7973573524AB5EDF00A63209 /* NoteBodyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBodyText.swift; sourceTree = "<group>"; };
-		7973573724AB5F5600A63209 /* NoteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHeader.swift; sourceTree = "<group>"; };
-		7973573924AB6FD700A63209 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
 		7973573B24AB7C2A00A63209 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		79A8F58B24AA5AAB00890E29 /* Dualogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dualogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A8F58E24AA5AAB00890E29 /* DualogueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualogueApp.swift; sourceTree = "<group>"; };
@@ -84,17 +57,9 @@
 		79A8F59524AA5AB000890E29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79A8F59724AA5AB000890E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79A8F59C24AA5AB100890E29 /* DualogueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualogueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79A8F5A024AA5AB100890E29 /* DualogueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualogueTests.swift; sourceTree = "<group>"; };
 		79A8F5A224AA5AB100890E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79A8F5A724AA5AB100890E29 /* DualogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualogueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79A8F5AB24AA5AB100890E29 /* DualogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualogueUITests.swift; sourceTree = "<group>"; };
-		79A8F5AD24AA5AB100890E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79A9DA4624ACE8E1001501CB /* NewContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
-		79A9DA4824ACED60001501CB /* ContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCard.swift; sourceTree = "<group>"; };
-		79AE312725F00452009811EB /* ContactsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsGrid.swift; sourceTree = "<group>"; };
 		79AE312C25F00724009811EB /* NoteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStorage.swift; sourceTree = "<group>"; };
 		79AE313125F00851009811EB /* ContactStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStorage.swift; sourceTree = "<group>"; };
-		79AEB3AF25EFE4370096A29C /* Dualogue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dualogue.xcdatamodel; sourceTree = "<group>"; };
 		79AEB3B825EFE46F0096A29C /* FilteredList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,60 +78,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79A8F5A424AA5AB100890E29 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7973571524AA634E00A63209 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7973572824AA636E00A63209 /* Maintimelines */,
-				7973572924AA637D00A63209 /* Single Note */,
-				7973572A24AA638700A63209 /* Contacts */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7973572824AA636E00A63209 /* Maintimelines */ = {
-			isa = PBXGroup;
-			children = (
-				7973571724AA634E00A63209 /* NotelistView.swift */,
-				7973571B24AA634E00A63209 /* FriendListScrollView.swift */,
-				7973571824AA634E00A63209 /* NoteTimeline.swift */,
-				7973573924AB6FD700A63209 /* TimelineItem.swift */,
-			);
-			path = Maintimelines;
-			sourceTree = "<group>";
-		};
-		7973572924AA637D00A63209 /* Single Note */ = {
-			isa = PBXGroup;
-			children = (
-				7973571924AA634E00A63209 /* SingleNoteView.swift */,
-				7973573724AB5F5600A63209 /* NoteHeader.swift */,
-				7973573524AB5EDF00A63209 /* NoteBodyText.swift */,
-				7973571A24AA634E00A63209 /* NotePreview.swift */,
-			);
-			path = "Single Note";
-			sourceTree = "<group>";
-		};
-		7973572A24AA638700A63209 /* Contacts */ = {
-			isa = PBXGroup;
-			children = (
-				7973572E24AA6A4700A63209 /* SingleContactTimeline.swift */,
-				7973571624AA634E00A63209 /* ContactsView.swift */,
-				79AE312725F00452009811EB /* ContactsGrid.swift */,
-				79A9DA4824ACED60001501CB /* ContactCard.swift */,
-				79A9DA4624ACE8E1001501CB /* NewContactView.swift */,
-			);
-			path = Contacts;
-			sourceTree = "<group>";
-		};
 		7973572B24AA63AD00A63209 /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +105,6 @@
 			children = (
 				79A8F58D24AA5AAB00890E29 /* Dualogue */,
 				79A8F59F24AA5AB100890E29 /* DualogueTests */,
-				79A8F5AA24AA5AB100890E29 /* DualogueUITests */,
 				79A8F58C24AA5AAB00890E29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -201,7 +114,6 @@
 			children = (
 				79A8F58B24AA5AAB00890E29 /* Dualogue.app */,
 				79A8F59C24AA5AB100890E29 /* DualogueTests.xctest */,
-				79A8F5A724AA5AB100890E29 /* DualogueUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,7 +127,6 @@
 				7973573324AA6DEE00A63209 /* Loading.swift */,
 				79AEB3C125EFE4750096A29C /* Model */,
 				79AEB3D425EFE5290096A29C /* ViewControllers */,
-				7973571524AA634E00A63209 /* Views */,
 				7973572B24AA63AD00A63209 /* Helper Views */,
 				7973573224AA6D4F00A63209 /* Extensions */,
 				79A8F59224AA5AB000890E29 /* Assets.xcassets */,
@@ -235,25 +146,17 @@
 		79A8F59F24AA5AB100890E29 /* DualogueTests */ = {
 			isa = PBXGroup;
 			children = (
-				79A8F5A024AA5AB100890E29 /* DualogueTests.swift */,
+				7926102125F01D7500E3CC57 /* BaseTestCase.swift */,
+				7926102C25F021DC00E3CC57 /* CoreDataTests.swift */,
 				79A8F5A224AA5AB100890E29 /* Info.plist */,
 			);
 			path = DualogueTests;
 			sourceTree = "<group>";
 		};
-		79A8F5AA24AA5AB100890E29 /* DualogueUITests */ = {
-			isa = PBXGroup;
-			children = (
-				79A8F5AB24AA5AB100890E29 /* DualogueUITests.swift */,
-				79A8F5AD24AA5AB100890E29 /* Info.plist */,
-			);
-			path = DualogueUITests;
-			sourceTree = "<group>";
-		};
 		79AEB3C125EFE4750096A29C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */,
+				7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */,
 				79AE312C25F00724009811EB /* NoteStorage.swift */,
 				79AE313125F00851009811EB /* ContactStorage.swift */,
 			);
@@ -306,24 +209,6 @@
 			productReference = 79A8F59C24AA5AB100890E29 /* DualogueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		79A8F5A624AA5AB100890E29 /* DualogueUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79A8F5B624AA5AB100890E29 /* Build configuration list for PBXNativeTarget "DualogueUITests" */;
-			buildPhases = (
-				79A8F5A324AA5AB100890E29 /* Sources */,
-				79A8F5A424AA5AB100890E29 /* Frameworks */,
-				79A8F5A524AA5AB100890E29 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79A8F5A924AA5AB100890E29 /* PBXTargetDependency */,
-			);
-			name = DualogueUITests;
-			productName = DualogueUITests;
-			productReference = 79A8F5A724AA5AB100890E29 /* DualogueUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,10 +222,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					79A8F59B24AA5AB100890E29 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 79A8F58A24AA5AAB00890E29;
-					};
-					79A8F5A624AA5AB100890E29 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 79A8F58A24AA5AAB00890E29;
 					};
@@ -361,7 +242,6 @@
 			targets = (
 				79A8F58A24AA5AAB00890E29 /* Dualogue */,
 				79A8F59B24AA5AB100890E29 /* DualogueTests */,
-				79A8F5A624AA5AB100890E29 /* DualogueUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -383,13 +263,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79A8F5A524AA5AB100890E29 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -399,28 +272,15 @@
 			files = (
 				79A8F58F24AA5AAB00890E29 /* DualogueApp.swift in Sources */,
 				7973572624AA634E00A63209 /* ColorSchemes.swift in Sources */,
-				7973572224AA634E00A63209 /* SingleNoteView.swift in Sources */,
-				7973572F24AA6A4700A63209 /* SingleContactTimeline.swift in Sources */,
 				7973573424AA6DEE00A63209 /* Loading.swift in Sources */,
-				7973572324AA634E00A63209 /* NotePreview.swift in Sources */,
 				79AEB3B925EFE46F0096A29C /* FilteredList.swift in Sources */,
-				79A9DA4924ACED60001501CB /* ContactCard.swift in Sources */,
 				7973572724AA634E00A63209 /* MainTab.swift in Sources */,
-				79AE312825F00452009811EB /* ContactsGrid.swift in Sources */,
 				79AE313225F00851009811EB /* ContactStorage.swift in Sources */,
-				79AEB3B025EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */,
-				79A9DA4724ACE8E1001501CB /* NewContactView.swift in Sources */,
 				7973573124AA6D4900A63209 /* Date Extensions.swift in Sources */,
-				7973572424AA634E00A63209 /* FriendListScrollView.swift in Sources */,
-				7973573A24AB6FD700A63209 /* TimelineItem.swift in Sources */,
 				7973573C24AB7C2A00A63209 /* DataController.swift in Sources */,
-				7973572024AA634E00A63209 /* NotelistView.swift in Sources */,
-				7973573824AB5F5600A63209 /* NoteHeader.swift in Sources */,
 				7973572524AA634E00A63209 /* AvatarView.swift in Sources */,
-				7973572124AA634E00A63209 /* NoteTimeline.swift in Sources */,
 				7973572D24AA646C00A63209 /* SearchBar.swift in Sources */,
-				7973571F24AA634E00A63209 /* ContactsView.swift in Sources */,
-				7973573624AB5EDF00A63209 /* NoteBodyText.swift in Sources */,
+				7962BD7A25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */,
 				79AE312D25F00724009811EB /* NoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,20 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79AE313D25F00FCB009811EB /* ContactStorage.swift in Sources */,
+				7962BD7525F110A2008B0449 /* ContactStorage.swift in Sources */,
+				7926102D25F021DC00E3CC57 /* CoreDataTests.swift in Sources */,
+				7962BD7B25F112FB008B0449 /* Dualogue.xcdatamodeld in Sources */,
 				79AE314525F01494009811EB /* DataController.swift in Sources */,
 				79AE314125F0148B009811EB /* Date Extensions.swift in Sources */,
-				79A8F5A124AA5AB100890E29 /* DualogueTests.swift in Sources */,
-				79AEB3B125EFE4370096A29C /* Dualogue.xcdatamodeld in Sources */,
+				7926102225F01D7500E3CC57 /* BaseTestCase.swift in Sources */,
 				79AE313925F00FC7009811EB /* NoteStorage.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79A8F5A324AA5AB100890E29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				79A8F5AC24AA5AB100890E29 /* DualogueUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,11 +306,6 @@
 			isa = PBXTargetDependency;
 			target = 79A8F58A24AA5AAB00890E29 /* Dualogue */;
 			targetProxy = 79A8F59D24AA5AB100890E29 /* PBXContainerItemProxy */;
-		};
-		79A8F5A924AA5AB100890E29 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 79A8F58A24AA5AAB00890E29 /* Dualogue */;
-			targetProxy = 79A8F5A824AA5AB100890E29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -668,46 +516,6 @@
 			};
 			name = Release;
 		};
-		79A8F5B724AA5AB100890E29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2BC5TCSR5;
-				INFOPLIST_FILE = DualogueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.DualogueUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Dualogue;
-			};
-			name = Debug;
-		};
-		79A8F5B824AA5AB100890E29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2BC5TCSR5;
-				INFOPLIST_FILE = DualogueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.garageminfinita.DualogueUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Dualogue;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -738,24 +546,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79A8F5B624AA5AB100890E29 /* Build configuration list for PBXNativeTarget "DualogueUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79A8F5B724AA5AB100890E29 /* Debug */,
-				79A8F5B824AA5AB100890E29 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		79AEB3AE25EFE4370096A29C /* Dualogue.xcdatamodeld */ = {
+		7962BD7825F112FB008B0449 /* Dualogue.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				79AEB3AF25EFE4370096A29C /* Dualogue.xcdatamodel */,
+				7962BD7925F112FB008B0449 /* Dualogue.xcdatamodel */,
 			);
-			currentVersion = 79AEB3AF25EFE4370096A29C /* Dualogue.xcdatamodel */;
+			currentVersion = 7962BD7925F112FB008B0449 /* Dualogue.xcdatamodel */;
 			path = Dualogue.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -1,8 +1,8 @@
 //
-//  DualogueTests.swift
+//  BaseTestCase.swift
 //  DualogueTests
 //
-//  Created by Alex Luna on 29/06/2020.
+//  Created by Alex Luna on 03/03/2021.
 //
 
 import CoreData
